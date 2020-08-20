@@ -6,5 +6,32 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false
+      },
+    },
+    /*{
+      resolve: "gatsby-plugin-prefetch-google-fonts",
+      options: {
+        fonts: [
+          {
+            family: 'Open Sans',
+            variants: [`300`]
+            //subsets: [`latin`]
+          },
+        ],
+      },
+    },*/    
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /_icons/
+        }
+      }
+    }    
+  ],
 }

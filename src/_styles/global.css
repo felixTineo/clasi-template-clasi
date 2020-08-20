@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+
+html{
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Raleway', sans-serif;
+  padding: 0;
+  margin: 0;
+  color: #212121;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button, input{
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: 300;
+}
+
+h1{
+  font-size: 2rem;
+}
+
+h2{
+  font-size: 1.5rem;
+}
+
+@media(min-width: 768px){
+  h1{
+    font-size: 50px;
+  }
+  h2{
+    font-size: 2rem;
+  }
+}
+
+.carousel-back-button, .carousel-next-button{
+  position: absolute;
+  top: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  transition: 250ms ease;
+}
+
+.carousel-back-button{
+  left: -10px;
+}
+
+.carousel-next-button{
+  right: -10px;
+}
+
+.carousel-back-button:hover, .carousel-next-button:hover{
+  filter: brightness(1.1);
+}
+
+.carousel-back-button:active, .carousel-next-button:active{
+  filter: brightness(.9);
+}
+.carousel-text-back-button{
+  top: auto;
+  bottom: 0 !important;
+  left: auto;
+  right: 6rem;
+}
+
+.carousel-text-next-button{
+  top: auto;
+  bottom: 0 !important;
+  right: 3rem;
+}
