@@ -1,6 +1,5 @@
 import React, { useContext, Fragment } from 'react';
 import Context from '../../_context';
-import styled from 'styled-components';
 import { PropertyCard } from '../cards'
 import { Visible, Hidden } from 'react-grid-system';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';

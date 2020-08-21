@@ -43,7 +43,7 @@ export default ({ onClick, visible })=> {
       gsap.to('#responsive-bar-middle', .25, { opacity: 1, backgroundColor: office.main.primaryColor });
       gsap.to('#responsive-bar-bottom', .25, { y: 0, rotate: 0, backgroundColor: office.main.primaryColor });
     }
-  },[visible])
+  },[visible, office.main.primaryColor])
 
   return(
     <Button onClick={onClick}>

@@ -2,7 +2,7 @@ import React, { useContext, Fragment } from 'react';
 import Context from '../../_context';
 import styled from 'styled-components';
 import { Visible, Hidden } from 'react-grid-system';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup, Dot } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const RevieweCont = styled.div`

@@ -7,6 +7,7 @@ import { ServiceCarousel, ReviewCarousel } from '../../_components/carousels';
 
 const MainCont = styled.section`  
   position: relative;
+  padding-bottom: 6rem;
 `
 const HeroInfoCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
@@ -61,7 +62,6 @@ const CarouselCont = styled.div`
 
 export default ()=> {
   const state = useContext(Context).home;
-  console.log("FOOOOOOOOOOO", state);
   return(
     <MainCont>
       <HeroInfoCont>
@@ -100,7 +100,7 @@ export default ()=> {
           <Col xs={12} md={6}>
             <TitleQuoteCont>
               <SvgCont width="84" height="101" viewBox="0 0 84 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M56 48.3737L56 0H84L84 48.3737L72.6923 101H58.1538L66.2308 48.3737H56ZM0 48.3737L0 0L28 0L28 48.3737L16.6923 101H2.15385L10.2308 48.3737H0Z"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M56 48.3737L56 0H84L84 48.3737L72.6923 101H58.1538L66.2308 48.3737H56ZM0 48.3737L0 0L28 0L28 48.3737L16.6923 101H2.15385L10.2308 48.3737H0Z"/>
               </SvgCont>
             </TitleQuoteCont>
             <QuoteCarouselCont>

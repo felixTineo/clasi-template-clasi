@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Context from '../_context';
 import data from '../_context/state';
 import styled, { ThemeProvider } from 'styled-components';
 import Header from './header';
+import Footer from './footer';
 
 const Layout = styled.div`
   overflow: hidden;
@@ -27,6 +28,7 @@ export default ({ children })=> {
           <Body>
             {children}
           </Body>
+          <Footer />
         </Layout>
       </ThemeProvider>
     </Context.Provider>

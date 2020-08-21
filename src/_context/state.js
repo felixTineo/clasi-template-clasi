@@ -10,7 +10,7 @@ export default {
     id: "5e8e36b31c9d440000d35090",
     name: "ClasiHome",
     email: "clasi@clasihome.cl",
-    address: "Hola",
+    address: "Av. La Dehesa 1939, Of. 607 - 608",
     phone: {
       countryCode: "+56",
       areaCode: "9",

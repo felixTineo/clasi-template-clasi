@@ -128,12 +128,12 @@ export default ()=> {
           </SocialItem>
           <SocialItem>
             <NavLink href="https://facebook.com" target="_blank">
-              <img src="/icons/facebook.svg" />
+              <img src="/icons/facebook.svg" alt="facebook" />
             </NavLink>
           </SocialItem>
           <SocialItem>
             <NavLink href="https://instagram.com" target="_blank">
-              <img src="/icons/instagram.svg" />
+              <img src="/icons/instagram.svg" alt="instagram" />
             </NavLink>
           </SocialItem>          
         </SocialCont>

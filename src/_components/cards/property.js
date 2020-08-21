@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from '../link';
 import styled from 'styled-components';
-import { Button } from '../buttons';
 
 const CardCont = styled.div`
   background-color: #fff;
