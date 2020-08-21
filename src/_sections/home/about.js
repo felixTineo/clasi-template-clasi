@@ -3,14 +3,14 @@ import Context from '../../_context';
 import styled from 'styled-components';
 import { Row, Col, Container, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
-import { ServiceCarousel } from '../../_components/carousels';
+import { ServiceCarousel, ReviewCarousel } from '../../_components/carousels';
 
 const MainCont = styled.section`  
   position: relative;
 `
 const HeroInfoCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
-  min-height: 50vh;
+  min-height: calc(50vh - 4rem);
   color: #ffffff;
 `
 const DescriptionCont = styled.div`
@@ -19,12 +19,13 @@ const DescriptionCont = styled.div`
   justify-content: center;
   align-items: center;  
   height: 100%;
+  padding: 4rem 0;
 `
 const Title = styled.h2`
   font-size: 40px;
 `
 const Description = styled.p`
-  margin: 4rem 0;
+  margin: 2rem 0 4rem;
 `
 const HeroImage = styled.img`
   width: 50vw;
@@ -48,7 +49,10 @@ const SvgCont = styled.svg`
   fill: ${props => props.theme.main.primaryColor};
 `
 const QuoteCarouselCont = styled.div`
-  margin-top: 4rem;
+  padding-top: 0rem;
+  @media(min-width: 768px){
+    padding-top: 2rem;
+  }
 `
 const CarouselCont = styled.div`
   position: relative;
@@ -57,6 +61,7 @@ const CarouselCont = styled.div`
 
 export default ()=> {
   const state = useContext(Context).home;
+  console.log("FOOOOOOOOOOO", state);
   return(
     <MainCont>
       <HeroInfoCont>
@@ -99,7 +104,7 @@ export default ()=> {
               </SvgCont>
             </TitleQuoteCont>
             <QuoteCarouselCont>
-
+              <ReviewCarousel />
             </QuoteCarouselCont>
           </Col>          
         </Row>

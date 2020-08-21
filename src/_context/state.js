@@ -286,14 +286,17 @@ export default {
       visible: true,
       items:[
         {
+          id: uuid(),
           review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate sapien at nisi volutpat dictum. Maecenas vel lorem tellus. Sed sit amet sollicitudin nisi. Sed consectetur eget orci sit amet condimentum.',
           author:'Adrian Carcamo - Clasihome'
         },
         {
+          id: uuid(),
           review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate sapien at nisi volutpat dictum. Maecenas vel lorem tellus. Sed sit amet sollicitudin nisi. Sed consectetur eget orci sit amet condimentum.',
           author:'Elon musk - Space-x'
         },
         {
+          id: uuid(),
           review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate sapien at nisi volutpat dictum. Maecenas vel lorem tellus. Sed sit amet sollicitudin nisi. Sed consectetur eget orci sit amet condimentum.',
           author:'Montgomery burns - Planta nuclear de springfield'
         },     

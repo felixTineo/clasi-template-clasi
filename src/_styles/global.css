@@ -38,15 +38,6 @@ h2{
   font-size: 1.5rem;
 }
 
-@media(min-width: 768px){
-  h1{
-    font-size: 50px;
-  }
-  h2{
-    font-size: 2rem;
-  }
-}
-
 .carousel-back-button, .carousel-next-button{
   position: absolute;
   top: 50%;
@@ -86,4 +77,34 @@ h2{
   top: auto;
   bottom: 0 !important;
   right: 3rem;
+}
+
+.carousel-text-dot{
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: none;
+  transition: 250ms ease;
+}
+
+.carousel-text-dot:nth-child(2n){
+  margin: 0 .5rem;
+}
+
+.carousel-text-dot:disabled{
+  transform: scale(1.40);
+  filter: brightness(1.1);
+}
+
+
+@media(min-width: 768px){
+  h1{
+    font-size: 50px;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  .carousel-text-dot{
+
+  }
 }
