@@ -9,18 +9,21 @@ const Form = styled.form`
   width: 100%;
   border-radius: 6px;
   padding: 0 15px;
+  margin-bottom: 1rem;
   @media(min-width: 768px){
-    width: 60%;
+    width: ${props => props.block ? "100%" : "60%"};
     padding: 0;
     padding-left: 5px;
     background-color: #fff;
+    box-shadow: ${props => props.shadow && "0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)"};
+    margin-bottom:0;
   }  
 `
 
-export default ()=> {
+export default ({ block, shadow })=> {
 
   return(
-    <Form onSubmit={(e) => e.preventDefault()}>
+    <Form onSubmit={(e) => e.preventDefault()} block={block} shadow={shadow}>
       <Row gutterWidth={32} align="center">
         <Col xs={12} md={3}>
           <Select

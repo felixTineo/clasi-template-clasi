@@ -15,7 +15,7 @@ const MainCont = styled.header`
   z-index: 1500;
   @media(min-width: 768px){
     position: absolute;
-    background-color: transparent;
+    //background-color: transparent;
   }
 `
 

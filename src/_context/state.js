@@ -28,7 +28,7 @@ export default {
     favicon: "",
     logo:{
       isImage: true,
-      value: "/logo-light.svg",
+      value: "/logo.svg",
     },
   },
   home:{
@@ -324,26 +324,32 @@ export default {
       background: "/about-description.jpg",
       items:[
         {
+        id: uuid(),
         title: "Misión",
         description: "En el ámbito de todo negocio inmobiliario, que nuestros clientes nos reconozcan como la mejor opción para exigir el máximo provecho a sus recursos inmobiliario."
         },
         {
+        id: uuid(),
         title: "Visión",
         description: "En el ámbito de todo negocio inmobiliario, que nuestros clientes nos reconozcan como la mejor opción para exigir el máximo provecho a sus recursos inmobiliario."
         },
         {
+        id: uuid(),
         title: "Valores",
         description: "En el ámbito de todo negocio inmobiliario, que nuestros clientes nos reconozcan como la mejor opción para exigir el máximo provecho a sus recursos inmobiliario."
         },       
         {
+        id: uuid(),
         title: "Misión",
         description: "En el ámbito de todo negocio inmobiliario, que nuestros clientes nos reconozcan como la mejor opción para exigir el máximo provecho a sus recursos inmobiliario."
         },
         {
+        id: uuid(),
         title: "Visión",
         description: "En el ámbito de todo negocio inmobiliario, que nuestros clientes nos reconozcan como la mejor opción para exigir el máximo provecho a sus recursos inmobiliario."
         },
         {
+        id: uuid(),          
         title: "Valores",
         description: "En el ámbito de todo negocio inmobiliario, que nuestros clientes nos reconozcan como la mejor opción para exigir el máximo provecho a sus recursos inmobiliario."
         },                        

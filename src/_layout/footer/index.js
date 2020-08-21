@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import Context from '../../_context';
-import { Container, Row, Col, Visible } from 'react-grid-system';
+import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
 
@@ -106,11 +106,39 @@ const LogoCont = styled.div`
   margin-bottom: 2rem;
   text-align: center;
 `
+const BackTopCont = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
+const BackTop = styled.button`
+  display: flex;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: ${props => props.theme.main.primaryColor};
+  margin-bottom: 1rem;
+  transition: 250ms ease;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
+              0px 2px 2px rgba(0, 0, 0, .12),
+              0px 4px 4px rgba(0, 0, 0, .12),
+              0px 8px 8px rgba(0, 0, 0, .12);
+  &:hover{
+    filter: brightness(1.1);
+  };
+  &:active{
+    box-shadow: none;
+  }
+`
  
 
 export default ()=> {
   const office = useContext(Context).office;
   const state = useContext(Context);
+  const handleTop = ()=> window.scrollTo(0, 0);
   return(
     <Footer>
       <MainFooter>
@@ -176,6 +204,13 @@ export default ()=> {
               <NavCont>
                 <Row>
                   <Col xs={6} md={12}>
+                    <Hidden xs>
+                        <BackTopCont>
+                          <BackTop onClick={handleTop} href="#top">
+                            <img src="/icons/chevron-up.svg" alt="backtop" />
+                          </BackTop>
+                        </BackTopCont>
+                    </Hidden> 
                     <NavLink href="#about">
                       Nosotros
                     </NavLink>

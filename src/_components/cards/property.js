@@ -85,7 +85,7 @@ export default ({
   characteristics,
 })=> {
   return(
-    <Link to="/singleProperty" title="Ver propiedad">
+    <Link to="/property" title="Ver propiedad">
     <CardCont>
       <CardImage src={mainImage} />
       <CardInfo>
