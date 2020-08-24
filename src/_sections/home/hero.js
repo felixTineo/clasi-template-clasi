@@ -5,7 +5,7 @@ import { FormProperty } from '../../_components/forms'
 
 const MainCont = styled.section`
   position: relative;
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
