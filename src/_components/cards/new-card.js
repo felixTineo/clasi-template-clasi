@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from '../../_components/link';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -35,19 +36,21 @@ const CardDate = styled.span`
 export default ({ image, title, tag, date })=>{
 
   return(
-    <CardCont>
-      <CardImage src={image} alt={title} />
-      <CardDescription>
-        <CardTag>
-          {tag}
-        </CardTag>
-        <CardTitle>
-          {title}
-        </CardTitle>
-        <CardDate>
-          {date}
-        </CardDate>
-      </CardDescription>
-    </CardCont>
+    <Link to="/new">
+      <CardCont>
+        <CardImage src={image} alt={title} />
+        <CardDescription>
+          <CardTag>
+            {tag}
+          </CardTag>
+          <CardTitle>
+            {title}
+          </CardTitle>
+          <CardDate>
+            {date}
+          </CardDate>
+        </CardDescription>
+      </CardCont>
+    </Link>
   )
 }

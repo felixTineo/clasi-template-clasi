@@ -10,7 +10,7 @@ const HeroCont = styled.div`
   background-repeat: no-repeat;
 `
 const InnerCont = styled.div`
-  height: 100vh;
+  height: 85vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -32,7 +32,7 @@ const query = (officeId)=> `
   }
 `
 const MainCont = styled.section`
-  margin-top: -50vh;
+  margin-top: -45vh;
 `
 const NavPaginate = styled.nav`
   display: flex;
@@ -84,9 +84,14 @@ const NavOption = styled.button`
   color: ${props => props.active ? "#000" : "#fff"};
   border: none;
   cursor: pointer;
-  width: 106px;
+  width: 58px;
   height: 34px;
   border-radius: 25px;
+  @media(min-width: 768px){
+    width: 106px;
+    height: 34px;
+    border-radius: 25px;    
+  }
 `
 
 export default ()=> {
