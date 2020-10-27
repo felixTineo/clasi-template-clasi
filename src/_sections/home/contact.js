@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import Context from '../../_context';
 import { Button } from '../../_components/buttons';
+import { navigate } from 'gatsby';
 
 const SectionCont = styled.div`
   padding: 2rem 0;
@@ -33,7 +34,7 @@ export default ()=> {
                 </SectionText>          
               </Col>
               <Col xs={12} md={3}>
-                <Button outlined primary block>
+                <Button outlined primary block onClick={()=> navigate("/contact")}>
                   Contáctanos
                 </Button>
               </Col>
