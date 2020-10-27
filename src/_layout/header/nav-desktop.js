@@ -13,6 +13,7 @@ const MainCont = styled.nav`
 `
 const NavBar = styled.ul`
   display: flex;
+  list-style: none;
 `
 const NavItem = styled.li`
   margin-left: ${props => props.noMargin ? 0 : "2.5rem"};

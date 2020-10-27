@@ -61,7 +61,7 @@ export default ()=> {
         <Row>
           <Col xs={12}>
             <Title>
-              ¿Quienes somos?
+              ¿Quiénes somos?
             </Title>
           </Col>
           {

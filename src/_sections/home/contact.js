@@ -34,7 +34,7 @@ export default ()=> {
               </Col>
               <Col xs={12} md={3}>
                 <Button outlined primary block>
-                  Contactanos
+                  Contáctanos
                 </Button>
               </Col>
             </Row>

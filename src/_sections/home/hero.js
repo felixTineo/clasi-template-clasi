@@ -5,7 +5,7 @@ import { FormProperty } from '../../_components/forms'
 
 const MainCont = styled.section`
   position: relative;
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,6 +16,9 @@ const MainCont = styled.section`
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
+  @media(min-width: 768px){
+    min-height: 85vh;
+  }
 `
 
 const Title = styled.h1`

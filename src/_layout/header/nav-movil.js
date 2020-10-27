@@ -27,7 +27,7 @@ const NavContainer = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
 `
 const NavBar = styled.ul`
-
+  list-style: none;
 `
 const NavItem = styled.li`
   margin-bottom: ${props => props.noMargin ? 0 : "1rem"};
@@ -61,6 +61,7 @@ const SvgCont = styled.svg`
 const SocialCont = styled.ul`
   display: flex;
   align-items: center;
+  list-style: none;
 `
 const SocialItem = styled.li`
   margin-left: ${props => props.noMargin ? 0 : '1rem'};

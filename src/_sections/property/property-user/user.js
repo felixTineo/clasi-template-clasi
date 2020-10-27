@@ -108,17 +108,24 @@ export default ()=> {
               vertical
             />
           </Col>   
-          <Col xs={12} md={6}>
+          <Col xs={12}>
             <ContactFormButtons>
               <Button primary outlined block>
-                LLamar por teléfono
+                Enviar
+              </Button>
+            </ContactFormButtons>
+          </Col>          
+          <Col xs={12}>
+            <ContactFormButtons>
+              <Button primary outlined block>
+                LLamar
               </Button>
             </ContactFormButtons>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12}>
             <ContactFormButtons>
               <Button primary outlined block>
-                Enviar whatsapp
+                whatsapp
               </Button>
             </ContactFormButtons>
           </Col>          

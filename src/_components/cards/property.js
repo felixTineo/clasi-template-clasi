@@ -8,7 +8,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 580px;
+  height: 520px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem;
@@ -39,7 +39,7 @@ const CardInfo = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   color: #212121;
 `
 const CardTitleCont = styled.ul`
@@ -47,6 +47,7 @@ const CardTitleCont = styled.ul`
   padding: 0;
   margin: 0;
   font-size: 14px;
+  padding-bottom: 2rem;
 `
 const CardTitle = styled.li`
   font-size: 1.2rem;
@@ -62,8 +63,9 @@ const CardOperation = styled.span`
   font-weight: bold;
 `
 const CardCharacteristics = styled.ul`
-  list-style: none;
+  //list-style: none;
   padding: 1rem;
+  padding-top: 2rem;
   color: #919191;
 `
 

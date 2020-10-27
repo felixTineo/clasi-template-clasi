@@ -242,7 +242,7 @@ export default ()=> {
         <Container>
           <FooterRights>
             <li>2020 © Todos los derechos reservados</li>
-            <li>Desarrollado por <DevelopBy href="https://www.clasihome.cl">Clasihome</DevelopBy></li>
+            <li>Desarrollado por <DevelopBy href="https://clasihome.com/" target="_blank">Clasihome</DevelopBy></li>
           </FooterRights>
         </Container>
       </FooterRightsCont>

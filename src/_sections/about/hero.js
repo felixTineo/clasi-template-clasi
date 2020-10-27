@@ -7,7 +7,7 @@ const MainCont = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${props => props.theme.about.hero.background});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: 45px;
+  
 `
 const InnerCont = styled.div`
   height: 70vh;
@@ -21,7 +21,6 @@ const InnerCont = styled.div`
 const Title = styled.h1`
   color: #fff;
   text-align: center;
-  margin-top: 8rem;
   @media(min-width: 768px){
     width: 70%;
     text-align: left;

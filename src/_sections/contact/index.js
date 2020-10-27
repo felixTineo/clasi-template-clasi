@@ -20,11 +20,12 @@ const SubTitle = styled.p`
 `
 const Form = styled.form`
   @media(min-width: 768px){
-    width: 50%;
+    width: 80%;
   }
 `
 const ImgCaptcha = styled.img`
-  width: 100%;
+  width: 287px;
+  height: 73.42px;
 `
 const MailSpan = styled.span`
   color: ${props => props.theme.main.primaryColor};
@@ -72,7 +73,7 @@ export default ()=> {
                     gray
                   />
                 </Col>
-                <Col xs={12} style={{ marginBottom: 32 }}>
+                <Col xs={12}>
                   <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
                   <ButtonContainer>
                     <Button primary block>Enviar</Button>
@@ -97,13 +98,15 @@ export default ()=> {
                     rows={7}
                   />
                 </Col>
+                <Col xs={12}>
+                  <SubTitleFooter>
+                    También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+                  </SubTitleFooter>
+                </Col>
               </Row>
             </Col>
           </Row>
         </Form>
-        <SubTitleFooter>
-          También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
-        </SubTitleFooter>
       </MainCont>
     </Container>
   )

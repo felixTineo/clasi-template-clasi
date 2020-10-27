@@ -62,7 +62,7 @@ export default ()=> {
         <h1>Propiedades</h1>
         <Row align="center">
           <Col xs={12} md={10}>
-            <FormProperty block shadow/>
+            <FormProperty block shadow noHome/>
           </Col>
           <Col xs={12} md={2}>
             <ButtonFilter onClick={()=> setFilter(!filter)}>
