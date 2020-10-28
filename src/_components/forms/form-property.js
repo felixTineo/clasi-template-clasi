@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
 import { Select, Input } from '../inputs';
@@ -20,7 +20,7 @@ const Form = styled.form`
   }  
 `
 const FormCont = styled.div`
-  min-width: 100%;
+  min-width: ${props => props.byCode ? "70%" : "100%"};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,7 +52,7 @@ const FormButton = styled.button`
 export default ({ block, shadow, noHome })=> {
   const [byCode, setByCode] = useState(false);
   return(
-    <FormCont>
+    <FormCont byCode={byCode}>
       {
         !noHome && (
       <FormButtonCont>
@@ -74,21 +74,33 @@ export default ({ block, shadow, noHome })=> {
       }
       <Form onSubmit={(e) => e.preventDefault()} shadow={shadow} block={block}>
         <Row gutterWidth={32} align="center">
-          <Col xs={12} md={3}>
-            <Select
-              default="Propiedad"
-              options={["opcion 1", "opcion 2", "opcion 3"]}
-            />
-          </Col>
-          <Col xs={12} md={3}>
-            <Select
-              default="Operación"
-              options={["opcion 1", "opcion 2", "opcion 3"]}
-            />
-          </Col>    
-          <Col xs={12} md={4}>
-            <Input placeholder="Comuna" />
-          </Col>        
+          {
+            byCode
+            ?(
+              <Col xs={12} md={10}>
+                <Input placeholder="Ingrese el código de la propiedad" />
+              </Col>    
+            )
+            :(
+              <Fragment>
+                <Col xs={12} md={3}>
+                  <Select
+                    default="Propiedad"
+                    options={["opcion 1", "opcion 2", "opcion 3"]}
+                  />
+                </Col>
+                <Col xs={12} md={3}>
+                  <Select
+                    default="Operación"
+                    options={["opcion 1", "opcion 2", "opcion 3"]}
+                  />
+                </Col>    
+                <Col xs={12} md={4}>
+                  <Input placeholder="Comuna" />
+                </Col>                        
+              </Fragment>              
+            )
+          }
           <Col xs={12} md={2}>
             <Hidden xs>
               <IconButton primary>
