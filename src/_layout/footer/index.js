@@ -152,7 +152,7 @@ export default ()=> {
                   {office.address}
                 </OfficeInfo>
                 <OfficeInfo>
-                  {`(${office.phone.countryCode}-${office.phone.areaCode}) ${office.phone.phoneNumber} / (${office.mobile.countryCode}-${office.mobile.areaCode}) ${office.mobile.phoneNumber}`}
+                  {office.phone}
                 </OfficeInfo>
                 <OfficeInfo>
                   {office.email}
@@ -162,12 +162,12 @@ export default ()=> {
             <Col xs={12} md={4}>
               <Row>
                 <Col xs={12}>
-                  <GatsbyLink to="/" style={{ textDecoration: 'none' }}>
+                  <GatsbyLink to={`/?id=${state.builderId}`} style={{ textDecoration: 'none' }}>
                     <LogoCont>
                         {
-                          state.main.logo.isImage
-                            ?<Logo src="/logo.svg" alt="logo" />
-                            :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
+                          state.main.logoDark.isImage
+                            ?<Logo src={state.main.logoDark.value} alt="logo" />
+                            :<HeaderTitle>{state.office.name}</HeaderTitle>
                         }
                     </LogoCont>                        
                   </GatsbyLink>                  
@@ -212,24 +212,24 @@ export default ()=> {
                           </BackTop>
                         </BackTopCont>
                     </Hidden> 
-                    <NavLink to="/about">
+                    <NavLink to={`/about/?id=${state.builderId}`}>
                       Nosotros
                     </NavLink>
                   </Col>
                   <Col xs={6} md={12}>
-                    <NavLink to="/properties">
+                    <NavLink to={`/properties/?id=${state.builderId}`}>
                       Propiedades
                     </NavLink>                  
                   </Col>
 {/*                  <Visible md xs xxl lg xl>
                     <Col xs={6} md={12}>
-                      <NavLink to="/news">
+                      <NavLink to={`/news/?id=${state.builderId}`}>
                         Noticias
                       </NavLink>                  
                     </Col>
 </Visible>*/}
                   <Col xs={6} md={12}>
-                    <NavLink to="/contact">
+                    <NavLink to={`/contact/?id=${state.builderId}`}>
                       Contacto
                     </NavLink>                  
                   </Col>                                          

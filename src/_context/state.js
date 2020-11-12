@@ -1,5 +1,6 @@
 import { v1 as uuid } from 'uuid';
 export default {
+  builderId: '',
   edit:{
     visible: false,
     type: "",
@@ -11,11 +12,7 @@ export default {
     name: "ClasiHome",
     email: "clasi@clasihome.cl",
     address: "Aquí el texto de tu empres",
-    phone: {
-      countryCode: "+56",
-      areaCode: "2",
-      phoneNumber: "1234 1234"
-    },
+    phone: "123456",
     mobile: {
       countryCode: "+56",
       areaCode: "9",
@@ -30,6 +27,10 @@ export default {
       isImage: true,
       value: "/logo.svg",
     },
+    logoDark:{
+      isImage: true,
+      value: "/logo.svg",
+    },    
   },
   home:{
     hero:{
@@ -581,7 +582,7 @@ export default {
     value: "75.000",
     ubication:{
       region: "Rosario",
-      commune: "Casorra Alzamona",
+      commune: "Casorra alzamona",
       location:{
         coordinates: ["0", "0"],
       }

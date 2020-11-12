@@ -62,7 +62,7 @@ const SvgCont = styled.svg`
   }
 `
 
-export default ()=> {
+export default ({ paginateProperties })=> {
   const officeId = useContext(OfficeContext).office.officeId;
   const propertyList = useContext(OfficeContext).home.properties.items;
   const properties = [...propertyList, ...propertyList];
@@ -85,6 +85,7 @@ export default ()=> {
 
   return(
     <Container>
+      {console.log("LOCATION", paginateProperties)}
       <div style={{ paddingTop: '5rem' }}>
         <Row>
           {

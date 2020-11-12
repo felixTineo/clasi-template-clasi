@@ -18,7 +18,7 @@ export default styled.button`
   color: #FFFFFF;
   transition: 250ms ease;
   &:hover{
-    background-color: ${props => props.primary ? hexToHsl(props.theme.main.primaryColor, 55) : "#fff" };
+    background-color: ${props => props.primary ? hexToHsl(props.theme.main.primaryColor, 60) : "#fff" };
     color: ${props => props.primary ? "#fff" : props.theme.main.primaryColor};
   };
   &:active{

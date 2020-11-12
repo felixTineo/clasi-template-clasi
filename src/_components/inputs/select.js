@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const capitalize = str =>{
+  const first = str.charAt(0);
+  str.toLowerCase();
+  return first + str.toLowerCase().slice(1);
+}
+
 const DefaultOption = styled.option`
   color: #212121;
   font-family: "Relaway";
@@ -9,6 +15,7 @@ const Option = styled.option`
   color: #212121;
   font-size: 1rem;
   font-family: "Relaway";
+  text-transform: capitalize !important;
 `
 
 const Select = styled.select`
@@ -49,7 +56,7 @@ export default (props)=> {
       >
         <DefaultOption value="" disabled selected hidden>{props.default}</DefaultOption>
         {
-          props.options.map((o, index) => <Option key={index}>{o}</Option>)
+          props.options.map((o, index) => <Option value={o} key={index}>{capitalize(o)}</Option>)
         }       
       </Select>    
   )

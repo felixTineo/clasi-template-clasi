@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../_layout/index';
-import Hero from '../_sections/properties/hero';
-import Properties from '../_sections/properties/properties';
-import Reviews from '../_sections/properties/reviews';
+import Properties from '../_sections/properties';
 
-export default ()=> (
-  <Layout>
-    <Hero />
-    <Properties />
-    <Reviews />
-  </Layout>
-)
+export default ({ location })=> {
+  return(
+    <Layout>
+      {console.log("LOCATION AAAAA", location)}
+      <Properties locationState={location.state} />
+    </Layout>
+  )
+}

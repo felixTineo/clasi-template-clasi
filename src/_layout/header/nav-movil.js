@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import Logo from './logo';
 import Link from '../../_components/link';
 import { gsap } from 'gsap';
 import { Button, Responsive as ButtonResponsive } from '../../_components/buttons';
 import RateBar from './rate-bar';
+import context from '../../_context';
 
 const MainCont = styled.nav`
   padding: 1.5rem 0;
@@ -69,7 +70,7 @@ const SocialItem = styled.li`
 
 export default ()=> {
   const [visibleNav, setVisibleNav] = useState(false);
-
+  const state = useContext(context);
   useEffect(()=> {
     if(visibleNav){
       gsap.to("#nav-movil", { duration: .25, left: 0 });
@@ -89,28 +90,28 @@ export default ()=> {
         <RateBar />
         <NavBar>
           <NavItem>
-            <Link to="/about">
+            <Link to={`/about/?id=${state.builderId}`}>
               <NavLink>
                 Nosotros
               </NavLink>
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/properties">
+            <Link to={`/properties/?id=${state.builderId}`}>
               <NavLink>
                 Propiedades
               </NavLink>
             </Link>
           </NavItem>
 {/*          <NavItem>
-            <Link to="/news">
+            <Link to={`/news/?id=${state.builderId}`}>
               <NavLink>
                 Noticias
               </NavLink>
             </Link>
 </NavItem>*/}
           <NavItem>
-            <Link to="/contact">
+            <Link to={`/contact/?id=${state.builderId}`}>
               <NavLink noMargin>
                 Contacto
               </NavLink>

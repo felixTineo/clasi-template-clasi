@@ -1,9 +1,15 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useReducer, useCallback, useContext } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
 import { Select, Input } from '../inputs';
 import { Button, IconButton } from '../buttons';
 import { Visible, Hidden } from 'react-grid-system';
+import PROPERTY_TYPE from '../../_constants/PROPERTY_TYPE.json';
+import COMMUNES from '../../_constants/CITIES.json';
+import { SearchOutlined, LoadingOutlined } from '@ant-design/icons';
+import Data from '../../_context/data.class';
+import context from '../../_context';
+import { navigate } from 'gatsby';
 
 const Form = styled.form`
   width: 100%;
@@ -51,6 +57,27 @@ const FormButton = styled.button`
 
 export default ({ block, shadow, noHome })=> {
   const [byCode, setByCode] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const state = useContext(context);
+  const [search, setSearch] = useReducer((current, next) => ({ ...current, ...next }),{
+    propertyType: '',
+    operation: '',
+    commune: '',
+  });
+
+  const onSubmit = useCallback(async(e) => {
+    try{
+      e.preventDefault();
+      setLoading(true);
+      const paginateProperties = await Data.paginateProperties({ id: state.office.id, ...search });
+      setLoading(false);
+      navigate(`/properties/?id=${state.builderId}`, { state: { paginateProperties, search } });
+    }catch(e){
+      console.log(e);
+      setLoading(false);
+    }
+  }, [search])
+
   return(
     <FormCont byCode={byCode}>
       {
@@ -72,7 +99,7 @@ export default ({ block, shadow, noHome })=> {
       </FormButtonCont>          
         )
       }
-      <Form onSubmit={(e) => e.preventDefault()} shadow={shadow} block={block}>
+      <Form onSubmit={onSubmit} shadow={shadow} block={block}>
         <Row gutterWidth={32} align="center">
           {
             byCode
@@ -85,18 +112,27 @@ export default ({ block, shadow, noHome })=> {
               <Fragment>
                 <Col xs={12} md={3}>
                   <Select
+                    id="propertyType"
+                    onChange={e => setSearch({ [e.target.id] : e.target.value })}
                     default="Propiedad"
-                    options={["opcion 1", "opcion 2", "opcion 3"]}
+                    options={PROPERTY_TYPE}
                   />
                 </Col>
                 <Col xs={12} md={3}>
                   <Select
+                    id="operation"
+                    onChange={e => setSearch({ [e.target.id] : e.target.value })}
                     default="Operación"
-                    options={["opcion 1", "opcion 2", "opcion 3"]}
+                    options={["VENTA", "ARRIENDO"]}
                   />
                 </Col>    
                 <Col xs={12} md={4}>
-                  <Input placeholder="Comuna" />
+                  <Select
+                    id="commune"
+                    onChange={e => setSearch({ [e.target.id] : e.target.value })}
+                    default="Comuna"
+                    options={COMMUNES.map(val => val.name)}
+                  />
                 </Col>                        
               </Fragment>              
             )
@@ -104,12 +140,20 @@ export default ({ block, shadow, noHome })=> {
           <Col xs={12} md={2}>
             <Hidden xs>
               <IconButton primary>
-                <img src="/icons/search.svg" alt="buscar" />
+                {
+                  loading
+                  ?(
+                    <LoadingOutlined />
+                  )
+                  :(
+                    <SearchOutlined />
+                  )
+                }
               </IconButton>
             </Hidden>
             <Visible xs>
               <Button primary block>
-                <img src="/icons/search.svg" alt="buscar" style={{ marginRight: "1rem" }} />
+                <SearchOutlined />
                 Buscar
               </Button>
             </Visible>

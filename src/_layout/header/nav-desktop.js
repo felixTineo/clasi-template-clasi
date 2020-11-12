@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Logo from './logo';
 import Link from '../../_components/link';
 import { Button } from '../../_components/buttons';
+import context from '../../_context';
 
 const MainCont = styled.nav`
   padding: 1.5rem 0;
@@ -39,34 +40,34 @@ const SvgCont = styled.svg`
 `
 
 export default ()=> {
-
+  const state = useContext(context);
   return(
     <MainCont>
       <Logo />
       <NavBar>
         <NavItem noMargin>
-          <Link to="/about">
+          <Link to={`/about/?id=${state.builderId}`}>
             <NavLink>
               Nosotros
             </NavLink>
           </Link>
         </NavItem>
         <NavItem>
-          <Link to="/properties">
+          <Link to={`/properties/?id=${state.builderId}`}>
             <NavLink>
               Propiedades
             </NavLink>
           </Link>
         </NavItem>
 {/*        <NavItem>
-          <Link to="/news">
+          <Link to={`/news/?id=${state.builderId}`}>
             <NavLink>
               Noticias
             </NavLink>
           </Link>
 </NavItem>*/}
         <NavItem>
-          <Link to="/contact">
+          <Link to={`/contact/?id=${state.builderId}`}>
             <NavLink>
               Contacto
             </NavLink>
