@@ -24,9 +24,10 @@ const Body = styled.div`
 `
 
 export default ({ children })=> {
-  const builderId = useQueryParam('id');
+  const builderId = useQueryParam('builderId');
+  const propertiesPage = useQueryParam('page');
   const builderUrl = useMemo(()=> `https://api.clasihome.com/rest/builders?builderId=${builderId}`, [builderId]);
-  const [query, setQuery] = useReducer((current, next) => ({ ...current, ...next }),{ loading: false, data: noData, error: false });
+  const [query, setQuery] = useReducer((current, next) => ({ ...current, ...next }),{ loading: false, data: null, error: false });
 
   const getInitialData = useCallback(async()=>{
     try{
@@ -34,8 +35,9 @@ export default ({ children })=> {
       const builderData = await fetch(builderUrl);
       const builderResult = await builderData.json();
       console.log("INITIAL DATA", builderResult);
-      const paginateProperties = await FormatData.paginateProperties({ id: builderResult.office });
-      builderResult.home.properties.items = paginateProperties.properties;
+      const propertiesData = await fetch(`https://api.clasihome.com/rest/properties?id=${builderResult.user ? builderResult.user : builderResult.office }&typeId=${builderResult.user ? "user" : "office"}&status=PUBLICADA&limit=6`);
+      const propertiesResult = await propertiesData.json();
+      builderResult.home.properties.items = propertiesResult.properties;
       const data = new FormatData(builderResult);
       console.log("FINAL DATA", data);
       setQuery({ loading: false, data })

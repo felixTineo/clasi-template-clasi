@@ -1,7 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback, useState, useReducer } from 'react';
 import styled from 'styled-components';
 import Context from '../../_context';
 import { FormProperty } from '../../_components/forms'
+import Data from '../../_context/data.class';
+import { navigate } from 'gatsby';
 
 const MainCont = styled.section`
   position: relative;
@@ -46,13 +48,34 @@ const SvgCont = styled.svg`
 
 export default ()=> {
   const state = useContext(Context);
+  const [loading, setLoading] = useState(false);
+  const [filters, setFilters] = useReducer((current, next) => ({ ...current, ...next }), {
+    propertyType: '',
+    operation: '',
+    commune: '',
+  });
+
+  const handleChange = useCallback((e)=> {
+    setFilters({ [e.target.id]: e.target.value });
+  },[filters]);
+
+  const onFinish = values => {
+    console.log(values);
+    const params = Data.makeFilters(values);
+    navigate(`/properties/?builderId=${state.builderId}&id=${state.office.id}&page=0&${params}`);
+  }
 
   return(
     <MainCont>
       <Title>
         {state.home.hero.title}
       </Title>
-      <FormProperty />
+      <FormProperty
+        onChange={handleChange}
+        values={filters}
+        onFinish={onFinish}
+        loading={loading}
+      />
       <DownButton href="#properties">
         <SvgCont width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="15" cy="15" r="14.5"/>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from '../link';
 import styled from 'styled-components';
 import { truncate } from '../../_util';
+import context from '../../_context';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -86,9 +87,11 @@ export default ({
   code,
   ubication,
   characteristics,
+  _id,
 })=> {
+  const builderId = useContext(context).builderId;
   return(
-    <Link to="/property" title="Ver propiedad">
+    <Link to={`/property/?builderId=${builderId}&id=${_id}`} title="Ver propiedad">
     <CardCont>
       <CardImage src={mainImage} />
       <CardInfo>

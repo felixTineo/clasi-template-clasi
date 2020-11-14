@@ -5,8 +5,7 @@ import Properties from '../_sections/properties';
 export default ({ location })=> {
   return(
     <Layout>
-      {console.log("LOCATION AAAAA", location)}
-      <Properties locationState={location.state} />
+      <Properties location={location} />
     </Layout>
   )
 }

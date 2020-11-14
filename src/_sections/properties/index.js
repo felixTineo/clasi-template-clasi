@@ -4,25 +4,39 @@ import Data from '../../_context/data.class';
 import Hero from './hero';
 import Properties from './properties';
 import Review from './reviews';
+import { getSearchParams } from "gatsby-query-params";
 
 export default ({ locationState })=> {
-  const [paginateProperties, setPaginateProperties] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [paginateProperties, setPaginateProperties] = useState(null);
+  const params = getSearchParams();
+
+  const getProperties = useCallback(async(filters) => {
+    try{
+      setLoading(true);
+      const paginateProperties = await Data.paginateProperties({ ...params });
+      console.log("PAGINATE GET PROPERTIES", paginateProperties);
+      setPaginateProperties(paginateProperties);      
+      setLoading(false);
+    }catch(e){
+      console.log(e);
+      setLoading(false);
+    }
+  },[params]);
 
   useLayoutEffect(()=> {
-    if(locationState.paginateProperties){
-      console.log("DESDE EL HOME", locationState.paginateProperties);
-    } else{
-      console.log("ACTUALIZADO")
-    }
-  },[locationState]);
+    getProperties(params);
+  },[params]);
+
+  if(!paginateProperties) return <p />
 
   return(
     <Fragment>
-      <Hero
-        search={locationState.search}
-      />
+      <Hero />
       <Properties
-        paginateProperties={locationState.paginateProperties}
+        paginateProperties={paginateProperties}
+        onPaginate={getProperties}
+        loading={loading}
       />
       <Review />
     </Fragment>

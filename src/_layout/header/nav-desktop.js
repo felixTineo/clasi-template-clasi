@@ -46,28 +46,28 @@ export default ()=> {
       <Logo />
       <NavBar>
         <NavItem noMargin>
-          <Link to={`/about/?id=${state.builderId}`}>
+          <Link to={`/about/?builderId=${state.builderId}`}>
             <NavLink>
               Nosotros
             </NavLink>
           </Link>
         </NavItem>
         <NavItem>
-          <Link to={`/properties/?id=${state.builderId}`}>
+          <Link to={`/properties/?builderId=${state.builderId}&id=${state.office.id}`}>
             <NavLink>
               Propiedades
             </NavLink>
           </Link>
         </NavItem>
 {/*        <NavItem>
-          <Link to={`/news/?id=${state.builderId}`}>
+          <Link to={`/news/?builderId=${state.builderId}`}>
             <NavLink>
               Noticias
             </NavLink>
           </Link>
 </NavItem>*/}
         <NavItem>
-          <Link to={`/contact/?id=${state.builderId}`}>
+          <Link to={`/contact/?builderId=${state.builderId}`}>
             <NavLink>
               Contacto
             </NavLink>

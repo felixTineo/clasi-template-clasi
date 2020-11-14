@@ -162,7 +162,7 @@ export default ()=> {
             <Col xs={12} md={4}>
               <Row>
                 <Col xs={12}>
-                  <GatsbyLink to={`/?id=${state.builderId}`} style={{ textDecoration: 'none' }}>
+                  <GatsbyLink to={`/?builderId=${state.builderId}`} style={{ textDecoration: 'none' }}>
                     <LogoCont>
                         {
                           state.main.logoDark.isImage
@@ -212,24 +212,24 @@ export default ()=> {
                           </BackTop>
                         </BackTopCont>
                     </Hidden> 
-                    <NavLink to={`/about/?id=${state.builderId}`}>
+                    <NavLink to={`/about/?builderId=${state.builderId}`}>
                       Nosotros
                     </NavLink>
                   </Col>
                   <Col xs={6} md={12}>
-                    <NavLink to={`/properties/?id=${state.builderId}`}>
+                    <NavLink to={`/properties/?builderId=${state.builderId}&id=${state.office.id}`}>
                       Propiedades
                     </NavLink>                  
                   </Col>
 {/*                  <Visible md xs xxl lg xl>
                     <Col xs={6} md={12}>
-                      <NavLink to={`/news/?id=${state.builderId}`}>
+                      <NavLink to={`/news/?builderId=${state.builderId}`}>
                         Noticias
                       </NavLink>                  
                     </Col>
 </Visible>*/}
                   <Col xs={6} md={12}>
-                    <NavLink to={`/contact/?id=${state.builderId}`}>
+                    <NavLink to={`/contact/?builderId=${state.builderId}`}>
                       Contacto
                     </NavLink>                  
                   </Col>                                          

@@ -13,6 +13,7 @@ const RatesCont = styled.ul`
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  list-style: none;
   @media(min-width: 768px){
     font-weight: normal;
     justify-content: flex-end;

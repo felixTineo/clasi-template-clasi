@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useReducer, useCallback} from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { FormProperty } from '../../_components/forms';
 import { Input, Select } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
 import { useWindowSize } from '../../_hooks';
+import { getSearchParams } from "gatsby-query-params";
+import Data from '../../_context/data.class';
+import { navigate } from 'gatsby';
+
 const SectionCont = styled.div`
   background-color: #fff;
   padding: 8rem 0 0;
@@ -56,13 +60,55 @@ const SvgCont = styled.svg`
 export default ()=> {
   const size = useWindowSize();
   const [filter, setFilter] = useState(false);
+  const [filters, setFilters] = useReducer((current, next) => ({ ...current, ...next }), {
+    propertyType: '',
+    operation: '',
+    commune: '',
+    priceMin: '',
+    priceMax: '',
+    bedrooms: '',
+    bathrooms: '',
+  });
+
+  const params = getSearchParams();
+
+  useEffect(()=>{
+    const filters = {
+      propertyType: params.propertyType ? params.propertyType : "",
+      operation: params.operation ? params.operation : "",
+      commune: params.commune ? params.commune : "",
+      priceMin: params.priceMin ? params.priceMin : "",
+      priceMax: params.priceMax ? params.priceMax : "",
+      bedrooms: params.bedrooms ? params.bedrooms : "",
+      bathrooms: params.bathrooms ? params.bathrooms: "",
+      currency: params.currency ? params.currency : "",
+    };
+    setFilters(filters);
+  },[params]);
+
+  const handleChange = useCallback((e)=> {
+    setFilters({ [e.target.id]: e.target.value });
+  },[filters]);
+
+  const onFinish = useCallback(()=> {
+    const nextParams = Data.makeFilters({ ...params, ...filters });
+    navigate(`/properties/?${nextParams}`);
+  },[filters])
+
   return(
     <SectionCont>
       <Container>
         <h1>Propiedades</h1>
         <Row align="center">
           <Col xs={12} md={10}>
-            <FormProperty block shadow noHome/>
+            <FormProperty 
+              values={filters}
+              onChange={handleChange}
+              onFinish={onFinish}
+              block
+              shadow
+              noHome
+            />
           </Col>
           <Col xs={12} md={2}>
             <ButtonFilter onClick={()=> setFilter(!filter)}>
@@ -78,23 +124,62 @@ export default ()=> {
       </Container>
         {
           filter && (
-            <FilterForm>
+            <FilterForm onSubmit={e => { e.preventDefault(); onFinish() }}>
               <Container>
                 <Row>
                   <Col xs={12} md={2}>
-                    <Input placeholder="Desde" shadow />
+                    <Input
+                      id="priceMin"
+                      type="number"
+                      onChange={e => handleChange(e)}
+                      value={filters.priceMin}
+                      min={0}
+                      placeholder="Desde"
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Input placeholder="Hasta" shadow />
+                    <Input
+                      id="priceMax"
+                      type="number"
+                      onChange={e => handleChange(e)}
+                      value={filters.priceMax}
+                      min={0}                    
+                      placeholder="Hasta"
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Select default="Dormitorios" options={["option A", "option B", "option C"]} shadow />
+                    <Input
+                      id="bedrooms"
+                      type="number"
+                      onChange={e => handleChange(e)}
+                      value={filters.bedrooms}
+                      min={0}                    
+                      placeholder="Dormitorios"
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Select default="Baños" options={["option A", "option B", "option C"]} shadow />
+                    <Input
+                      id="bathrooms"
+                      type="number"
+                      onChange={e => handleChange(e)}
+                      value={filters.bathrooms}
+                      min={0}                    
+                      placeholder="Baños"
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Select default="Divisa" options={["option A", "option B", "option C"]} shadow />
+                    <Select
+                      id="currency"
+                      default="Divisa"
+                      onChange={e => handleChange(e)}
+                      value={filters.bathrooms}
+                      options={["CLP", "UF"]}
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
                     <Button primary block shadow>Aplicar filtros</Button>

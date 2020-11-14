@@ -5,7 +5,7 @@ export default class{
   constructor(props){
     this.builderId = props._id;
     this.office = {
-      id: props.office,
+      id: props.user ? props.user : props.office,
       name: props.email,
       email: props.email,
       address: props.address,
@@ -62,14 +62,63 @@ export default class{
         visible: true,
         title: "¿Necesitas vender, arrendar o comprar una propiedad? Somos tu socio perfecto.",
         buttonText: "contacto"
-      },    
+      },
     }
+    this.about = {
+      ...props.about,
+      hero:{
+        ...props.about.hero,
+        background: props.about.hero.background || '/about-hero.jpg',
+      },
+      description:{
+        ...props.about.description,
+        background: "/about-description.jpg",
+      },
+      stats:{
+        items:{
+          years:{
+            value: props.about.stats.years || 50,
+            meta: "Años en el mercado",
+          },
+          transactions:{
+            value: props.about.stats.transactions || 500,
+            meta: "Ventas y arriendos anuales",
+          },
+          properties:{
+            value: props.about.stats.properties || 1000,
+            meta: "Propiedades en administración",
+          },
+          proffesionals:{
+            value: props.about.stats.proffesionals || 70,
+            meta: "Profesionales",
+          },          
+        }
+      }
+    };
+    this.paginateProperties = props.paginateProperties;
   }
+  static makeFilters = (filters) => {
+    let url = '';
+    let i = 0;
+    console.log("MAKE FILTES", filters)
+    for(let key in filters){
+      i++;
+      if(filters[key] === "all"){
+        continue;
+      }
+      const more = i !== 1 ? '&' : ''; 
+      url = url + more + `${key}=${filters[key]}`;
+    }
+    return url;
+  }
+
   static paginateProperties = (filters)=> new Promise(async(resolve, reject) => {
     try{
       const url = makePropertiesFilters(filters);
+      console.log("URLO URL ", url);
       const data = await fetch(url);
       const result = await data.json();
+      console.log("URLO URL RESULT", result);
       resolve(result);
     }catch(e){
       console.log("paginateProperties error:", e);

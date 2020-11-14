@@ -11,6 +11,9 @@ const DefaultOption = styled.option`
   color: #212121;
   font-family: "Relaway";
 `
+const AllOption = styled(DefaultOption)`
+  font-weight: bold;
+`
 const Option = styled.option`
   color: #212121;
   font-size: 1rem;
@@ -55,8 +58,9 @@ export default (props)=> {
         {...props}
       >
         <DefaultOption value="" disabled selected hidden>{props.default}</DefaultOption>
+        <AllOption value="all">Todo</AllOption>
         {
-          props.options.map((o, index) => <Option value={o} key={index}>{capitalize(o)}</Option>)
+          props.options.map((o, index) => <Option value={o} key={index}>{props.capitalize ? capitalize(o): o}</Option>)
         }       
       </Select>    
   )

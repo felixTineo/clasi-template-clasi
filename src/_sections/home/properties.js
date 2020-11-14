@@ -19,6 +19,7 @@ const Title = styled.h2`
 
 export default ()=> {
   const state = useContext(Context).home.properties;
+  const builderId = useContext(Context).builderId;
   return(
     <MainCont id="properties">
       <Container>
@@ -37,7 +38,7 @@ export default ()=> {
               buttonText={state.buttonText}
               title={state.footer}
               icon="/icons/marker.svg"
-              onClick={()=> navigate("/properties")}
+              onClick={()=> navigate(`http://localhost:8000/properties/?builderId=${builderId}&id=5e8e36b31c9d440000d35090`)}
             />
           </Col>
         </Row>

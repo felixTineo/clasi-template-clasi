@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useReducer, useCallback, useContext } from 'react';
+import React, { useState, Fragment, useReducer, useCallback, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
 import { Select, Input } from '../inputs';
@@ -6,10 +6,7 @@ import { Button, IconButton } from '../buttons';
 import { Visible, Hidden } from 'react-grid-system';
 import PROPERTY_TYPE from '../../_constants/PROPERTY_TYPE.json';
 import COMMUNES from '../../_constants/CITIES.json';
-import { SearchOutlined, LoadingOutlined } from '@ant-design/icons';
-import Data from '../../_context/data.class';
-import context from '../../_context';
-import { navigate } from 'gatsby';
+import { LoadingOutlined, SearchOutlined } from '@ant-design/icons';
 
 const Form = styled.form`
   width: 100%;
@@ -55,28 +52,24 @@ const FormButton = styled.button`
   }
 `
 
-export default ({ block, shadow, noHome })=> {
+export default ({ block, shadow, noHome, loading, onFinish, onChange, values })=> {
   const [byCode, setByCode] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const state = useContext(context);
-  const [search, setSearch] = useReducer((current, next) => ({ ...current, ...next }),{
+  /*const [values, setValues] = useReducer((current, next) => ({ ...current, ...next }),{
     propertyType: '',
     operation: '',
     commune: '',
-  });
+  });*/
 
-  const onSubmit = useCallback(async(e) => {
-    try{
-      e.preventDefault();
-      setLoading(true);
-      const paginateProperties = await Data.paginateProperties({ id: state.office.id, ...search });
-      setLoading(false);
-      navigate(`/properties/?id=${state.builderId}`, { state: { paginateProperties, search } });
-    }catch(e){
-      console.log(e);
-      setLoading(false);
+  /*useEffect(()=>{
+    if(initialValues){
+      setValues(initialValues);
     }
-  }, [search])
+  },[initialValues]);*/
+
+  const onSubmit = useCallback((e)=> {
+    e.preventDefault();
+    onFinish();
+  },[values]);
 
   return(
     <FormCont byCode={byCode}>
@@ -113,23 +106,28 @@ export default ({ block, shadow, noHome })=> {
                 <Col xs={12} md={3}>
                   <Select
                     id="propertyType"
-                    onChange={e => setSearch({ [e.target.id] : e.target.value })}
+                    value={values.propertyType}
+                    onChange={e => onChange(e)}
                     default="Propiedad"
                     options={PROPERTY_TYPE}
+                    capitalize
                   />
                 </Col>
                 <Col xs={12} md={3}>
                   <Select
                     id="operation"
-                    onChange={e => setSearch({ [e.target.id] : e.target.value })}
+                    value={values.operation}
+                    onChange={e => onChange(e)}
                     default="Operación"
                     options={["VENTA", "ARRIENDO"]}
+                    capitalize
                   />
                 </Col>    
                 <Col xs={12} md={4}>
                   <Select
                     id="commune"
-                    onChange={e => setSearch({ [e.target.id] : e.target.value })}
+                    value={values.commune}
+                    onChange={e => onChange(e)}
                     default="Comuna"
                     options={COMMUNES.map(val => val.name)}
                   />
