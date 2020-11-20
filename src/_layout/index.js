@@ -32,6 +32,7 @@ export default ({ children })=> {
   const getInitialData = useCallback(async()=>{
     try{
       setQuery({ loading: true });
+      console.log("INITIAL URL", builderUrl);
       const builderData = await fetch(builderUrl);
       const builderResult = await builderData.json();
       console.log("INITIAL DATA", builderResult);
@@ -50,6 +51,8 @@ export default ({ children })=> {
   useLayoutEffect(()=> {
     if(builderId){
       getInitialData();
+    } else {
+      setQuery({ loading: false, data: noData });
     }
   },[builderId]);
 
