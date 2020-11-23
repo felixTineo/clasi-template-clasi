@@ -10,8 +10,8 @@ const MainCont = styled.div`
 
 `
 
-export default ()=> {
-  const state = useContext(Context).singleProperty;
+export default ({ state })=> {
+  //const state = useContext(Context).singleProperty;
   return(
     <MainCont>
       <Container>
@@ -21,7 +21,7 @@ export default ()=> {
           </Col>
           <Hidden xs>
             <Col xs={6}>
-              <User description={state} />
+              {<User description={state} />}
             </Col>
           </Hidden>
         </Row>

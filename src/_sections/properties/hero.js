@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { FormProperty } from '../../_components/forms';
 import { Input, Select } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
-import { useWindowSize } from '../../_hooks';
+import { useWindowSize, useNavigateForm } from '../../_hooks';
+import { getSearchParams } from 'gatsby-query-params';
+
 const SectionCont = styled.div`
   background-color: #fff;
   padding: 8rem 0 0;
@@ -56,6 +58,20 @@ const SvgCont = styled.svg`
 export default ()=> {
   const size = useWindowSize();
   const [filter, setFilter] = useState(false);
+
+  const { values, onChange, onFinish, setInitial } = useNavigateForm({
+    priceMin: '',
+    priceMax: '',
+    bedrooms: '',
+    bathrooms: '',
+    currency: '',
+  });
+  const params = getSearchParams();
+
+  useEffect(()=>{
+    setInitial(params);
+  },[params]);
+
   return(
     <SectionCont>
       <Container>
@@ -78,23 +94,63 @@ export default ()=> {
       </Container>
         {
           filter && (
-            <FilterForm>
+            <FilterForm onSubmit={e => { e.preventDefault(); onFinish() }}>
               <Container>
                 <Row>
                   <Col xs={12} md={2}>
-                    <Input placeholder="Desde" shadow />
+                    <Input
+                      id="priceMin"
+                      value={values.priceMin}
+                      onChange={onChange}
+                      type="number"
+                      min={0}
+                      placeholder="Desde"
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Input placeholder="Hasta" shadow />
+                    <Input
+                      id="priceMin"
+                      value={values.priceMax}
+                      onChange={onChange}
+                      type="number"
+                      min={0}                    
+                      placeholder="Hasta"
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Select default="Dormitorios" options={["option A", "option B", "option C"]} shadow />
+                    <Input
+                      id="bedrooms"
+                      value={values.bedrooms}
+                      onChange={onChange}
+                      type="number"
+                      min={0}                    
+                      placeholder="Dormitorios"
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Select default="Baños" options={["option A", "option B", "option C"]} shadow />
+                    <Input
+                      id="bathrooms"
+                      value={values.bathrooms}
+                      onChange={onChange}
+                      type="number"
+                      min={0}                    
+                      placeholder="Baños"
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Select default="Divisa" options={["option A", "option B", "option C"]} shadow />
+                    <Select
+                      id="currency"
+                      onChange={onChange}
+                      value={values.currency}
+                      default="Divisa"
+                      options={["CPL", "UF"]}
+                      primary
+                      shadow
+                    />
                   </Col>
                   <Col xs={12} md={2}>
                     <Button primary block shadow>Aplicar filtros</Button>

@@ -21,9 +21,9 @@ const LogoText = styled.span`
 
 export default ({ dark })=> {
   const state = useContext(Context);
-
+  const builderId = state.builderId;
   return(
-    <Link to="/">
+    <Link to={`/?builderId=${builderId}`}>
       <Nav title="Inicio">
         {
           state.main.logo.isImage

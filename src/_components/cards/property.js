@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import context from '../../_context';
 import Link from '../link';
 import styled from 'styled-components';
+import { truncate } from '../../_util';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -79,6 +81,7 @@ const Divider = styled.span`
 `
 
 export default ({
+  _id,
   mainImage,
   title,
   value,
@@ -86,13 +89,14 @@ export default ({
   ubication,
   characteristics,
 })=> {
+  const builderId = useContext(context).builderId;
   return(
-    <Link to="/property" title="Ver propiedad">
+    <Link to={`/property?builderId=${builderId}&propertyId=${_id}`} title="Ver propiedad">
     <CardCont>
       <CardImage src={mainImage} />
       <CardInfo>
         <CardTitleCont>
-          <CardTitle>{title}</CardTitle>
+          <CardTitle>{truncate(title, 30)}</CardTitle>
           <CardPrice>UF ${value}</CardPrice>
           <li>
             <CardOperation>Venta - </CardOperation>
@@ -101,7 +105,7 @@ export default ({
         </CardTitleCont>
         <Divider />
         <CardCharacteristics>
-          <CharItem>{ubication.address}</CharItem>
+          <CharItem>{truncate(ubication.address, 30)}</CharItem>
           {
             characteristics.slice(0, 2).map((char, index) => (
               <CharItem key={index}>

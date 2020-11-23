@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { capitalize } from '../../_util';
+import { v1 as uuid } from 'uuid';
 
 const DefaultOption = styled.option`
   color: #212121;
   font-family: "Relaway";
+`
+const AllOption = styled(DefaultOption)`
+  font-weight: bold;
 `
 const Option = styled.option`
   color: #212121;
@@ -25,7 +30,9 @@ const Select = styled.select`
   padding: 5px;
   height: 44px;
   width: 100%;
-  background-image: url('/icons/chevron-select.svg');
+  background-image: ${props => props.primary
+  ? `url('data:image/svg+xml;utf8,<svg stroke="%23${props.theme.main.primaryColor.substring(1)}" width="28" height="6.633" fill="none" version="1.1" viewBox="0 0 28 6.633" xmlns="http://www.w3.org/2000/svg"><path d="m11.368 0.63261-5.3678 5.3678-5.3678-5.3678"/></svg>')`
+  : `url('data:image/svg+xml;utf8,<svg stroke="%23FFFFFF" width="28" height="6.633" fill="none" version="1.1" viewBox="0 0 28 6.633" xmlns="http://www.w3.org/2000/svg"><path d="m11.368 0.63261-5.3678 5.3678-5.3678-5.3678"/></svg>')`};
   background-repeat: no-repeat;
   background-position: right center;
   margin-bottom: 1rem;
@@ -48,8 +55,9 @@ export default (props)=> {
         {...props}
       >
         <DefaultOption value="" disabled selected hidden>{props.default}</DefaultOption>
+        <AllOption value="">Todo</AllOption>
         {
-          props.options.map((o, index) => <Option key={index}>{o}</Option>)
+          props.options.map((o, index) => <Option value={o} key={uuid()}>{props.capitalize ? capitalize(o): o}</Option>)
         }       
       </Select>    
   )

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import context from '../../_context'
 import styled from 'styled-components';
 import Logo from './logo';
 import Link from '../../_components/link';
@@ -39,20 +40,20 @@ const SvgCont = styled.svg`
 `
 
 export default ()=> {
-
+  const builderId = useContext(context).builderId
   return(
     <MainCont>
       <Logo />
       <NavBar>
         <NavItem noMargin>
-          <Link to="/about">
+          <Link to={`/about?builderId=${builderId}`}>
             <NavLink>
               Nosotros
             </NavLink>
           </Link>
         </NavItem>
         <NavItem>
-          <Link to="/properties">
+          <Link to={`/properties?builderId=${builderId}`}>
             <NavLink>
               Propiedades
             </NavLink>
@@ -66,7 +67,7 @@ export default ()=> {
           </Link>
 </NavItem>*/}
         <NavItem>
-          <Link to="/contact">
+          <Link to={`/contact?builderId=${builderId}`}>
             <NavLink>
               Contacto
             </NavLink>

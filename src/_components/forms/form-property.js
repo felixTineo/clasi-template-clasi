@@ -1,9 +1,13 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
 import { Select, Input } from '../inputs';
 import { Button, IconButton } from '../buttons';
 import { Visible, Hidden } from 'react-grid-system';
+import { useNavigateForm } from '../../_hooks';
+import PROPERTY_TYPE from '../../_constants/PROPERTY_TYPE.json';
+import COMMUNES from '../../_constants/CITIES.json';
+import { getSearchParams } from 'gatsby-query-params';
 
 const Form = styled.form`
   width: 100%;
@@ -51,6 +55,14 @@ const FormButton = styled.button`
 
 export default ({ block, shadow, noHome })=> {
   const [byCode, setByCode] = useState(false);
+  const [filter, setFilter] = useState(false);
+  const { values, onChange, onFinish, setInitial } = useNavigateForm({ propertyType: '', operation: '', commune: '' });
+  const params = getSearchParams();
+
+  useEffect(()=>{
+    setInitial(params);
+  },[params]);
+
   return(
     <FormCont byCode={byCode}>
       {
@@ -72,7 +84,7 @@ export default ({ block, shadow, noHome })=> {
       </FormButtonCont>          
         )
       }
-      <Form onSubmit={(e) => e.preventDefault()} shadow={shadow} block={block}>
+      <Form onSubmit={(e) => {e.preventDefault(); onFinish()}} shadow={shadow} block={block}>
         <Row gutterWidth={32} align="center">
           {
             byCode
@@ -85,18 +97,35 @@ export default ({ block, shadow, noHome })=> {
               <Fragment>
                 <Col xs={12} md={3}>
                   <Select
+                    id="propertyType"
+                    onChange={onChange}
+                    value={values.propertyType}
                     default="Propiedad"
-                    options={["opcion 1", "opcion 2", "opcion 3"]}
+                    options={PROPERTY_TYPE}
+                    capitalize
+                    primary
                   />
                 </Col>
                 <Col xs={12} md={3}>
-                  <Select
+                <Select
+                    id="operation"
+                    onChange={onChange}        
+                    value={values.operation}          
                     default="Operación"
-                    options={["opcion 1", "opcion 2", "opcion 3"]}
+                    options={["VENTA", "ARRIENDO"]}
+                    primary
+                    capitalize
                   />
                 </Col>    
                 <Col xs={12} md={4}>
-                  <Input placeholder="Comuna" />
+                  <Select
+                    id="commune"
+                    onChange={onChange}
+                    value={values.commune}
+                    default="Comuna"
+                    options={COMMUNES.map(val => val.name)}
+                    primary
+                  />
                 </Col>                        
               </Fragment>              
             )

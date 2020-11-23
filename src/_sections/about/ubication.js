@@ -3,6 +3,7 @@ import Context from '../../_context';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import Contact from '../home/contact';
+import Map from '../../_components/map';
 
 const MainCont = styled.section`
   padding: 4rem 0;
@@ -15,26 +16,36 @@ const Title = styled.p`
   font-weight: bold;
   margin: 0;
 `
-const Map = styled.img`
+/*const Map = styled.img`
   width: 100%;
   height: 304px;
   object-position: center;
   object-fit: cover;
-`
+`*/
 
 export default ()=> {
   const state = useContext(Context).about.ubication;
+  const { lat, lng } = useContext(Context).office;
   return(
     <MainCont>
       <Title>
         {state.title}
       </Title>
-      <Map src="/map.png" />
-        <Row>
-          <Col xs={12}>
-            <Contact />
-          </Col>
-        </Row>
+      {
+        lat && (
+          <Map
+          lat={parseFloat(lng)}
+          lng={parseFloat(lat)}
+          height={300}
+          zoom={8}
+        />         
+        )
+      } 
+      <Row>
+        <Col xs={12}>
+          <Contact />
+        </Col>
+      </Row>
     </MainCont>
   )
 }
