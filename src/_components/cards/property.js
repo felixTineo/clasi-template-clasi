@@ -28,7 +28,7 @@ const CardCont = styled.div`
   }
 `
 const CardImage = styled.div`
-  background-image: url(${props => props.src});
+  background-image: url("${props => props.src}");
   background-position: center;
   background-size: cover;
   background-repeat: none;
