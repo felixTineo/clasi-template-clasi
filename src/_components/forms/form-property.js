@@ -56,12 +56,38 @@ const FormButton = styled.button`
 export default ({ block, shadow, noHome })=> {
   const [byCode, setByCode] = useState(false);
   const [filter, setFilter] = useState(false);
-  const { values, onChange, onFinish, setInitial } = useNavigateForm({ propertyType: '', operation: '', commune: '' });
+  const { values, onChange, onFinish, setInitial } = useNavigateForm({
+    propertyType: '',
+    operation: '',
+    commune: '',
+    stringSearch: '',
+    priceMin: '',
+    priceMax: '',
+    bedrooms: '',
+    bathrooms: '',
+    currency: '',
+  });  
+
   const params = getSearchParams();
 
   useEffect(()=>{
-    setInitial(params);
-  },[params]);
+    if(params){
+      setInitial({...params, stringSearch: ''});
+    }
+    if(byCode){
+      setInitial({
+        propertyType: '',
+        operation: '',
+        commune: '',
+        stringSearch: '',
+        priceMin: '',
+        priceMax: '',
+        bedrooms: '',
+        bathrooms: '',
+        currency: '',
+      })
+    }
+  },[params, byCode]);
 
   return(
     <FormCont byCode={byCode}>

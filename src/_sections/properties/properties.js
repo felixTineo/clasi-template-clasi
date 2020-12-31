@@ -93,8 +93,8 @@ const StandCont = styled.div`
   color: ${props => props.loading && props.theme.main.primaryColor};
 `
 
-export default ()=> {
-  const { data, loading, error } = useProperties();
+export default ({ location })=> {
+  const { data, loading, error } = useProperties({ location });
   const params = getSearchParams();
 
   const handlePaginate = useCallback((val)=> {

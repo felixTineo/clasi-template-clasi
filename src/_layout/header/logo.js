@@ -13,7 +13,8 @@ const Nav = styled.span`
   }
 `
 const LogoImg = styled.img`
-
+  max-width: 150px;
+  max-height: 42px;
 `
 const LogoText = styled.span`
   font-size: 1.5rem;

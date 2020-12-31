@@ -20,12 +20,12 @@ const Body = styled.div`
   }
 `
 
-export default ({ children })=> {
+export default ({ children, data })=> {
 
-  const { loading, data, error } = useLayout();
+  /*const { loading, data, error } = useLayout();
 
   if(loading) return <LoaderScreen />
-  if(error) return <p>error de conexión</p>
+  if(error) return <p>error de conexión</p>*/
 
   return(
     <Context.Provider value={data}>
