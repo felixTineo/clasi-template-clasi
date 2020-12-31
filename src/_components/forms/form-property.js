@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
-import { Select, Input } from '../inputs';
+import { Select, Input, Autocomplete } from '../inputs';
 import { Button, IconButton } from '../buttons';
 import { Visible, Hidden } from 'react-grid-system';
 import { useNavigateForm } from '../../_hooks';
@@ -89,6 +89,11 @@ export default ({ block, shadow, noHome })=> {
     }
   },[params, byCode]);
 
+  const onSubmit = (e)=> {
+    e.preventDefault();
+    onFinish();
+  }
+
   return(
     <FormCont byCode={byCode}>
       {
@@ -110,13 +115,18 @@ export default ({ block, shadow, noHome })=> {
       </FormButtonCont>          
         )
       }
-      <Form onSubmit={(e) => {e.preventDefault(); onFinish()}} shadow={shadow} block={block}>
+      <Form onSubmit={onSubmit} shadow={shadow} block={block}>
         <Row gutterWidth={32} align="center">
           {
             byCode
             ?(
               <Col xs={12} md={10}>
-                <Input placeholder="Ingrese el código de la propiedad" />
+                <Autocomplete
+                  id="stringSearch"
+                  onSelect={onChange}
+                  selected={values.stringSearch}
+                  placeholder="Ingrese el código de la propiedad"
+                />
               </Col>    
             )
             :(
@@ -144,14 +154,13 @@ export default ({ block, shadow, noHome })=> {
                   />
                 </Col>    
                 <Col xs={12} md={4}>
-                  <Select
+                  <Autocomplete
                     id="commune"
-                    onChange={onChange}
-                    value={values.commune}
-                    default="Comuna"
+                    onSelect={onChange}
+                    selected={values.commune}
                     options={COMMUNES.map(val => val.name)}
-                    primary
-                  />
+                    placeholder="Comuna"
+                  />                  
                 </Col>                        
               </Fragment>              
             )
