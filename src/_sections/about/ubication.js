@@ -37,7 +37,7 @@ export default ()=> {
           lat={parseFloat(lng)}
           lng={parseFloat(lat)}
           height={300}
-          zoom={8}
+          zoom={18}
         />         
         )
       } 

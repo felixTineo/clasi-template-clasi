@@ -8,6 +8,8 @@ export default (inputs)=> {
   const builderId = useContext(context).builderId;
 
   const onChange = e => {
+    //console.log( typeof e.target.value);
+    //const value = e.target.id === "priceMax" || e.target.id === "priceMin" ? new Intl.NumberFormat().format(e.target.value.replace(/\./g, '')) : e.target.value;
     setParams({ [e.target.id]: e.target.value });
   }
   const onFinish = useCallback(()=> {

@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Row, Col } from 'react-grid-system';
+import { Container, Row, Col, Hidden, Visible } from 'react-grid-system';
 import { Input, Textarea } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
 
 const MainCont = styled.div`
+  margin-top: 103.59px;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -35,7 +36,7 @@ const SubTitleFooter = styled(SubTitle)`
   margin-top: 4rem;
 `
 const ButtonContainer = styled.div`
-   margin-top: 32px;
+   margin-top: 16px;
    display:flex;
    //justify-content: flex-start;
    align-items: center;
@@ -73,12 +74,13 @@ export default ()=> {
                     gray
                   />
                 </Col>
-                <Col xs={12}>
-                  <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
-                  <ButtonContainer>
-                    <Button primary block>Enviar</Button>
-                  </ButtonContainer>              
-                </Col>
+                <Hidden xs>
+                  <Col xs={12}>
+                    <ButtonContainer>
+                      <Button primary block>Enviar</Button>
+                    </ButtonContainer>              
+                  </Col>
+                </Hidden>
               </Row>
             </Col>
             <Col xs={12} md={6}>
@@ -98,6 +100,13 @@ export default ()=> {
                     rows={7}
                   />
                 </Col>
+                <Visible xs>
+                  <Col xs={12}>
+                    <ButtonContainer>
+                      <Button primary block>Enviar</Button>
+                    </ButtonContainer>              
+                  </Col>                  
+                </Visible>
                 <Col xs={12}>
                   <SubTitleFooter>
                     También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>

@@ -5,6 +5,7 @@ import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { FacebookFilled, InstagramFilled, TwitterCircleFilled, LinkedinFilled, YoutubeFilled } from '@ant-design/icons';
 
 const Footer = styled.footer`
   
@@ -134,6 +135,24 @@ const BackTop = styled.button`
     box-shadow: none;
   }
 `
+
+const SocialCont = styled.nav`
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+`
+const SocialLink = styled.a`
+  margin-left: .8rem;
+  color: rgba(0, 0, 0, .5);
+  font-size: 1.3rem;
+  transition: 250ms ease;
+  &:visited{
+    color: rgba(0, 0, 0, .5);
+  }
+  &:hover{
+    color: ${props => props.theme.main.primaryColor};
+  }
+`
  
 
 export default ()=> {
@@ -163,11 +182,11 @@ export default ()=> {
             <Col xs={12} md={4}>
               <Row>
                 <Col xs={12}>
-                  <GatsbyLink to={`/?builderId=${builderId}`} style={{ textDecoration: 'none' }}>
+                  <GatsbyLink to={`/`} style={{ textDecoration: 'none' }}>
                     <LogoCont>
                         {
                           state.main.logo.isImage
-                            ?<Logo src="/logo.svg" alt="logo" />
+                            ?<Logo src={state.main.logo.value} alt="logo" />
                             :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
                         }
                     </LogoCont>                        
@@ -182,23 +201,24 @@ export default ()=> {
                   </Button>                 
                 </Col>                            
                 <Col xs={12}>
-                  <SocialNav>
-                    <li>Siguenos en</li>
-                    <SocialItem style={{ marginLeft: "1rem" }}>
-                      <a href="https://www.facebook.com">
-                        <SvgIcon social={true} width="29" height="29" fill="none" version="1.1" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg">
-                          <path d="m14.457 0a14.5 14.5 0 0 0-14.457 14.5 14.5 14.5 0 0 0 14.5 14.5 14.5 14.5 0 0 0 14.5-14.5 14.5 14.5 0 0 0-14.5-14.5 14.5 14.5 0 0 0-0.042969 0zm0.91016 6h2.6328v2.9805h-1.9355c-0.3833 0-0.76953 0.39326-0.76953 0.68555v1.957h2.7012c-0.1087 1.5007-0.33203 2.873-0.33203 2.873h-2.3828v8.5039h-3.5527v-8.5059h-1.7285v-2.8613h1.7285v-2.3398c0-0.42786-0.087828-3.293 3.6387-3.293z" />
-                        </SvgIcon>
-                      </a>
-                    </SocialItem>
-                    <SocialItem>
-                      <a href="https://www.instagram.com">
-                        <SvgIcon social={true} width="29" height="29" fill="none" version="1.1" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg">
-                          <path d="m14.457 0a14.5 14.5 0 0 0-14.457 14.5 14.5 14.5 0 0 0 14.5 14.5 14.5 14.5 0 0 0 14.5-14.5 14.5 14.5 0 0 0-14.5-14.5 14.5 14.5 0 0 0-0.042969 0zm-2.916 6h6.6504c3.0602 0 5.543 2.4808 5.543 5.541v6.6504c0 3.0602-2.4828 5.543-5.543 5.543h-6.6504c-3.0603 0-5.541-2.4828-5.541-5.543v-6.6504c0-3.0603 2.4808-5.541 5.541-5.541zm0 1.6621c-2.1392 0-3.8789 1.7397-3.8789 3.8789v6.6504c0 2.1392 1.7397 3.8809 3.8789 3.8809h6.6504c2.1392 0 3.8809-1.7417 3.8809-3.8809v-6.6504c0-2.1392-1.7417-3.8789-3.8809-3.8789h-6.6504zm3.3262 2.7715c2.4484 0 4.4336 1.9852 4.4336 4.4336 0 2.4484-1.9852 4.4336-4.4336 4.4336-2.4484 0-4.4336-1.9852-4.4336-4.4336 0-2.4484 1.9852-4.4336 4.4336-4.4336zm0 1.6621c-1.5273 0-2.7715 1.243-2.7715 2.7715 0 1.5273 1.2442 2.7715 2.7715 2.7715 1.5273 0 2.7715-1.2442 2.7715-2.7715 0-1.5285-1.2442-2.7715-2.7715-2.7715z"/>
-                        </SvgIcon>
-                      </a>
-                    </SocialItem>     
-                  </SocialNav>
+                <SocialCont>
+                  <h3>Siguenos en:</h3>         
+                  <SocialLink href="https://www.instagram.com/lw.propiedades/" rel="noopener" target="_blank">
+                    <InstagramFilled />
+                  </SocialLink>
+                  <SocialLink href="https://www.facebook.com/LWpropiedades-1243413362473433/" rel="noopener" target="_blank">
+                    <FacebookFilled />
+                  </SocialLink>
+                  <SocialLink href="https://www.youtube.com/c/lwpropiedades" rel="noopener" target="_blank">
+                    <YoutubeFilled />
+                  </SocialLink>
+                  <SocialLink href="https://www.linkedin.com/showcase/oportunidades-lw-propiedades/" rel="noopener" target="_blank">
+                    <LinkedinFilled />
+                  </SocialLink>
+                  <SocialLink href="https://twitter.com/PropiedadesLw?s=09" rel="noopener" target="_blank">
+                    <TwitterCircleFilled />
+                  </SocialLink>                
+                </SocialCont>
                 </Col>  
               </Row>
             </Col>    
@@ -213,12 +233,12 @@ export default ()=> {
                           </BackTop>
                         </BackTopCont>
                     </Hidden> 
-                    <NavLink to={`/about?builderId=${builderId}`}>
+                    <NavLink to={`/about`}>
                       Nosotros
                     </NavLink>
                   </Col>
                   <Col xs={6} md={12}>
-                    <NavLink to={`/properties?builderId=${builderId}`}>
+                    <NavLink to={`/properties`}>
                       Propiedades
                     </NavLink>                  
                   </Col>
@@ -230,7 +250,7 @@ export default ()=> {
                     </Col>
 </Visible>*/}
                   <Col xs={6} md={12}>
-                    <NavLink to={`/contact?builderId=${builderId}`}>
+                    <NavLink to={`/contact`}>
                       Contacto
                     </NavLink>                  
                   </Col>                                          

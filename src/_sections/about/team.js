@@ -25,6 +25,7 @@ const Card = styled.div`
   margin-bottom: 4rem;
   @media(min-width: 768px){
     margin: 0;
+    margin-bottom: 4rem;
   }
 `
 const Avatar = styled.img`
@@ -38,7 +39,7 @@ const Name = styled.p`
   font-weight: bold;
 `
 const Description = styled.p`
-  height: 184px;
+  height: 80px;
   overflow: hidden;
   text-align: center;
 `

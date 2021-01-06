@@ -24,7 +24,7 @@ export default ({ dark })=> {
   const state = useContext(Context);
   const builderId = state.builderId;
   return(
-    <Link to={`/?builderId=${builderId}`}>
+    <Link to={`/`}>
       <Nav title="Inicio">
         {
           state.main.logo.isImage

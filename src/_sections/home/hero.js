@@ -17,7 +17,7 @@ const MainCont = styled.section`
   background-repeat: no-repeat;
   color: #fff;
   @media(min-width: 768px){
-    min-height: 85vh;
+    min-height: 100vh;
   }
 `
 

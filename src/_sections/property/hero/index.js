@@ -8,6 +8,7 @@ import Description from './description';
 
 const MainCont = styled.div`
   padding-top: 10rem;
+  margin-top: 103.59px;
 `
 export default ({ state })=> {
   //const state = useContext(Context).singleProperty;

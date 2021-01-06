@@ -14,8 +14,10 @@ export default ({ location })=> {
       setQuery({ loading:true })
       //const url = location.search ? urlBuilder('https://api.clasihome.com/rest/properties',{...params, id, typeId} ) : urlBuilder('https://api.clasihome.com/rest/properties',{id, typeId} );
       //const url = location.search ? 'https://api.clasihome.com/rest/properties' + location.search + "&typeId=" + typeId + "&id=" +id : 'https://api.clasihome.com/rest/properties' + "?typeId=" + typeId + "&id=" +id
+      console.log("USE PROPERTIES", url);
       const data = await fetch(url);
       const result = await data.json();
+      console.log("USE PROPERTIES", result);
       setQuery({ loading: false, data: result });
     }
     catch(e){
