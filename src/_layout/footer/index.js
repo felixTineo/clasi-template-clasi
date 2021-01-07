@@ -253,7 +253,12 @@ export default ()=> {
                     <NavLink to={`/contact`}>
                       Contacto
                     </NavLink>                  
-                  </Col>                                          
+                  </Col>    
+                  <Col xs={6} md={12}>
+                    <NavLink to={`/covid`}>
+                      Protocolo COVID-19
+                    </NavLink>                  
+                  </Col>                                                        
                 </Row>
               </NavCont>
             </Col>                            

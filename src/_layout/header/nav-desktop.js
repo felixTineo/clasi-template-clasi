@@ -89,7 +89,14 @@ export default ()=> {
               Contacto
             </NavLink>
           </Link>
-        </NavItem>                          
+        </NavItem>         
+        <NavItem>
+          <Link to={`/covid`}>
+            <NavLink>
+              Protocolo COVID-19
+            </NavLink>
+          </Link>
+        </NavItem>                                  
       </NavBar>
       <SocialCont>
         <SocialLink href="https://www.instagram.com/lw.propiedades/" rel="noopener" target="_blank">

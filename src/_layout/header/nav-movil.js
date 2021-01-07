@@ -125,6 +125,13 @@ export default ()=> {
               </NavLink>
             </Link>
           </NavItem>
+          <NavItem>
+            <Link to={`/covid`}>
+              <NavLink noMargin>
+                Protocolo COVID-19
+              </NavLink>
+            </Link>
+          </NavItem>          
         </NavBar>    
         <SocialCont>
         <h3>Siguenos en:</h3>         
