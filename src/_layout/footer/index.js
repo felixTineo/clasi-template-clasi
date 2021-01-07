@@ -167,7 +167,7 @@ export default ()=> {
                     <LogoCont>
                         {
                           state.main.logo.isImage
-                            ?<Logo src="/logo.svg" alt="logo" />
+                            ?<Logo src={state.main.logo.value} alt="logo" />
                             :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
                         }
                     </LogoCont>                        
