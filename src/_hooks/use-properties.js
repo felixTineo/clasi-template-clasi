@@ -19,7 +19,15 @@ export default ()=> {
       console.log("PROPERTIES URL", url)
       const data = await fetch(url);
       const result = await data.json();
-      setQuery({ loading: false, data: result });
+      console.log("RESULT USE PROPERTIES", result);
+      if(result.totalRegisters === 0){
+        const url = urlBuilder('https://api.clasihome.com/rest/properties',{...params, id: "5e8e36b31c9d440000d35090", typeId: "office"} );
+        const data = await fetch(url);
+        const result = await data.json();
+        setQuery({ loading: false, data: result });
+      } else {
+        setQuery({ loading: false, data: result });
+      }
     }
     catch(e){
       console.log(e);
