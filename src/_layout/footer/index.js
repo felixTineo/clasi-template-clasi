@@ -163,7 +163,7 @@ export default ()=> {
             <Col xs={12} md={4}>
               <Row>
                 <Col xs={12}>
-                  <GatsbyLink to={`/?builderId=${builderId}`} style={{ textDecoration: 'none' }}>
+                  <GatsbyLink to={`/`} style={{ textDecoration: 'none' }}>
                     <LogoCont>
                         {
                           state.main.logo.isImage
@@ -213,12 +213,12 @@ export default ()=> {
                           </BackTop>
                         </BackTopCont>
                     </Hidden> 
-                    <NavLink to={`/about?builderId=${builderId}`}>
+                    <NavLink to={`/about`}>
                       Nosotros
                     </NavLink>
                   </Col>
                   <Col xs={6} md={12}>
-                    <NavLink to={`/properties?builderId=${builderId}`}>
+                    <NavLink to={`/properties`}>
                       Propiedades
                     </NavLink>                  
                   </Col>
@@ -230,7 +230,7 @@ export default ()=> {
                     </Col>
 </Visible>*/}
                   <Col xs={6} md={12}>
-                    <NavLink to={`/contact?builderId=${builderId}`}>
+                    <NavLink to={`/contact`}>
                       Contacto
                     </NavLink>                  
                   </Col>                                          

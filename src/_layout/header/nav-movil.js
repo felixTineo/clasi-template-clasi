@@ -90,14 +90,14 @@ export default ()=> {
         <RateBar />
         <NavBar>
           <NavItem>
-            <Link to={`/about?builderId=${builderId}`}>
+            <Link to={`/about`}>
               <NavLink>
                 Nosotros
               </NavLink>
             </Link>
           </NavItem>
           <NavItem>
-            <Link to={`/properties?builderId=${builderId}`}>
+            <Link to={`/properties`}>
               <NavLink>
                 Propiedades
               </NavLink>
@@ -111,7 +111,7 @@ export default ()=> {
             </Link>
 </NavItem>*/}
           <NavItem>
-            <Link to={`/contact?builderId=${builderId}`}>
+            <Link to={`/contact`}>
               <NavLink noMargin>
                 Contacto
               </NavLink>
