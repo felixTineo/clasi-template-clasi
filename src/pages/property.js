@@ -20,6 +20,7 @@ const StandCont = styled.div`
   align-items: center;
   font-size: 2rem;
   color: ${props => props.loading && props.theme.main.primaryColor};
+  margin-top: 116.16px;
 `
 
 export default ({ data })=> {

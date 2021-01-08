@@ -5,7 +5,7 @@ import { v1 as uuid } from 'uuid';
 
 const DefaultOption = styled.option`
   color: #212121;
-  font-family: "Relaway";
+  font-family: "Proxima Nova";
 `
 const AllOption = styled(DefaultOption)`
   font-weight: bold;
@@ -13,14 +13,14 @@ const AllOption = styled(DefaultOption)`
 const Option = styled.option`
   color: #212121;
   font-size: 1rem;
-  font-family: "Relaway";
+  font-family: "Proxima Nova";
 `
 
 const Select = styled.select`
   border: none;
   outline: none;
   font-size: 1rem;
-  font-family: "Relaway";
+  font-family: "Proxima Nova";
   color: ${props => props.primary ? props.theme.main.primaryColor : "#212121"};
   -webkit-appearance: none;
   -moz-appearance: none;

@@ -15,6 +15,7 @@ const InputLabel = styled.label`
   border: ${props => props.gray ? "1px solid #EBEBEB" : "1px solid #5A5A5A" };  
   padding-right: 16px;
   color: #fff;
+  font-family: "Proxima Nova";
   @media(min-width: 768px){
     margin-bottom: ${props => props.vertical ? "2rem" : "0"};
     box-shadow: ${props => props.shadow ? "0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)" : "none"};
@@ -30,6 +31,7 @@ const Input = styled.input`
   width: 100%;
   border: none;
   font-size: 1rem;
+  font-family: "Proxima Nova";
   //color: #fff;
   &::placeholder{
     color: #878787;
@@ -45,6 +47,7 @@ const OptionsMainCont = styled.ul`
   padding: 1rem 5px;
   border: 1px solid #cecece;
   z-index: 100;
+  font-family: "Proxima Nova";
 `
 const Option = styled.button`
   background-color: transparent;
@@ -54,6 +57,7 @@ const Option = styled.button`
   transition: 250ms ease;
   display: flex;
   text-align: left;
+  font-family: "Proxima Nova";
   &:hover{
     color: ${props => props.theme.main.primaryColor} !important;
   }
@@ -69,17 +73,21 @@ const PropertyInfoCont = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: .5rem;
+  font-family: "Proxima Nova";
 `
 const PropertyInfoCode = styled.span`
   font-size: 12px;
   color: ${props => props.theme.main.primaryColor};
+  font-family: "Proxima Nova";
 `
 const PropertyInfoTitle = styled.span`
   font-size: 14px;
+  font-family: "Proxima Nova";
 `
 const PropertyInfoDescription = styled.span`
   font-size: 12px;
   color: #666;
+  font-family: "Proxima Nova";
 `
 
 

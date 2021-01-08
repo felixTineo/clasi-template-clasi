@@ -8,7 +8,7 @@ import { useWindowSize, useNavigateForm } from '../../_hooks';
 import { getSearchParams } from 'gatsby-query-params';
 
 const SectionCont = styled.div`
-  margin-top: 103.59px;
+  margin-top: 116.16px;
   background-color: #F2F1F0;
   padding: 8rem 0 0;
 `
@@ -141,7 +141,7 @@ export default ()=> {
                 id="currency"
                 onChange={onChange}
                 value={values.currency}
-                default="Divisa"
+                default="Moneda"
                 options={["CLP", "UF"]}
                 primary
                 shadow

@@ -4,7 +4,7 @@ import { Container } from 'react-grid-system';
 import Context from '../../_context';
 
 const MainCont = styled.section`
-  margin-top: 103.59px;
+  margin-top: 116.16px;
   background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("/covid.jpg");
   background-size: cover;
   background-repeat: no-repeat;

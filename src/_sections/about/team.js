@@ -31,6 +31,7 @@ const Card = styled.div`
 const Avatar = styled.img`
   width: 160px;
   height: 160px;
+  border-radius: 50%;
   object-fit: cover;
   object-position: cover;
 `

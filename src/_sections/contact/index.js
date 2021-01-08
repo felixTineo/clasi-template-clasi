@@ -5,7 +5,7 @@ import { Input, Textarea } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
 
 const MainCont = styled.div`
-  margin-top: 103.59px;
+  margin-top: 116.16px;
   min-height: 80vh;
   display: flex;
   flex-direction: column;

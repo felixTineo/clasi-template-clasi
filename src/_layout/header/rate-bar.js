@@ -7,6 +7,7 @@ const MainCont = styled.div`
   color: #212121;
   padding: .5rem 0;
   font-size: 14px;
+  font-weight: bold;
 `
 const RatesCont = styled.ul`
   display: flex;
@@ -20,6 +21,7 @@ const RatesCont = styled.ul`
 `
 const RateItem = styled.li`
   margin-left: .30rem;
+  font-weight: bold;
   &::after{
     content: " -"
   }
@@ -48,13 +50,13 @@ export default ()=> {
       <Container>
         <RatesCont>
           <RateItem>
-            UF $75875987
+            UF $29.079
           </RateItem>
           <RateItem>
-            UTM $75875987
+            UTM $51.029
           </RateItem>
           <RateItemNoAfter>
-            Dólar $75875987
+            Dólar $731
           </RateItemNoAfter>                    
         </RatesCont>
       </Container>
