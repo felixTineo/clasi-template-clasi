@@ -17,7 +17,7 @@ const MainCont = styled.section`
   background-repeat: no-repeat;
   color: #fff;
   @media(min-width: 768px){
-    min-height: 85vh;
+    min-height: calc(100vh - 138.64px);
   }
 `
 
@@ -40,7 +40,7 @@ const SvgCont = styled.svg`
   stroke: #fff;
   transition: 250ms ease;
   ${DownButton}:hover & {
-    stroke: ${props => props.theme.main.primaryColor};
+    stroke: #b79c4e;
   }
 `
 

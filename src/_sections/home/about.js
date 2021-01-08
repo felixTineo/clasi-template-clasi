@@ -25,6 +25,7 @@ const DescriptionCont = styled.div`
 `
 const Title = styled.h2`
   font-size: 40px;
+  color: #b79c4e;
 `
 const Description = styled.p`
   margin: 2rem 0 4rem;

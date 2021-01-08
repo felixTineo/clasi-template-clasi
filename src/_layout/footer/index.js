@@ -5,6 +5,7 @@ import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Logo from '../header/logo';
 
 const Footer = styled.footer`
   
@@ -85,11 +86,11 @@ const SocialItem = styled.li`
   margin-left: .5rem;
 `
 
-const Logo = styled.img`
+/*const Logo = styled.img`
   object-fit: cover;
   object-position: center;
   max-width: 180px;
-`
+`*/
 
 const HeaderTitle = styled.h1`
   color: ${props => props.theme.main.primaryColor};
@@ -165,11 +166,7 @@ export default ()=> {
                 <Col xs={12}>
                   <GatsbyLink to={`/`} style={{ textDecoration: 'none' }}>
                     <LogoCont>
-                        {
-                          state.main.logo.isImage
-                            ?<Logo src="/logo.svg" alt="logo" />
-                            :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
-                        }
+                      <Logo dark />
                     </LogoCont>                        
                   </GatsbyLink>                  
                 </Col>

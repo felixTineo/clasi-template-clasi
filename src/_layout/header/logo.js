@@ -13,8 +13,8 @@ const Nav = styled.span`
   }
 `
 const LogoImg = styled.img`
-  max-width: 150px;
-  max-height: 42px;
+  max-width: 250px;
+  //max-height: 42px;
 `
 const LogoText = styled.span`
   font-size: 1.5rem;
@@ -22,14 +22,14 @@ const LogoText = styled.span`
 
 export default ({ dark })=> {
   const state = useContext(Context);
-  const builderId = state.builderId;
   return(
     <Link to={`/`}>
+      {console.log("STATE", state)}
       <Nav title="Inicio">
         {
           state.main.logo.isImage
           ?(
-            <LogoImg src={ dark ? "/logo.svg" : state.main.logo.value} />
+            <LogoImg src={ dark ? state.main.logoDark.value : state.main.logo.value} />
           )
           :(
             <LogoText>

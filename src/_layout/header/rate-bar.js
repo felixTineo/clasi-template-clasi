@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Container } from 'react-grid-system';
 
 const MainCont = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
+  background-color: #b79c4e;
   color: #fff;
   padding: .5rem 0;
   font-size: 14px;

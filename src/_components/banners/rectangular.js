@@ -13,7 +13,7 @@ const BannerCont = styled.div`
   background-size: cover;
 `
 const Title = styled.p`
-  color: #fff;
+  color: #b79c4e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@ export default ({ title, image, onClick, buttonText, icon }) => {
           </Title>
         </Col>
         <Col xs={12} md={3}>
-          <Button onClick={onClick} block primary>
+          <Button onClick={onClick} block >
             {buttonText}
           </Button>
         </Col>        

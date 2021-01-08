@@ -18,11 +18,13 @@ export default styled.button`
   color: #FFFFFF;
   transition: 250ms ease;
   &:hover{
-    background-color: ${props => props.primary ? hexToHsl(props.theme.main.primaryColor, 55) : "#fff" };
+    background-color: ${props => props.primary ? props.theme.main.primaryColor : "#fff" };
     color: ${props => props.primary ? "#fff" : props.theme.main.primaryColor};
+    filter:${props => props.primary && "brightness(1.5)"};
   };
   &:active{
-    background-color: ${props => props.primary ? hexToHsl(props.theme.main.primaryColor, 45) : hexToHsl("#ffffff", 90) };
+    background-color: ${props => props.primary ? props.theme.main.primaryColor : hexToHsl("#ffffff", 90) };
     color: ${props => props.primary ? "#fff" : props.theme.main.primaryColor};
+    filter: brightness(.8);
   }  
 `
