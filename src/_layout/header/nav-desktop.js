@@ -87,7 +87,7 @@ export default ()=> {
           </Link>
         </NavItem>                          
       </NavBar>
-      <LoginButton href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor}`}>
+      <LoginButton href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}>
         <UserOutlined />
         <span style={{ marginLeft: 8 }}>Login</span>
       </LoginButton>
