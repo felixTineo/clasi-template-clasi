@@ -11,7 +11,7 @@ const MainCont = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(${props => props.theme.home.hero.background});
+  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url("${props => props.theme.home.hero.background}");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

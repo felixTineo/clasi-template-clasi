@@ -3,11 +3,15 @@ import styled from 'styled-components';
 import { Container } from 'react-grid-system';
 
 const MainCont = styled.div`
-  background-color: #F2F1F0;
-  color: #212121;
+  background-color: transparent;
+  color: #fff;
   padding: .5rem 0;
   font-size: 14px;
   font-weight: bold;
+  @media(min-width: 768px){
+    background-color: #F2F1F0;
+    color: #212121;
+  }
 `
 const RatesCont = styled.ul`
   display: flex;

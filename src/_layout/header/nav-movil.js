@@ -78,7 +78,7 @@ const SocialLink = styled.a`
 
 export default ()=> {
   const [visibleNav, setVisibleNav] = useState(false);
-  const builderId = useContext(context);
+  const state = useContext(context);
   useEffect(()=> {
     if(visibleNav){
       gsap.to("#nav-movil", { duration: .25, left: 0 });
@@ -97,6 +97,13 @@ export default ()=> {
       <NavContainer id="nav-movil">
         <RateBar />
         <NavBar>
+          <NavItem>
+            <Link to={`/`}>
+              <NavLink>
+                Inicio
+              </NavLink>
+            </Link>
+          </NavItem>          
           <NavItem>
             <Link to={`/about`}>
               <NavLink>
@@ -131,7 +138,14 @@ export default ()=> {
                 Protocolo COVID-19
               </NavLink>
             </Link>
-          </NavItem>          
+          </NavItem>      
+          <NavItem>
+            <Link href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}>
+              <NavLink noMargin>
+                Login
+              </NavLink>
+            </Link>
+          </NavItem>                    
         </NavBar>    
         <SocialCont>
         <h3>Siguenos en:</h3>         

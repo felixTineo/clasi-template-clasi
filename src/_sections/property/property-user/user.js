@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useReducer } from 'react';
 import Context from '../../../_context';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
-import { Input } from '../../../_components/inputs';
+import { Input, Textarea } from '../../../_components/inputs';
 import { Button } from '../../../_components/buttons';
+import { PlusCircleOutlined } from '@ant-design/icons';
 
 const MainCont = styled.div`
   padding: 4rem;
@@ -50,10 +51,31 @@ const ContactForm = styled.form`
 const ContactFormButtons = styled.div`
   margin-top: 2rem;
 `
+const IconButton = styled.a`
+  color: #5A5A5A;
+  transition: 250ms ease;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-top: 2rem;
+  cursor: pointer;
+  &:visited{
+    color: #5A5A5A;
+  }  
+  &:hover{
+    color: ${props => props.theme.main.primaryColor};
+  }
+`
 
 export default ({ description })=> {
   //const description = useContext(Context).singleProperty;
   const user = {...description._comercialUser[0], ...description._comercialUser_person[0]};
+  const [message, setMessage] = useReducer((current, next) => ({ ...current, ...next }),{
+    name: '',
+    phone: '',
+    email: '',
+    message: '',
+  });  
 
   return(
     <MainCont>
@@ -101,11 +123,12 @@ export default ({ description })=> {
             />
           </Col>
           <Col xs={12}>
-            <Input
+            <Textarea
               placeholder="Mensaje"
               gray
               id="message"
               vertical
+              rows="6"
             />
           </Col>   
           <Col xs={12}>
@@ -116,18 +139,10 @@ export default ({ description })=> {
             </ContactFormButtons>
           </Col>          
           <Col xs={12}>
-            <ContactFormButtons>
-              <Button primary outlined block>
-                LLamar
-              </Button>
-            </ContactFormButtons>
-          </Col>
-          <Col xs={12}>
-            <ContactFormButtons>
-              <Button primary outlined block>
-                whatsapp
-              </Button>
-            </ContactFormButtons>
+            <IconButton target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=${user.phone ? user.phone.countryCode + user.phone.areaCode + user.phone.phoneNumber : user.mobile ? user.mobile.countryCode + user.mobile.areaCode + user.mobile.phoneNumber : ''}&text=${message.message}`} alt="send whatsapp message">
+              <span>¿Deseas contactarnos por teléfono o enviarnos un Whatsapp?</span>
+              <PlusCircleOutlined style={{ marginRight: 8, fontSize: 26 }} />
+            </IconButton>
           </Col>          
         </Row>
       </ContactForm>
