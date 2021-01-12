@@ -15,7 +15,7 @@ const MainFooter = styled.div`
 `
 const FooterRightsCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
-  color: ${props => props.theme.main.secondaryColor};
+  color: #b79c4e;
   padding: 2rem 0;
   @media(min-width: 768px){
     padding: .5rem 0;
@@ -68,7 +68,7 @@ const NavLink = styled(Link)`
   }
 `
 const SvgIcon = styled.svg`
-  fill: ${props => props.social ? props.theme.main.primaryColor : "#fff"};
+  fill: ${props => props.social ? props.theme.main.primaryColor : "#b79c4e"};
   margin-right: .5rem;
 `
 const SocialNav = styled.ul`
@@ -99,7 +99,7 @@ const HeaderTitle = styled.h1`
 `
 
 const DevelopBy = styled.a`
-  color: #fff !important;
+  color: #b79c4e !important;
   font-weight: bold;
   margin-left: .5rem;
 `

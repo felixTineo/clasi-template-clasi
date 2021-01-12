@@ -17,9 +17,10 @@ export default styled.button`
   border-color: ${props => props.primary ? props.theme.main.primaryColor : "#fff"};
   color: #FFFFFF;
   transition: 250ms ease;
+  font-size: 1.2rem;
   &:hover{
     background-color: ${props => props.primary ? props.theme.main.primaryColor : "#fff" };
-    color: ${props => props.primary ? "#fff" : props.theme.main.primaryColor};
+    color: ${props => props.primary ? "#b79c4e" : props.theme.main.primaryColor};
     filter:${props => props.primary && "brightness(1.5)"};
   };
   &:active{

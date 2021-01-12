@@ -88,6 +88,7 @@ export default ({
   code,
   ubication,
   characteristics,
+  currency,
 })=> {
   const builderId = useContext(context).builderId;
   return(
@@ -97,7 +98,7 @@ export default ({
       <CardInfo>
         <CardTitleCont>
           <CardTitle>{truncate(title, 30)}</CardTitle>
-          <CardPrice>UF ${value}</CardPrice>
+          <CardPrice>{currency} ${value.toLocaleString()}</CardPrice>
           <li>
             <CardOperation>Venta - </CardOperation>
             <span>cod {code}</span>

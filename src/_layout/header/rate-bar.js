@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import { Container } from 'react-grid-system';
 
 const MainCont = styled.div`
-  background-color: #b79c4e;
+  background-color: transparent;
   color: #fff;
   padding: .5rem 0;
   font-size: 14px;
+  @media(min-width: 768px){
+    background-color: #b79c4e;
+    justify-content: flex-end;
+  }  
 `
 const RatesCont = styled.ul`
   display: flex;
@@ -48,13 +52,13 @@ export default ()=> {
       <Container>
         <RatesCont>
           <RateItem>
-            UF $75875987
+            UF $29.079
           </RateItem>
           <RateItem>
-            UTM $75875987
+            UTM $51.029
           </RateItem>
           <RateItemNoAfter>
-            Dólar $75875987
+            Dólar $731
           </RateItemNoAfter>                    
         </RatesCont>
       </Container>

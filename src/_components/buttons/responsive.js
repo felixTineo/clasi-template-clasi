@@ -39,9 +39,9 @@ export default ({ onClick, visible })=> {
       gsap.to('#responsive-bar-middle', .25, { backgroundColor: "#fff", opacity: 0 });
       gsap.to('#responsive-bar-bottom', .25, { y: -7, rotate: -45, backgroundColor: "#fff" });
     } else{
-      gsap.to('#responsive-bar-top', .25, { y: 0, rotate: 0, backgroundColor: office.main.primaryColor });
-      gsap.to('#responsive-bar-middle', .25, { opacity: 1, backgroundColor: office.main.primaryColor });
-      gsap.to('#responsive-bar-bottom', .25, { y: 0, rotate: 0, backgroundColor: office.main.primaryColor });
+      gsap.to('#responsive-bar-top', .25, { y: 0, rotate: 0, backgroundColor: "#fff" });
+      gsap.to('#responsive-bar-middle', .25, { opacity: 1, backgroundColor: "#fff" });
+      gsap.to('#responsive-bar-bottom', .25, { y: 0, rotate: 0, backgroundColor: "#fff" });
     }
   },[visible, office.main.primaryColor])
 

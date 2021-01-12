@@ -8,6 +8,7 @@ import { useNavigateForm } from '../../_hooks';
 import PROPERTY_TYPE from '../../_constants/PROPERTY_TYPE.json';
 import COMMUNES from '../../_constants/CITIES.json';
 import { getSearchParams } from 'gatsby-query-params';
+import { SearchOutlined } from '@ant-design/icons';
 
 const Form = styled.form`
   width: 100%;
@@ -168,7 +169,7 @@ export default ({ block, shadow, noHome })=> {
           <Col xs={12} md={2}>
             <Hidden xs>
               <IconButton primary>
-                <img src="/icons/search.svg" alt="buscar" />
+                <SearchOutlined />
               </IconButton>
             </Hidden>
             <Visible xs>

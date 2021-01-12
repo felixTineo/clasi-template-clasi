@@ -27,7 +27,10 @@ export default ()=> {
     <Fragment>
       <Row nogutter>
         <Col xs={12} md={6}>
-          <Image src={state.description.background} alt="nuestra empresa" />
+          <Image
+            src={state.description.background} alt="nuestra empresa"
+            src={"/about-1.jpg"}
+          />
         </Col>
         <Col xs={12} md={6}>
           <Carousel>

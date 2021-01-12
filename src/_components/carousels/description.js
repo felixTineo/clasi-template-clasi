@@ -10,7 +10,7 @@ const DescriptioneCont = styled.div`
   color: #fff;
 `
 const DescriptionTitle = styled.h2`
-  
+  color: #b79c4e;
 `
 const DescriptionDescription = styled.p`
 

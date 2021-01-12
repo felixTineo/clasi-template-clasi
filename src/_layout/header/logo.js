@@ -5,16 +5,24 @@ import styled from 'styled-components';
 
 const Nav = styled.span`
   text-decoration: none;
+  position: relative;
+  z-index: 500;
   &:hover{
     color: #fff;
   }
   &:visited{
     color: #fff;
   }
+  @media(min-width: 768px){
+    z-index: auto;
+  }   
 `
 const LogoImg = styled.img`
-  max-width: 250px;
+    max-width: 150px;
   //max-height: 42px;
+  @media(min-width: 768px){
+    max-width: 250px;
+  }  
 `
 const LogoText = styled.span`
   font-size: 1.5rem;

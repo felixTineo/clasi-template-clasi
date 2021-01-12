@@ -84,7 +84,10 @@ export default ()=> {
             </Col>
             <Hidden xs>
               <Col md={6}>
-                <HeroImage src={state.about.banner.image} />
+                <HeroImage
+                  //src={state.about.banner.image}
+                  src={"/about-2.jpg"}
+                />
               </Col>
             </Hidden>
           </Row>
@@ -93,8 +96,8 @@ export default ()=> {
       <Container>
         <Row gutterWidth={128}>
           <Col xs={12} md={6}>
-            <TitleService>Ofrecemos un servicio ajustado a las necesidades de cada cliente</TitleService>
-            <SubTitleService>Estas son algunas de las cosas que podemos hacer por vos:</SubTitleService>
+            <TitleService>Ofrecemos asesoría profesional e integral</TitleService>
+            <SubTitleService>Nuestros servicios son diferenciadores, conócenos.</SubTitleService>
             <CarouselCont>
               <ServiceCarousel />
             </CarouselCont>

@@ -10,6 +10,10 @@ const MainCont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding-top: 84.78px;
+  @media(min-width: 768px){
+    padding-top: 0;
+  }    
 `
 
 const Title = styled.h1`
@@ -23,7 +27,7 @@ const Form = styled.form`
     width: 80%;
   }
 `
-const ImgCaptcha = styled.img`
+const ImgCaptcha = styled.div`
   width: 287px;
   height: 73.42px;
 `
@@ -74,7 +78,7 @@ export default ()=> {
                   />
                 </Col>
                 <Col xs={12}>
-                  <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
+                  <ImgCaptcha />
                   <ButtonContainer>
                     <Button primary block>Enviar</Button>
                   </ButtonContainer>              
