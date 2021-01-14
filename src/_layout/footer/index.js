@@ -37,11 +37,13 @@ const FooterRights = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
+  font-size: .6rem;
   @media(min-width: 768px){
     flex-direction: row;
     align-items: center;
+    font-size: .7rem;
   }    
 `
 const NavCont = styled.div`
@@ -240,8 +242,7 @@ export default ()=> {
       <FooterRightsCont>
         <Container>
           <FooterRights>
-            <li>2020 © Todos los derechos reservados</li>
-            <li>Desarrollado por <DevelopBy href="https://clasihome.com/" target="_blank">Clasihome</DevelopBy></li>
+            <li>Copiright© 2021 Benjamín Cousiño Propiedades - Todos los derechos reservados</li>
           </FooterRights>
         </Container>
       </FooterRightsCont>
