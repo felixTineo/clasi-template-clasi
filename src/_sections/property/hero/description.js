@@ -40,9 +40,10 @@ const SvgCont = styled.span`
 
 
 export default ({ description })=> {
-
+  
   return(
     <MainCont>
+      {console.log("DESCTIPTION", description)}
       <Row>
         <Col xs ={12}>
           <OperationCode>
@@ -59,7 +60,7 @@ export default ({ description })=> {
               <EnvironmentOutlined />
             </SvgCont>
             <span>
-              {description.ubication.address}
+              {description.ubication.commune}
             </span>
           </UbicationCont>
         </Col>
@@ -70,3 +71,4 @@ export default ({ description })=> {
     </MainCont>
   )
 }
+
