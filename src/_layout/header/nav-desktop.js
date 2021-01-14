@@ -21,10 +21,10 @@ const NavItem = styled.li`
   margin-left: ${props => props.noMargin ? 0 : "2.5rem"};
 `
 const NavLink = styled.span`
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, .8);
   transition: 250ms ease;
   &:hover{
-    color: #b79c4e;
+    color: #fff;
     text-decoration: underline !important;
   }
   &:visited{
@@ -87,10 +87,11 @@ export default ()=> {
           </Link>
         </NavItem>                          
       </NavBar>
-      <LoginButton href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}>
+{/*      <LoginButton href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}>
         <UserOutlined />
         <span style={{ marginLeft: 8 }}>Login</span>
       </LoginButton>
+*/}
   </MainCont>
   )
 }

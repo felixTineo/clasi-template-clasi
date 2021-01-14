@@ -11,11 +11,11 @@ const Footer = styled.footer`
   
 `
 const MainFooter = styled.div`
-  padding: 4rem 0;
+  padding: 2rem 0;
 `
 const FooterRightsCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
-  color: #b79c4e;
+  color: #fff;
   padding: 2rem 0;
   @media(min-width: 768px){
     padding: .5rem 0;
@@ -68,7 +68,7 @@ const NavLink = styled(Link)`
   }
 `
 const SvgIcon = styled.svg`
-  fill: ${props => props.social ? props.theme.main.primaryColor : "#b79c4e"};
+  fill: ${props => props.social ? props.theme.main.primaryColor : "#fff"};
   margin-right: .5rem;
 `
 const SocialNav = styled.ul`
@@ -99,7 +99,7 @@ const HeaderTitle = styled.h1`
 `
 
 const DevelopBy = styled.a`
-  color: #b79c4e !important;
+  color: #fff !important;
   font-weight: bold;
   margin-left: .5rem;
 `
@@ -202,7 +202,7 @@ export default ()=> {
             <Col xs={12} md={4}>
               <NavCont>
                 <Row>
-                  <Col xs={6} md={12}>
+                  <Col xs={4} md={12}>
                     <Hidden xs>
                         <BackTopCont>
                           <BackTop onClick={handleTop} href="#top">
@@ -214,7 +214,7 @@ export default ()=> {
                       Nosotros
                     </NavLink>
                   </Col>
-                  <Col xs={6} md={12}>
+                  <Col xs={4} md={12}>
                     <NavLink to={`/properties`}>
                       Propiedades
                     </NavLink>                  
@@ -226,7 +226,7 @@ export default ()=> {
                       </NavLink>                  
                     </Col>
 </Visible>*/}
-                  <Col xs={6} md={12}>
+                  <Col xs={4} md={12}>
                     <NavLink to={`/contact`}>
                       Contacto
                     </NavLink>                  

@@ -74,7 +74,7 @@ export default ({ data })=> {
     <Layout data={JSON.parse(data.initial.data)}>
       <Hero state={dataQuery}/>
       <PropertyUser state={dataQuery} />
-      <Ubication coordinates={dataQuery.ubication.location.coordinates} />
+      {/*<Ubication coordinates={dataQuery.ubication.location.coordinates} />*/}
       <Properties />
       <Visible xs>
         <Container>

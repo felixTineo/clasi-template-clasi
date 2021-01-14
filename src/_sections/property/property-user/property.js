@@ -52,7 +52,7 @@ export default ({ description })=> {
         </Hidden>
         <Col xs={12}>
           <PublicObs>
-            {description.publicObservation}
+            {description.publicObservations}
           </PublicObs>
         </Col>
         <Col xs={12}>
@@ -62,7 +62,7 @@ export default ({ description })=> {
               <CharsCont>
                 {
                   //charsGeneral.slice(0, 7).map((c) => <CharItem key={c.id} {...c} />)
-                  description.characteristics.map((c) => <CharItem key={c.id} {...c} />)
+                  description.characteristics.slice(0, description.characteristics.length / 2 ).map((c) => <CharItem key={c.id} {...c} />)
                 }
               </CharsCont>
             </Col>
@@ -70,13 +70,13 @@ export default ({ description })=> {
               <CharsCont>
                 {
                   //charsGeneral.slice(7, charsGeneral.length).map((c) => <CharItem key={c.id} {...c} />)
-                  [].map((c) => <CharItem key={c.id} {...c} />)
+                  description.characteristics.slice(description.characteristics.length / 2, description.characteristics.length).map((c) => <CharItem key={c.id} {...c} />)
                 }        
               </CharsCont>      
             </Col>            
           </Row>
         </Col>
-        <Col xs={12}>
+{/*        <Col xs={12}>
           <h2 style={{ color: "#002438" }}>Otros servicios</h2>
           <Row>
             <Col xs={12} md={6}>
@@ -94,7 +94,7 @@ export default ({ description })=> {
               </CharsCont>                    
             </Col>            
           </Row>
-        </Col>        
+              </Col>        */}
       </Row>
     </MainCont>
   )

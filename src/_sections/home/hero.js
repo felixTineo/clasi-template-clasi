@@ -11,14 +11,13 @@ const MainCont = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  //background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(${props => props.theme.home.hero.background});
-  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url("/foo.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(${props => props.theme.home.hero.background});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   @media(min-width: 768px){
-    min-height: calc(100vh - 138.64px);
+    min-height: calc(100vh - 130.45px);
   }
 `
 
@@ -54,12 +53,12 @@ export default ()=> {
         {state.home.hero.title}
       </Title>
       <FormProperty />
-      <DownButton href="#properties">
+{/*      <DownButton href="#properties">
         <SvgCont width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="15" cy="15" r="14.5"/>
           <path d="M19.2426 14L15 18.2427L10.7574 14" strokeLinecap="round" strokeLinejoin="round"/>
         </SvgCont>
-      </DownButton>
+  </DownButton>*/}
     </MainCont>
   )
 }

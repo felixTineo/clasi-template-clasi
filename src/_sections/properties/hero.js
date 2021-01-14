@@ -42,6 +42,7 @@ const ButtonFilter = styled.button`
   align-items: center;
   text-decoration: underline;
   transition: 250ms ease;
+  font-size: 1rem;
   &:hover{
     color: ${props => props.theme.main.primaryColor};
   }

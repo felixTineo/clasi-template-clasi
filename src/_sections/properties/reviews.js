@@ -18,6 +18,7 @@ const TitleQuoteCont = styled.div`
 const SvgCont = styled.svg`
   margin: 2rem 0;
   fill: ${props => props.theme.main.primaryColor};
+  width: 50px;
 `
 const QuoteCarouselCont = styled.div`
   padding-top: 0rem;

@@ -29,7 +29,7 @@ export default ()=> {
   return(
     <MainCont>
       <Title>
-        {state.title}
+        Encuentranos en Vitacura
       </Title>
       {
         lat && (

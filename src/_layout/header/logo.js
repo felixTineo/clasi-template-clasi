@@ -21,7 +21,7 @@ const LogoImg = styled.img`
     max-width: 150px;
   //max-height: 42px;
   @media(min-width: 768px){
-    max-width: 250px;
+    max-width: 300px;
   }  
 `
 const LogoText = styled.span`

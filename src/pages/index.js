@@ -11,7 +11,7 @@ export default function Home({ data }) {
     <Layout data={JSON.parse(data.initial.data)}>
       <Hero />
       <Properties />
-      <About />
+      {/*<About />*/}
       <Contact />
     </Layout>
   )

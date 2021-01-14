@@ -12,10 +12,21 @@ const MainCont = styled.div`
   border: 1px solid #EBEBEB;
   height: 100%;
 `
+const Title = styled.h2`
+  text-align: center;
+  @media(min-width: 768px){
+    text-align: left;
+  }
+`
 const UserCont = styled.div`
   margin-top: 2rem;
   display: flex;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  @media(min-width: 768px){
+    flex-direction: row;
+  }
 `
 const Avatar = styled.img`
   object-fit: cover;
@@ -36,13 +47,40 @@ const Avatar = styled.img`
     flex-shrink: 1;
   }
 `
+const NoAvatar = styled.div`
+  min-height: 60px;
+  min-width: 60px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  background-color: ${props => props.theme.main.primaryColor};
+  color: #fff;
+  border: 4px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  @media(min-width: 768px){
+    font-size: 2rem;
+    min-height: 76px;
+    min-width: 76px;
+    height: 120px;
+    width: 120px;
+  }
+`
 const UserInfoCont = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0 1rem;
+  text-align: center;
+  @media(min-width: 768px){
+    text-align: left;
+  }
 `
 const UserInfoItem = styled.li`
-  font-weight: bold;
+  //font-weight: bold;
 `
 const ContactForm = styled.form`
   margin-top: 3rem;
@@ -80,12 +118,22 @@ export default ({ description })=> {
 
   return(
     <MainCont>
-      <h2>Contacto</h2>
+      <Title>Contacto</Title>
       <UserCont>
-        <Avatar src={user.avatar} alt={user.lastName} />
+      {
+          user.Avatar?(
+            <Avatar src={user.avatar} alt={user.lastName} />
+          )
+          :(
+            <NoAvatar>
+              <span>{user.firstName.charAt(0).toUpperCase()}</span>
+              <span>{user.lastName.charAt(0).toUpperCase()}</span>
+            </NoAvatar>
+          )
+        }
         <UserInfoCont>
           <UserInfoItem>
-            {`${user.firstName} ${user.lastName} - ${user.jobTitle}`}
+            {`${user.firstName} ${user.lastName} - ${user.position}`}
           </UserInfoItem>
           <UserInfoItem>
             {`${user.phone.countryCode} ${user.phone.areaCode} ${user.phone.phoneNumber}`}

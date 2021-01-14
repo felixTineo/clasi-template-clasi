@@ -6,7 +6,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pu
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const RevieweCont = styled.div`
-  padding: 2rem;
+  //padding: 1rem;
 `
 const ReviewAuthor = styled.p`
   font-weight: bold;
@@ -38,7 +38,7 @@ export default ()=> {
       <Hidden xs>
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={60}
+          naturalSlideHeight={40}
           //isIntrinsicHeight={true}
           totalSlides={items.length}
           visibleSlides={1}

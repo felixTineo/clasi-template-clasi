@@ -8,7 +8,6 @@ export default styled.textarea`
   width: 100%;
   border: none;
   font-size: 1rem;
-  font-family: "Relaway";
   margin-bottom: 1rem;
   border: ${props => props.gray ? "1px solid #EBEBEB" : "none" };
   @media(min-width: 768px){

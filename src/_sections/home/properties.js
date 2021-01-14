@@ -36,7 +36,7 @@ export default ()=> {
               image={state.bannerImage}
               buttonText={state.buttonText}
               title={state.footer}
-              icon="/icons/gold-marker.svg"
+              icon="/icons/marker.svg"
               onClick={()=> navigate("/properties")}
             />
           </Col>

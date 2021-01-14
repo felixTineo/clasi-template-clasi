@@ -8,7 +8,8 @@ const MainCont = styled.div`
   padding: .5rem 0;
   font-size: 14px;
   @media(min-width: 768px){
-    background-color: #b79c4e;
+    background-color: #606060;
+    color: #fff;
     justify-content: flex-end;
   }  
 `

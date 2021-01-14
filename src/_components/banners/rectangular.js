@@ -13,7 +13,7 @@ const BannerCont = styled.div`
   background-size: cover;
 `
 const Title = styled.p`
-  color: #b79c4e;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;

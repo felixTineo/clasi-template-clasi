@@ -29,11 +29,10 @@ const Form = styled.form`
 `
 const ImgCaptcha = styled.div`
   width: 287px;
-  height: 73.42px;
+  height: 140px;
 `
 const MailSpan = styled.span`
   color: ${props => props.theme.main.primaryColor};
-  text-decoration: underline;
 `
 const SubTitleFooter = styled(SubTitle)`
   margin-top: 4rem;
@@ -54,7 +53,7 @@ export default ()=> {
     <Container>
       <MainCont>
         <Title>
-          ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
+          Contactanos
         </Title>
         <SubTitle>
           Envienos un mensaje y uno de nuestros asesores se pondra en contacto a la brevedad
@@ -104,7 +103,7 @@ export default ()=> {
                 </Col>
                 <Col xs={12}>
                   <SubTitleFooter>
-                    También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+                    También puede escribirnos a: <MailSpan>contacto@benjamincousinopropiedades.cl</MailSpan>
                   </SubTitleFooter>
                 </Col>
               </Row>
