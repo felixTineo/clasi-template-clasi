@@ -10,7 +10,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 600px;
+  //height: 580px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem;
@@ -36,7 +36,7 @@ const CardImage = styled.div`
   padding-top: 75%;
 `
 const CardInfo = styled.div`
-  padding: 1rem 1rem 1.5rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
   width: 100%;
   height: 100%;
   display: flex;
@@ -63,16 +63,24 @@ const CardPrice = styled.li`
 `
 const CardOperation = styled.span`
   font-weight: bold;
+  text-transform: capitalize;
 `
 const CardCharacteristics = styled.ul`
   //list-style: none;
-  padding: 1rem;
-  padding-top: 2rem;
+  padding: 2rem 1rem;
   color: #919191;
 `
 
 const CharItem = styled.li`
   margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  span{
+    margin-left: .5rem;
+  }
+  img{
+    width: 20px;
+  }
 `
 const Divider = styled.span`
   height: 1px;
@@ -88,29 +96,43 @@ export default ({
   code,
   ubication,
   characteristics,
-  currency,
+  operation,
+  currency
 })=> {
   const builderId = useContext(context).builderId;
   return(
     <Link to={`/property?builderId=${builderId}&propertyId=${_id}`} title="Ver propiedad">
+      {console.log("CHARACTERISTICS", characteristics)}
     <CardCont>
       <CardImage src={mainImage} />
       <CardInfo>
         <CardTitleCont>
-          <CardTitle>{truncate(title, 40)}</CardTitle>
-          <CardPrice>{currency} ${value.toLocaleString()}</CardPrice>
+          <CardTitle>{truncate(title, 30)}</CardTitle>
+          <CardPrice>{currency} ${value}</CardPrice>
           <li>
-            <CardOperation>Venta - </CardOperation>
+            <CardOperation>{operation.toLowerCase()} - </CardOperation>
             <span>cod {code}</span>
           </li>
         </CardTitleCont>
         <Divider />
         <CardCharacteristics>
-          {/*<CharItem>{truncate(ubication.address, 30)}</CharItem>*/}
           {
-            characteristics.slice(0, 2).map((char, index) => (
+            characteristics.filter(char => (
+              char.name === "Superficie total" ||
+              char.name === "Superficie útil" ||
+              char.name === "Habitaciones" ||
+              char.name === "Baños" ||
+              char.name === "Estacionamientos"
+
+            ) ).map((char, index) => (
               <CharItem key={index}>
-                <span>{char.name} {char.value} {char.name === "Sup. Total" && "mt2"}</span>
+                {/*
+                  char.name === "Superficie total" && <img src="/icons/surface.svg" /> ||
+                  char.name === "Superficie útil" && <img src="/icons/surface.svg" />  ||
+                  char.name === "Habitaciones" && <img src="/icons/rooms.svg" /> ||
+                  char.name === "Baños" && <img src="/icons/bath.svg" />
+                */}
+                <span>{char.name} {char.value} {char.name === "Superficie total" && "mt2" || char.name === "Superficie útil" && "mt2"}</span>
               </CharItem>
             ))
           }
