@@ -58,7 +58,7 @@ export default ({ description })=> {
           {
             description.currency === "UF" &&
             <Price>
-              {`CLP ${(description.value * 29.079).toLocaleString()}`}
+              {`CLP ${Math.floor(description.value * 29.079).toLocaleString()}`}
             </Price>            
           }
           {/*<UbicationCont>
