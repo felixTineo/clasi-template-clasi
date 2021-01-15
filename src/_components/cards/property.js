@@ -97,7 +97,7 @@ export default ({
       <CardImage src={mainImage} />
       <CardInfo>
         <CardTitleCont>
-          <CardTitle>{truncate(title, 30)}</CardTitle>
+          <CardTitle>{truncate(title, 40)}</CardTitle>
           <CardPrice>{currency} ${value.toLocaleString()}</CardPrice>
           <li>
             <CardOperation>Venta - </CardOperation>
@@ -106,7 +106,7 @@ export default ({
         </CardTitleCont>
         <Divider />
         <CardCharacteristics>
-          <CharItem>{truncate(ubication.address, 30)}</CharItem>
+          {/*<CharItem>{truncate(ubication.address, 30)}</CharItem>*/}
           {
             characteristics.slice(0, 2).map((char, index) => (
               <CharItem key={index}>
