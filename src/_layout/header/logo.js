@@ -18,7 +18,7 @@ const Nav = styled.span`
   }   
 `
 const LogoImg = styled.img`
-    max-width: 150px;
+    max-width: ${props => props.footer ? "250px" : "150px"};
   //max-height: 42px;
   @media(min-width: 768px){
     max-width: 300px;
@@ -28,7 +28,7 @@ const LogoText = styled.span`
   font-size: 1.5rem;
 `
 
-export default ({ dark })=> {
+export default ({ dark, footer })=> {
   const state = useContext(Context);
   return(
     <Link to={`/`}>
@@ -37,7 +37,7 @@ export default ({ dark })=> {
         {
           state.main.logo.isImage
           ?(
-            <LogoImg src={ dark ? state.main.logoDark.value : state.main.logo.value} />
+            <LogoImg footer={footer} src={ dark ? state.main.logoDark.value : state.main.logo.value} />
           )
           :(
             <LogoText>

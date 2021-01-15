@@ -10,7 +10,7 @@ const MainCont = styled.div`
   border-right: none;
 `
 const PublicObs = styled.p`
-  font-weight: bold;
+  //font-weight: bold;
   margin: 2rem 0;
 `
 

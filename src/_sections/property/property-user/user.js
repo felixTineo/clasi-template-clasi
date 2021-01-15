@@ -108,6 +108,7 @@ const IconButton = styled.a`
 
 export default ({ description })=> {
   //const description = useContext(Context).singleProperty;
+  const office = useContext(Context).office;
   const user = {...description._comercialUser[0], ...description._comercialUser_person[0]};
   const [message, setMessage] = useReducer((current, next) => ({ ...current, ...next }),{
     name: '',
@@ -133,7 +134,7 @@ export default ({ description })=> {
         }
         <UserInfoCont>
           <UserInfoItem>
-            {`${user.firstName} ${user.lastName} - ${user.position}`}
+            {`${user.firstName} ${user.lastName}`}
           </UserInfoItem>
           <UserInfoItem>
             {`${user.phone.countryCode} ${user.phone.areaCode} ${user.phone.phoneNumber}`}
@@ -196,7 +197,7 @@ export default ({ description })=> {
             </ContactFormButtons>
           </Col>          
           <Col xs={12}>
-            <IconButton href={`https://api.whatsapp.com/send?phone=${user.phone ? user.phone.countryCode + user.phone.areaCode + user.phone.phoneNumber : user.mobile ? user.mobile.countryCode + user.mobile.areaCode + user.mobile.phoneNumber : ''}&text=${message.message}`} alt="send whatsapp message">
+            <IconButton href={`https://api.whatsapp.com/send?phone=${office.phone}&text=${message.message}`} alt="send whatsapp message">
               <span>¿Deseas contactarme por teléfono o enviarme un whatsapp?</span>
               <PlusCircleOutlined style={{ marginRight: 8, fontSize: 26 }} />
             </IconButton>

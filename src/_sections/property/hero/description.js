@@ -53,16 +53,22 @@ export default ({ description })=> {
             {description.title}
           </Title>
           <Price>
-            {`${description.currency} ${description.value}`}
+            {`${description.currency} ${description.value.toLocaleString()}`}
           </Price>
-          <UbicationCont>
+          {
+            description.currency === "UF" &&
+            <Price>
+              {`CLP ${(description.value * 29.079).toLocaleString()}`}
+            </Price>            
+          }
+          {/*<UbicationCont>
             <SvgCont version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
               <EnvironmentOutlined />
             </SvgCont>
             <span>
               {description.ubication.commune}
             </span>
-          </UbicationCont>
+          </UbicationCont>*/}
         </Col>
         <Visible xs>
           <InteractionButtons />

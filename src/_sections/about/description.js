@@ -4,6 +4,10 @@ import { Container, Row, Col } from 'react-grid-system';
 import styled from 'styled-components';
 import { DescCarousel } from '../../_components/carousels';
 
+const MainCont = styled.div`
+  
+`
+
 const Image = styled.img`
   object-position: center;
   object-fit: cover;
@@ -24,7 +28,7 @@ const CarouselInnerCont = styled.div`
 export default ()=> {
   const state = useContext(Context).about;
   return(
-    <Fragment>
+    <MainCont>
       <Row nogutter>
         <Col xs={12} md={6}>
           <Image
@@ -40,6 +44,6 @@ export default ()=> {
           </Carousel>
         </Col>        
       </Row>
-    </Fragment>
+    </MainCont>
   )
 }
