@@ -168,7 +168,7 @@ export default ({ block, shadow, noHome })=> {
           }
           <Col xs={12} md={2}>
             <Hidden xs>
-              <IconButton primary>
+              <IconButton>
                 <SearchOutlined />
               </IconButton>
             </Hidden>

@@ -4,9 +4,13 @@ import { Container } from 'react-grid-system';
 import Context from '../../_context';
 
 const MainCont = styled.section`
-  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${props => props.theme.about.hero.background});
+  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("/about-hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
+  @media(min-width: 768px){
+    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("/about-hero.jpg");
+  }
   
 `
 const InnerCont = styled.div`

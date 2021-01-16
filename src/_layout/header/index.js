@@ -5,6 +5,16 @@ import RateBar from './rate-bar';
 import NavDesktop from './nav-desktop';
 import NavMovil from './nav-movil';
 
+const MyContainer = styled.div`
+    box-sizing: border-box;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1240px;
+`
+
 const MainCont = styled.header`
   color: #fff;
   position: fixed;
@@ -26,9 +36,9 @@ export default ()=> {
       <Hidden xs>
         <MainCont>
           <RateBar />
-          <Container>
+          <MyContainer>
             <NavDesktop />
-          </Container>
+          </MyContainer>
         </MainCont>
       </Hidden>
       <Visible xs>

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import context from '../../_context';
 import Link from '../link';
 import styled from 'styled-components';
-import { truncate } from '../../_util';
+import { truncate, priceFormat } from '../../_util';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -107,8 +107,8 @@ export default ({
       <CardImage src={mainImage} />
       <CardInfo>
         <CardTitleCont>
-          <CardTitle>{truncate(title, 30)}</CardTitle>
-          <CardPrice>{currency} ${value}</CardPrice>
+          <CardTitle>{truncate(title, 50)}</CardTitle>
+          <CardPrice>{currency} {currency !== "UF" && "$"}{priceFormat(value)}</CardPrice>
           <li>
             <CardOperation>{operation.toLowerCase()} - </CardOperation>
             <span>cod {code}</span>

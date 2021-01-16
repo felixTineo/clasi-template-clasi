@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Row, Col, Visible } from 'react-grid-system';
 import InteractionButtons from '../interaction-buttons';
 import { EnvironmentOutlined } from '@ant-design/icons';
+import { priceFormat } from '../../../_util';
 
 const MainCont = styled.div`
   background-color: #fff;
@@ -20,6 +21,7 @@ const Title = styled.h1`
   font-size: 50px;
 `
 const Price = styled(Title)`
+  font-family: 'Lato', sans-serif;
   color: ${props => props.theme.main.primaryColor};
 `
 const UbicationCont = styled.div`
@@ -53,12 +55,13 @@ export default ({ description })=> {
             {description.title}
           </Title>
           <Price>
-            {`${description.currency} ${description.value.toLocaleString()}`}
+            {`${description.currency} ${priceFormat(description.value)}`}
           </Price>
           {
             description.currency === "UF" &&
             <Price>
-              {`CLP ${Math.floor(description.value * 29.079).toLocaleString()}`}
+              {`CLP ${priceFormat(description.value * 29.079)}`}
+              
             </Price>            
           }
           {/*<UbicationCont>
