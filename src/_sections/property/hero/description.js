@@ -60,7 +60,7 @@ export default ({ description })=> {
           {
             description.currency === "UF" &&
             <Price>
-              {`CLP ${priceFormat(description.value * 29.079)}`}
+              {`CLP ${priceFormat(description.value * 29079)}`}
               
             </Price>            
           }
