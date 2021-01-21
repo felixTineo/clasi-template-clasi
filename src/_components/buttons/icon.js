@@ -13,16 +13,16 @@ export default styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.primary ? props.theme.main.primaryColor : "transparent"};
-  border-color: ${props => props.primary ? props.theme.main.primaryColor : "#fff"};
+  background-color: ${props => props.primary ? "#000" : "transparent"};
+  border-color: ${props => props.primary ? "#000" : "#fff"};
   color: #FFFFFF;
   transition: 250ms ease;
   &:hover{
-    background-color: ${props => props.primary ? hexToHsl(props.theme.main.primaryColor, 55) : "#fff" };
+    background-color: ${props => props.primary ? hexToHsl("#000000", 10) : "#fff" };
     color: ${props => props.primary ? "#fff" : props.theme.main.primaryColor};
   };
   &:active{
-    background-color: ${props => props.primary ? hexToHsl(props.theme.main.primaryColor, 45) : hexToHsl("#ffffff", 90) };
+    background-color: ${props => props.primary ? "#000" : hexToHsl("#ffffff", 90) };
     color: ${props => props.primary ? "#fff" : props.theme.main.primaryColor};
   }  
 `

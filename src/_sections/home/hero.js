@@ -11,11 +11,11 @@ const MainCont = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url("${props => props.theme.home.hero.background}");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url("${props => props.theme.home.hero.background}");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: #fff !important;
   @media(min-width: 768px){
     min-height: 100vh;
   }
@@ -26,9 +26,12 @@ const Title = styled.h1`
   max-width: 95%;
   font-size: 32px;
   text-align: center;
+  text-shadow: rgba(255, 255, 255, 0.6) 1px 1px 1px, rgba(0, 0, 0, 0.6) -1px -1px 1px;
+  font-family: 'Montserrat', sans-serif;
   @media(min-width: 768px){
     max-width: 50%;
-    font-size: 50px;
+    font-size: 66px;
+    letter-spacing: .1px;
   }
 `
 const DownButton = styled.a`

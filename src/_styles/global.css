@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 @font-face {
   font-family: "Proxima Nova";
@@ -6,9 +6,15 @@
 }
 
 html{
-  font-size: 16px;
+  font-size: 18px;
   scroll-behavior: smooth;
   background-color: #F2F1F0;
+}
+
+@media(max-width: 600px){
+  html{
+    font-size: 14px;
+  }
 }
 
 *{
@@ -16,7 +22,7 @@ html{
 }
 
 body{
-  font-family: "Proxima Nova", 'Raleway', sans-serif;
+  font-family: "Proxima Nova", 'Montserrat', sans-serif;
   padding: 0;
   margin: 0;
   color: #212121;
@@ -27,14 +33,20 @@ ul{
   padding: 0;
   margin: 0;
 }
+button{
+  font-size: 1rem;
+}
 
 button, input, textarea{
   outline: none;
-  font-family: "Proxima Nova", 'Raleway', sans-serif;
+  font-family: "Proxima Nova", 'Montserrat', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6{
   font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  font-family: "Proxima Nova", 'Montserrat', sans-serif;
+  //color: #2A2A2A !important;
 }
 
 h1{

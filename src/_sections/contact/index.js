@@ -5,7 +5,7 @@ import { Input, Textarea } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
 
 const MainCont = styled.div`
-  margin-top: 116.16px;
+  margin-top: 145.39px;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ export default ()=> {
     <Container>
       <MainCont>
         <Title>
-          ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
+          ¿Dudas? ¿Consultas? Estamos aquí para ayudarte
         </Title>
         <SubTitle>
           Envienos un mensaje y uno de nuestros asesores se pondra en contacto a la brevedad
@@ -109,7 +109,7 @@ export default ()=> {
                 </Visible>
                 <Col xs={12}>
                   <SubTitleFooter>
-                    También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+                    También puede escribirnos a <MailSpan>contacto@lwpropiedades.cl</MailSpan>
                   </SubTitleFooter>
                 </Col>
               </Row>

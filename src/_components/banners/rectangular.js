@@ -6,7 +6,7 @@ import { Button } from '../buttons';
 const BannerCont = styled.div`
   margin-top: 2rem;
   padding: 4rem 2rem;
-  background-color: ${props => props.theme.main.primaryColor};
+  background-color: #000;
   background-image: ${props => props.image ? `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props.image})` : ""};
   background-position: center;
   background-repeat: no-repeat;

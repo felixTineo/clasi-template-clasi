@@ -14,7 +14,7 @@ const MainFooter = styled.div`
   padding: 4rem 0;
 `
 const FooterRightsCont = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
+  background-color: #000;
   color: ${props => props.theme.main.secondaryColor};
   padding: 2rem 0;
   @media(min-width: 768px){
@@ -89,7 +89,7 @@ const SocialItem = styled.li`
 const Logo = styled.img`
   object-fit: cover;
   object-position: center;
-  max-width: 180px;
+  max-width: 250px;
 `
 
 const HeaderTitle = styled.h1`
@@ -169,8 +169,11 @@ export default ()=> {
               <p>Contacto:</p>
               <OfficeInfoCont>
                 <OfficeInfo>
-                  {office.address}
+                  {office.address.split(",")[0]}
                 </OfficeInfo>
+                <OfficeInfo>
+                  {office.address.split(",")[1]}
+                </OfficeInfo>                
                 <OfficeInfo>
                   {office.phone}
                 </OfficeInfo>
@@ -268,8 +271,7 @@ export default ()=> {
       <FooterRightsCont>
         <Container>
           <FooterRights>
-            <li>2020 © Todos los derechos reservados</li>
-            <li>Desarrollado por <DevelopBy href="https://clasihome.com/" target="_blank">Clasihome</DevelopBy></li>
+            <li>Derechos reservados: LW Propiedades® es marca registrada (INAPI n°reg. 13288873)</li>
           </FooterRights>
         </Container>
       </FooterRightsCont>

@@ -17,6 +17,9 @@ const HistoryCont = styled.div`
 `
 const Title = styled.h2`
   color: ${props => props.theme.main.primaryColor};
+  letter-spacing: 0.35px;
+  color: #2a2a2a;
+  font-size: 28px;
 `
 const Description = styled.div`
 

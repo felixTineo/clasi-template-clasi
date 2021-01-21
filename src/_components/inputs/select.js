@@ -31,7 +31,7 @@ const Select = styled.select`
   height: 44px;
   width: 100%;
   background-image: ${props => props.primary
-  ? `url('data:image/svg+xml;utf8,<svg stroke="%23${props.theme.main.primaryColor.substring(1)}" width="28" height="6.633" fill="none" version="1.1" viewBox="0 0 28 6.633" xmlns="http://www.w3.org/2000/svg"><path d="m11.368 0.63261-5.3678 5.3678-5.3678-5.3678"/></svg>')`
+  ? `url('data:image/svg+xml;utf8,<svg stroke="%23${"#000000".substring(1)}" width="28" height="6.633" fill="none" version="1.1" viewBox="0 0 28 6.633" xmlns="http://www.w3.org/2000/svg"><path d="m11.368 0.63261-5.3678 5.3678-5.3678-5.3678"/></svg>')`
   : `url('data:image/svg+xml;utf8,<svg stroke="%23FFFFFF" width="28" height="6.633" fill="none" version="1.1" viewBox="0 0 28 6.633" xmlns="http://www.w3.org/2000/svg"><path d="m11.368 0.63261-5.3678 5.3678-5.3678-5.3678"/></svg>')`};
   background-repeat: no-repeat;
   background-position: right center;

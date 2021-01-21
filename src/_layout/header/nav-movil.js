@@ -103,18 +103,18 @@ export default ()=> {
                 Inicio
               </NavLink>
             </Link>
-          </NavItem>          
-          <NavItem>
-            <Link to={`/about`}>
-              <NavLink>
-                Nosotros
-              </NavLink>
-            </Link>
           </NavItem>
           <NavItem>
             <Link to={`/properties`}>
               <NavLink>
                 Propiedades
+              </NavLink>
+            </Link>
+          </NavItem>                    
+          <NavItem>
+            <Link to={`/about`}>
+              <NavLink>
+                Nosotros
               </NavLink>
             </Link>
           </NavItem>

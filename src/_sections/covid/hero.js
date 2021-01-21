@@ -5,9 +5,14 @@ import Context from '../../_context';
 
 const MainCont = styled.section`
   margin-top: 116.16px;
-  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("/covid.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/covid.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  text-shadow: rgba(255, 255, 255, 0.6) 1px 1px 1px, rgba(0, 0, 0, 0.6) -1px -1px 1px;
+  @media(min-width: 768px){
+    font-size: 66px;
+    letter-spacing: .1px;
+  }
   
 `
 const InnerCont = styled.div`

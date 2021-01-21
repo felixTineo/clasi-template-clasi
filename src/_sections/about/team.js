@@ -16,6 +16,7 @@ const Title = styled.h2`
   font-weight: 300;
   margin-bottom: 7rem;
   text-align: center;
+  color: #000;
 `
 const Card = styled.div`
   display: flex;

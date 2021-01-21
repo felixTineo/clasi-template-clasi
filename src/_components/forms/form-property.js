@@ -40,13 +40,14 @@ const FormButtonCont = styled.div`
 `
 const FormButton = styled.button`
   margin-left: ${props => props.noMargin ? "0" : "2rem"};
-  color: ${props => props.active ? "#fff" : "rgba(255, 255, 255, .6)"};
+  color: #fff;
   font-weight: bold;
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
   border-color: ${props => props.active && props.theme.main.primaryColor};
   transition: 250ms ease;
+  text-shadow: rgba(0, 0, 0, .5) 1px 1px 1px, rgba(0, 0, 0, .5) -1px -1px 1px;
   cursor: pointer;
   @media(min-width: 768px){
     font-size: 1.2rem;

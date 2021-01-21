@@ -3,6 +3,7 @@ import context from '../../_context';
 import Link from '../link';
 import styled from 'styled-components';
 import { truncate } from '../../_util';
+import { useGetIndicators } from '../../_hooks';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -10,7 +11,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 580px;
+  height: 640px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem;
@@ -34,6 +35,17 @@ const CardImage = styled.div`
   background-repeat: none;
   width: 100%;
   padding-top: 75%;
+  position: relative;
+`
+const Commune = styled.p`
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5rem;
+  color: #fff;
+  background-color: #000;
+  margin: 0;
+  text-transform: uppercase;
 `
 const CardInfo = styled.div`
   padding: 1rem 1rem 1.5rem 1rem;
@@ -41,7 +53,7 @@ const CardInfo = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   color: #212121;
 `
 const CardTitleCont = styled.ul`
@@ -100,26 +112,29 @@ export default ({
   currency
 })=> {
   const builderId = useContext(context).builderId;
+  const { loading, error, data } = useGetIndicators();
   return(
     <Link to={`/property?builderId=${builderId}&propertyId=${_id}`} title="Ver propiedad">
       {console.log("CHARACTERISTICS", characteristics)}
     <CardCont>
-      <CardImage src={mainImage} />
+      <CardImage src={mainImage}>
+        <Commune>
+          {ubication.commune}
+        </Commune>
+      </CardImage>
       <CardInfo>
+        {console.log("INDICADORES",data)}
         <CardTitleCont>
-          <CardTitle>{truncate(title, 30)}</CardTitle>
-          <CardPrice>{currency} ${value}</CardPrice>
+          <CardTitle>{truncate(title, 50)}</CardTitle>
+          <CardPrice>{"UF "}{ currency === "UF" ? " " + value.toLocaleString() : data && (value / data.uf).toLocaleString()}</CardPrice>
+          <CardPrice>{"CLP $"}{ currency === "CLP" ? value.toLocaleString() : data && (value * data.uf).toLocaleString()}</CardPrice>
           <li>
-            <CardOperation>{operation.toLowerCase()} - </CardOperation>
+            <CardOperation>{operation.charAt(0).toUpperCase()} - </CardOperation>
             <span>cod {code}</span>
           </li>
         </CardTitleCont>
         <Divider />
         <CardCharacteristics>
-          <CharItem>
-            <img src="/icons/site.svg" />
-            <span>{truncate(ubication.commune, 30)}</span>
-          </CharItem>
           {
             characteristics.filter(char => (
               char.name === "Superficie total" ||

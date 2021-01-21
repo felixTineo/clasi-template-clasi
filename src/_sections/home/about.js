@@ -11,7 +11,7 @@ const MainCont = styled.section`
   padding-bottom: 6rem;
 `
 const HeroInfoCont = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
+  background-color: #000;
   min-height: calc(50vh - 4rem);
   color: #ffffff;
 `
@@ -22,6 +22,7 @@ const DescriptionCont = styled.div`
   align-items: center;  
   height: 100%;
   padding: 4rem 0;
+  text-align: justify;
 `
 const Title = styled.h2`
   font-size: 40px;
@@ -76,7 +77,7 @@ export default ()=> {
                 <Description>
                   {state.about.banner.subTitle}
                 </Description>
-                <Button block onClick={()=> navigate("/about")}>
+                <Button block onClick={()=> navigate("/about")} primary>
                   {state.about.banner.buttonText}
                 </Button>
               </DescriptionCont>

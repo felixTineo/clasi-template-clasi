@@ -15,6 +15,9 @@ const HistoryCont = styled.div`
   justify-content: center;
   align-items: flex-start;
   height: 100%;
+  li{
+    line-height: 2rem;
+  }
 `
 const Title = styled.h2`
   color: ${props => props.theme.main.primaryColor};
@@ -32,7 +35,7 @@ const Image = styled.img`
 `
 const Footer = styled.div`
   text-align: center;
-  width: 95%;
+  //width: 95%;
   a{
     color: ${props => props.theme.main.primaryColor};
   }

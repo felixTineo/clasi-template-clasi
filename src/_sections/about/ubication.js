@@ -10,7 +10,7 @@ const MainCont = styled.section`
 `
 const Title = styled.p`
   background-color: ${props => props.theme.main.primaryColor};
-  color: #fff;
+  color: #000;
   padding: 2rem;
   text-align: center;
   font-weight: bold;

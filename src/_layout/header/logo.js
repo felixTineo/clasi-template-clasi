@@ -13,7 +13,7 @@ const Nav = styled.span`
   }
 `
 const LogoImg = styled.img`
-  max-width: 180px;
+  max-width: 250px;
   //max-height: 42px;
 `
 const LogoText = styled.span`

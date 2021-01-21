@@ -79,7 +79,7 @@ export default ()=> {
             <img src="/icons/chevron-right.svg" alt="chevron"/>
           </ButtonNext>
           {
-            Array(itemsDesk.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)
+            Array(itemsDesk.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: "#000" }} className="carousel-text-dot" key={i} slide={i} />)
           }
         </CarouselProvider>
       </Hidden>
@@ -102,7 +102,7 @@ export default ()=> {
             }
           </Slider>
             {
-              Array(itemsMovil.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)
+              Array(itemsMovil.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: "#000" }} className="carousel-text-dot" key={i} slide={i} />)
             }          
           </CarouselProvider>
       </Visible>

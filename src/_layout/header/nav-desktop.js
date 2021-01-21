@@ -9,6 +9,7 @@ import { UserOutlined } from '@ant-design/icons';
 
 const MainCont = styled.nav`
   padding: .8rem 0;
+  padding-top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,14 +20,14 @@ const NavBar = styled.ul`
   list-style: none;
 `
 const NavItem = styled.li`
-  margin-left: ${props => props.noMargin ? 0 : "2.5rem"};
+  margin-left: ${props => props.noMargin ? 0 : "1.8rem"};
 `
 const NavLink = styled.span`
   color: #212121;;
   transition: 250ms ease;
   text-decoration: none !important;
   &:hover{
-    color: ${props => props.theme.main.primaryColor};;
+    color: #008AFC;
   }
   &:visited{
     color: rgba(255, 255, 255, .6);
@@ -85,16 +86,16 @@ export default ()=> {
       <Logo />
       <NavBar>
         <NavItem noMargin>
-          <Link to={`/about`}>
-            <NavLink>
-              Nosotros
-            </NavLink>
-          </Link>
-        </NavItem>
-        <NavItem>
           <Link to={`/properties`}>
             <NavLink>
               Propiedades
+            </NavLink>
+          </Link>
+        </NavItem>        
+        <NavItem>
+          <Link to={`/about`}>
+            <NavLink>
+              Nosotros
             </NavLink>
           </Link>
         </NavItem>

@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-grid-system';
+import { useGetIndicators } from '../../_hooks';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const MainCont = styled.div`
-  background-color: transparent;
-  color: #fff;
-  padding: .5rem 0;
+  //background-color: ${props => props.theme.main.primaryColor};
+  color: ${props => props.theme.main.primaryColor};
+  padding: 2rem 0;
   font-size: 14px;
-  font-weight: bold;
+  user-select: none;
   @media(min-width: 768px){
-    background-color: #F2F1F0;
-    color: #212121;
+    padding: 1rem 0;
   }
 `
 const RatesCont = styled.ul`
@@ -18,21 +19,25 @@ const RatesCont = styled.ul`
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  color: #fff;
   @media(min-width: 768px){
+    color: #919191;
     font-weight: normal;
     justify-content: flex-end;
+    color: ${props => props.theme.main.primaryColor};
   }
 `
 const RateItem = styled.li`
-  margin-left: .30rem;
-  font-weight: bold;
+  //margin-left: .30rem;
   &::after{
-    content: " -"
+    margin: 0 .5rem;
+    content: "|"
   }
   @media(min-width: 768px){
-    margin-left: .5rem;
+    //margin-left: .5rem;
     &::after{
-      content: " /"
+      margin: 0 1rem;
+      content: "|"
     } 
   }
 `
@@ -42,25 +47,47 @@ const RateItemNoAfter = styled(RateItem)`
   }
   @media(min-width: 768px){
     &::after{
+      margin: 0;
       content: ""
     } 
   }
 `
 
 export default ()=> {
+  const { loading, error, data } = useGetIndicators();
+  
+  if(loading) return(
+    <MainCont>
+      <Container>
+        <RatesCont>
+          <RateItem>
+            UF <span><LoadingOutlined /></span>
+          </RateItem>
+          <RateItem>
+            UTM <span><LoadingOutlined /></span>
+          </RateItem>
+          <RateItemNoAfter>
+            Dólar <span><LoadingOutlined /></span>
+          </RateItemNoAfter>                    
+        </RatesCont>
+      </Container>
+    </MainCont>
+  );
+
+  if(error) return <span>error de conextión</span>
 
   return(
     <MainCont>
       <Container>
         <RatesCont>
           <RateItem>
-            UF $29.079
+            UF ${data.uf}
           </RateItem>
           <RateItem>
-            UTM $51.029
+            UTM ${data.utm}
           </RateItem>
           <RateItemNoAfter>
-            Dólar $731
+            Dólar ${data.dollar}
           </RateItemNoAfter>                    
         </RatesCont>
       </Container>
