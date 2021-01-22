@@ -161,6 +161,7 @@ export default ({ block, shadow, noHome })=> {
                     selected={values.commune}
                     options={COMMUNES.map(val => val.name)}
                     placeholder="Comuna"
+                    primary
                   />                  
                 </Col>                        
               </Fragment>              

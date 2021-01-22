@@ -16,6 +16,7 @@ const InputLabel = styled.label`
   width: 100%;
   margin-bottom: 1rem;
   border: ${props => props.gray ? "1px solid #EBEBEB" : "1px solid #5A5A5A" };  
+  border: none;
   padding-right: 16px;
   color: #fff;
   @media(min-width: 768px){

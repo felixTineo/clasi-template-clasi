@@ -41,7 +41,7 @@ const Name = styled.p`
   font-weight: bold;
 `
 const Description = styled.p`
-  height: 80px;
+  height: 95px;
   overflow: hidden;
   text-align: center;
 `

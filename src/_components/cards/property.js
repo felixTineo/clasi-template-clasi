@@ -75,6 +75,7 @@ const CardPrice = styled.li`
 `
 const CardOperation = styled.span`
   font-weight: bold;
+  text-transform: capitalize;
 `
 const CardCharacteristics = styled.ul`
   //list-style: none;
@@ -129,7 +130,7 @@ export default ({
           <CardPrice>{"UF "}{ currency === "UF" ? " " + value.toLocaleString() : data && (value / data.uf).toLocaleString()}</CardPrice>
           <CardPrice>{"CLP $"}{ currency === "CLP" ? value.toLocaleString() : data && (value * data.uf).toLocaleString()}</CardPrice>
           <li>
-            <CardOperation>{operation.charAt(0).toUpperCase()} - </CardOperation>
+            <CardOperation>{operation.toLowerCase()} - </CardOperation>
             <span>cod {code}</span>
           </li>
         </CardTitleCont>
