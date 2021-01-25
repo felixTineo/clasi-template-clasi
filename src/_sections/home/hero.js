@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Context from '../../_context';
 import { FormProperty } from '../../_components/forms'
+import { DownCircleFilled } from '@ant-design/icons';
 
 const MainCont = styled.section`
+  padding-top: 119px;
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -39,9 +41,10 @@ const DownButton = styled.a`
   position: absolute;
   bottom: 30px;
 `
-const SvgCont = styled.svg`
-  stroke: #fff;
+const SvgCont = styled.span`
+  color: #000;
   transition: 250ms ease;
+  font-size: 1.8rem;
   ${DownButton}:hover & {
     stroke: ${props => props.theme.main.primaryColor};
   }
@@ -57,9 +60,8 @@ export default ()=> {
       </Title>
       <FormProperty />
       <DownButton href="#properties">
-        <SvgCont width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="15" cy="15" r="14.5"/>
-          <path d="M19.2426 14L15 18.2427L10.7574 14" strokeLinecap="round" strokeLinejoin="round"/>
+        <SvgCont>
+          <DownCircleFilled />
         </SvgCont>
       </DownButton>
     </MainCont>

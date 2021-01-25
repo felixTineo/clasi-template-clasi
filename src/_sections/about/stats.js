@@ -10,7 +10,7 @@ const MainCont = styled.section`
 
 const InfoGram = styled.div`
   color: #fff;
-  background-color: ${props => props.theme.main.primaryColor};
+  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;

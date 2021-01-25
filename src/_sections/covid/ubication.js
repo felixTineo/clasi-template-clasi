@@ -9,9 +9,9 @@ const MainCont = styled.section`
   padding: 4rem 0;
 `
 const Title = styled.p`
-  background-color: ${props => props.theme.main.primaryColor};
-  color: #000;
-  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+  padding: 1rem;
   text-align: center;
   font-weight: bold;
   margin: 0;

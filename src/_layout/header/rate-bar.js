@@ -6,7 +6,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 
 const MainCont = styled.div`
   //background-color: ${props => props.theme.main.primaryColor};
-  color: ${props => props.theme.main.primaryColor};
+  color: #008AFC;
   padding: 2rem 0;
   font-size: 14px;
   user-select: none;
@@ -24,7 +24,7 @@ const RatesCont = styled.ul`
     color: #919191;
     font-weight: normal;
     justify-content: flex-end;
-    color: ${props => props.theme.main.primaryColor};
+    color: #008AFC;
   }
 `
 const RateItem = styled.li`

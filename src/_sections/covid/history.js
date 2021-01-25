@@ -20,7 +20,9 @@ const HistoryCont = styled.div`
   }
 `
 const Title = styled.h2`
-  color: ${props => props.theme.main.primaryColor};
+  //color: ${props => props.theme.main.primaryColor};
+  letter-spacing: .5rem;
+  font-size: 28px;
 `
 const Medidas = styled.ul`
   list-style-type: disc;
@@ -55,7 +57,7 @@ export default ()=> {
               <Title>
                 MEDIDAS DE SEGURIDAD
               </Title>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Entendiendo las necesidades del mercado y de nuestros clientes, hemos implementado todas las medidas de seguridad para poder seguir funcionando lo más “normal posible” bajo estrictos protocolos.
               </p>
               <Medidas>
@@ -79,9 +81,9 @@ export default ()=> {
                 </li>                                                                                
               </Medidas>
               <Footer>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Antes de solicitar una visita puedes ver nuestras propiedades en los video recorrido
-                  de nuestra Página web y en nuestro canal de <a rel="noopener" target="_blank" href="https://www.youtube.com/c/LWPropiedades/featured">YouTube</a>.                  
+                  de nuestra Página web y en nuestro canal de <a style={{ color: "#FF0000", textDecoration: "none" }} rel="noopener" target="_blank" href="https://www.youtube.com/c/LWPropiedades/featured">YouTube</a>.                  
                 </p>
                 <p>
                   ¡Nos cuidamos por nosotros y por ustedes!

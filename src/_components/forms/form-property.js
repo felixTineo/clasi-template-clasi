@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import styled from 'styled-components';
-import { Row, Col } from 'react-grid-system';
+import { Row, Col, Container } from 'react-grid-system';
 import { Select, Input, Autocomplete } from '../inputs';
 import { Button, IconButton } from '../buttons';
 import { Visible, Hidden } from 'react-grid-system';
@@ -11,13 +11,13 @@ import { getSearchParams } from 'gatsby-query-params';
 
 const Form = styled.form`
   width: 100%;
-  border-radius: 6px;
+  //border-radius: 6px;
   padding: 0 15px;
   margin-bottom: 1rem;
   @media(min-width: 768px){
-    width: ${props => props.block ? "100%" : "60%"};
+    width: ${props => props.block ? "100%" : "70%"};
     padding: 0;
-    padding-left: 5px;
+    //padding-left: 5px;
     background-color: #fff;
     box-shadow: ${props => props.shadow && "0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)"};
     margin-bottom:0;
@@ -44,8 +44,8 @@ const FormButton = styled.button`
   font-weight: bold;
   background: transparent;
   border: none;
-  border-bottom: 2px solid transparent;
-  border-color: ${props => props.active && props.theme.main.primaryColor};
+  border-bottom: 4px solid transparent;
+  border-color: ${props => props.active && "#fff"};
   transition: 250ms ease;
   text-shadow: rgba(0, 0, 0, .5) 1px 1px 1px, rgba(0, 0, 0, .5) -1px -1px 1px;
   cursor: pointer;
@@ -54,9 +54,26 @@ const FormButton = styled.button`
   }
 `
 
+const FilterForm = styled.form`
+  width: 100%;
+  padding: 1.5rem 0;
+  padding: 0 15px;
+  @media(min-width: 768px){
+    padding: 3rem 0;
+    width: ${props => props.block ? "100%" : "70%"};
+    padding: 0;
+    //padding-left: 5px;
+    //background-color: #fff;
+    //box-shadow: ${props => props.shadow && "0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)"};
+    margin-bottom:0;   
+    margin-bottom: 2rem;
+    border: none !important;
+  } 
+`
+
 export default ({ block, shadow, noHome })=> {
   const [byCode, setByCode] = useState(false);
-  const [filter, setFilter] = useState(false);
+  const [filter, setFilter] = useState(true);
   const { values, onChange, onFinish, setInitial } = useNavigateForm({
     propertyType: '',
     operation: '',
@@ -116,7 +133,76 @@ export default ({ block, shadow, noHome })=> {
       </FormButtonCont>          
         )
       }
-      <Form onSubmit={onSubmit} shadow={shadow} block={block}>
+      {
+        filter && (
+          <FilterForm onSubmit={e => { e.preventDefault(); onFinish() }} shadow block={block}>
+
+            <Row>
+              <Col xs={12} md={3}>
+                <Input
+                  id="priceMin"
+                  value={values.priceMin}
+                  onChange={onChange}
+                  type="number"
+                  min={0}
+                  placeholder="Precio desde"
+                  shadow
+                />
+              </Col>
+              <Col xs={12} md={3}>
+                <Input
+                  id="priceMin"
+                  value={values.priceMax}
+                  onChange={onChange}
+                  type="number"
+                  min={0}                    
+                  placeholder="Precio hasta"
+                  shadow
+                />
+              </Col>
+              <Col xs={12} md={2}>
+                <Input
+                  id="bedrooms"
+                  value={values.bedrooms}
+                  onChange={onChange}
+                  type="number"
+                  min={0}                    
+                  placeholder="Dormitorios"
+                  shadow
+                />
+              </Col>
+              <Col xs={12} md={2}>
+                <Input
+                  id="bathrooms"
+                  value={values.bathrooms}
+                  onChange={onChange}
+                  type="number"
+                  min={0}                    
+                  placeholder="Baños"
+                  shadow
+                />
+              </Col>
+              <Col xs={12} md={2}>
+                <Select
+                  id="currency"
+                  onChange={onChange}
+                  value={values.currency}
+                  default="Divisa"
+                  options={["CPL", "UF"]}
+                  primary
+                  shadow
+                />
+              </Col>
+{/*              <Col xs={12} md={2}>
+                <Button primary block shadow>Aplicar filtros</Button>
+              </Col>                                                                                    
+              */}
+            </Row>
+
+        </FilterForm>   
+        )
+      }      
+      <Form onSubmit={onSubmit} shadow block={block}>
         <Row gutterWidth={32} align="center">
           {
             byCode
@@ -163,7 +249,7 @@ export default ({ block, shadow, noHome })=> {
                     placeholder="Comuna"
                     primary
                   />                  
-                </Col>                        
+                </Col>               
               </Fragment>              
             )
           }

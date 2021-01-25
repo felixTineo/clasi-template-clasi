@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import { Visible, Hidden } from 'react-grid-system';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 const DescriptioneCont = styled.div`
   padding: 2rem;
-  color: #fff;
+  //color: #fff;
 `
 const DescriptionTitle = styled.h2`
   
@@ -54,11 +55,11 @@ export default ()=> {
               ))
             }
           </Slider>
-          <ButtonBack className="carousel-back-button carousel-desc-back-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-left.svg" alt="chevron" />
+          <ButtonBack className="carousel-back-button carousel-desc-back-button" style={{ backgroundColor: "#000" }}>
+            <LeftOutlined style={{ color: "#fff" }} />
           </ButtonBack>
-          <ButtonNext className="carousel-next-button carousel-desc-next-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-right.svg" alt="chevron"/>
+          <ButtonNext className="carousel-next-button carousel-desc-next-button" style={{ backgroundColor: "#000" }}>
+            <RightOutlined style={{ color: "#fff" }} />
           </ButtonNext>
           {/*
             Array(items.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)

@@ -5,7 +5,7 @@ import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { FacebookFilled, InstagramFilled, TwitterCircleFilled, LinkedinFilled, YoutubeFilled } from '@ant-design/icons';
+import { FacebookFilled, InstagramFilled, TwitterCircleFilled, LinkedinFilled, YoutubeFilled, UpOutlined } from '@ant-design/icons';
 
 const Footer = styled.footer`
   
@@ -17,6 +17,7 @@ const FooterRightsCont = styled.div`
   background-color: #000;
   color: ${props => props.theme.main.secondaryColor};
   padding: 2rem 0;
+  font-size: 16px;
   @media(min-width: 768px){
     padding: .5rem 0;
   }  
@@ -60,11 +61,11 @@ const NavLink = styled(Link)`
     display: block;
     text-align: right;
   }
-  &:hover{
-    color: ${props => props.theme.main.primaryColor} !important;
-  }
   &:visited{
     color: #212121;
+  }  
+  &:hover{
+    color: #008AFC;
   }
 `
 const SvgIcon = styled.svg`
@@ -121,9 +122,10 @@ const BackTop = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  background: ${props => props.theme.main.primaryColor};
+  background: #000;
   margin-bottom: 1rem;
   transition: 250ms ease;
+  color: #fff;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
               0px 2px 2px rgba(0, 0, 0, .12),
               0px 4px 4px rgba(0, 0, 0, .12),
@@ -143,14 +145,28 @@ const SocialCont = styled.nav`
 `
 const SocialLink = styled.a`
   margin-left: .8rem;
-  color: rgba(0, 0, 0, .5);
+  color: #000;
   font-size: 1.3rem;
   transition: 250ms ease;
   &:visited{
     color: rgba(0, 0, 0, .5);
   }
   &:hover{
-    color: ${props => props.theme.main.primaryColor};
+    color: hsl(0, 0%, 10%);
+  }
+`
+
+const CustomButton = styled(Button)`
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+  &:hover{
+    background-color: hsl(0, 0%, 10%);
+    color: #fff;
+  }
+  &:active{
+    background-color: hsl(0, 0%, 0%);
+    color: #fff;
   }
 `
  
@@ -196,12 +212,12 @@ export default ()=> {
                   </GatsbyLink>                  
                 </Col>
                 <Col xs={12}>
-                  <Button outlined primary block>
+                  <CustomButton outlined primary block>
                     <SvgIcon width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12.8766 9.1894C12.0195 9.1894 11.1779 9.05534 10.3804 8.79178C9.98958 8.65849 9.50917 8.78077 9.27066 9.02573L7.6965 10.2141C5.87092 9.23956 4.7464 8.11541 3.78521 6.30354L4.93857 4.77039C5.23822 4.47114 5.3457 4.03401 5.21693 3.62385C4.95224 2.82213 4.81779 1.98093 4.81779 1.12343C4.81782 0.503963 4.31386 0 3.69443 0H1.12339C0.503964 0 0 0.503964 0 1.12339C0 8.22365 5.77639 14 12.8766 14C13.4961 14 14 13.496 14 12.8766V10.3127C14 9.69336 13.496 9.1894 12.8766 9.1894Z"/>
                     </SvgIcon>
                       <span>{office.phone}</span>
-                  </Button>                 
+                  </CustomButton>                 
                 </Col>                            
                 <Col xs={12}>
                 <SocialCont>
@@ -232,7 +248,7 @@ export default ()=> {
                     <Hidden xs>
                         <BackTopCont>
                           <BackTop onClick={handleTop} href="#top">
-                            <img src="/icons/chevron-up.svg" alt="backtop" />
+                            <UpOutlined />
                           </BackTop>
                         </BackTopCont>
                     </Hidden> 

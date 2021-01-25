@@ -29,7 +29,7 @@ const ImgCaptcha = styled.img`
   height: 73.42px;
 `
 const MailSpan = styled.span`
-  color: ${props => props.theme.main.primaryColor};
+  color: #008AFC;
   text-decoration: underline;
 `
 const SubTitleFooter = styled(SubTitle)`
@@ -45,6 +45,20 @@ const ButtonContainer = styled.div`
   }   
 `
 
+const CustomButton = styled(Button)`
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+  &:hover{
+    background-color: hsl(0, 0%, 10%);
+    color: #fff;
+  }
+  &:active{
+    background-color: hsl(0, 0%, 0%);
+    color: #fff;
+  }
+`
+
 export default ()=> {
 
   return(
@@ -54,7 +68,7 @@ export default ()=> {
           ¿Dudas? ¿Consultas? Estamos aquí para ayudarte
         </Title>
         <SubTitle>
-          Envienos un mensaje y uno de nuestros asesores se pondra en contacto a la brevedad
+          Envienos un mensaje y una de nuestras asesoras inmobiliarias se pondrá en contacto a la brevedad
         </SubTitle>
         <Form onSubmit={e=> e.preventDefault()}>
           <Row>
@@ -77,7 +91,7 @@ export default ()=> {
                 <Hidden xs>
                   <Col xs={12}>
                     <ButtonContainer>
-                      <Button primary block>Enviar</Button>
+                      <CustomButton primary block>Enviar</CustomButton>
                     </ButtonContainer>              
                   </Col>
                 </Hidden>

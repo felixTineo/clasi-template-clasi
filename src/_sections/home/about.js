@@ -26,6 +26,7 @@ const DescriptionCont = styled.div`
 `
 const Title = styled.h2`
   font-size: 40px;
+  font-size: 2rem;
 `
 const Description = styled.p`
   margin: 2rem 0 4rem;
@@ -37,7 +38,7 @@ const HeroImage = styled.img`
   object-fit: center;
 `
 const TitleService = styled(Title)`
-  color: ${props => props.theme.main.primaryColor};
+  //color: ${props => props.theme.main.primaryColor};
   padding-top: 4rem;
 `
 const SubTitleService = styled(Description)`
@@ -49,7 +50,7 @@ const TitleQuoteCont = styled.div`
 `
 const SvgCont = styled.svg`
   margin: 2rem 0;
-  fill: ${props => props.theme.main.primaryColor};
+  fill: #000;
 `
 const QuoteCarouselCont = styled.div`
   padding-top: 0rem;
@@ -59,6 +60,19 @@ const QuoteCarouselCont = styled.div`
 `
 const CarouselCont = styled.div`
   position: relative;
+`
+const CustomButton = styled(Button)`
+  background-color: hsl(40, 4%, 85%);
+  border-color: #DAD9D7;
+  color: #000;
+  &:hover{
+    background-color: hsl(40, 4%, 75%);
+    color: #000;
+  }
+  &:active{
+    background-color: hsl(40, 4%, 85%);
+    color: #000;
+  }
 `
 
 
@@ -77,9 +91,9 @@ export default ()=> {
                 <Description>
                   {state.about.banner.subTitle}
                 </Description>
-                <Button block onClick={()=> navigate("/about")} primary>
+                <CustomButton block onClick={()=> navigate("/about")} primary>
                   {state.about.banner.buttonText}
-                </Button>
+                </CustomButton>
               </DescriptionCont>
             </Col>
             <Hidden xs>

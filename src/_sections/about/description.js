@@ -12,8 +12,8 @@ const Image = styled.img`
 `
 
 const Carousel = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
-  padding: 4rem;
+  background-color: #DAD9D7;
+  padding: 2rem;
   padding-top: 20%;
   height: 100%;
 `

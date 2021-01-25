@@ -27,6 +27,19 @@ const ImageCont = styled.div`
   align-items: center;
   justify-content: center;
 `
+const CustomButton = styled(Button)`
+  background-color: hsl(40, 4%, 85%);
+  border-color: #DAD9D7;
+  color: #000;
+  &:hover{
+    background-color: hsl(40, 4%, 75%);
+    color: #000;
+  }
+  &:active{
+    background-color: hsl(40, 4%, 85%);
+    color: #000;
+  }
+`
 
 export default ({ title, image, onClick, buttonText, icon }) => {
 
@@ -49,9 +62,9 @@ export default ({ title, image, onClick, buttonText, icon }) => {
           </Title>
         </Col>
         <Col xs={12} md={3}>
-          <Button onClick={onClick} block primary>
+          <CustomButton onClick={onClick} block primary>
             {buttonText}
-          </Button>
+          </CustomButton>
         </Col>        
       </Row>
     </BannerCont>

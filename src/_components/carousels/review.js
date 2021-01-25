@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Visible, Hidden } from 'react-grid-system';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 const RevieweCont = styled.div`
   padding: 2rem;
@@ -53,11 +54,11 @@ export default ()=> {
               ))
             }
           </Slider>
-          <ButtonBack className="carousel-back-button carousel-text-back-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-left.svg" alt="chevron" />
+          <ButtonBack className="carousel-back-button carousel-text-back-button" style={{ backgroundColor: "#000" }}>
+            <LeftOutlined style={{ color: "#fff" }} />
           </ButtonBack>
-          <ButtonNext className="carousel-next-button carousel-text-next-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-right.svg" alt="chevron"/>
+          <ButtonNext className="carousel-next-button carousel-text-next-button" style={{ backgroundColor: "#000" }}>
+            <RightOutlined style={{ color: "#fff" }} />
           </ButtonNext>
           {
             Array(items.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: "#000" }} className="carousel-text-dot" key={i} slide={i} />)

@@ -11,13 +11,13 @@ const InputLabel = styled.label`
   box-shadow: 0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12);
   align-items: center;
   height: 44px;
-  border-radius: 6px;
+  //border-radius: 6px;
   background-color: #fff;
   width: 100%;
   margin-bottom: 1rem;
   border: ${props => props.gray ? "1px solid #EBEBEB" : "1px solid #5A5A5A" };  
   border: none;
-  padding-right: 16px;
+  //padding-right: 16px;
   color: #fff;
   @media(min-width: 768px){
     margin-bottom: ${props => props.vertical ? "2rem" : "0"};
@@ -28,8 +28,8 @@ const InputLabel = styled.label`
 const Input = styled.input`
   background-color: transparent;
   //box-shadow: 0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12);
-  border-radius: 3px;
-  padding: 5px;
+  //border-radius: 3px;
+  padding: 10px;
   height: 44px;
   width: 100%;
   border: none;
@@ -65,7 +65,7 @@ const Option = styled.button`
 const PropertyImg = styled.img`
   width: 60px;
   height: 60px;
-  border-radius: 2px;
+  //border-radius: 2px;
   object-fit: cover;
   object-position: center;
 `

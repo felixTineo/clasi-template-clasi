@@ -20,9 +20,10 @@ const Title = styled.h2`
   letter-spacing: 0.35px;
   color: #2a2a2a;
   font-size: 28px;
+  letter-spacing: 0.5rem;
 `
 const Description = styled.div`
-
+  text-align: justify;
 `
 const Image = styled.img`
   object-fit: cover;

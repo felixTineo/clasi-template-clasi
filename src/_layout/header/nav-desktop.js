@@ -46,14 +46,14 @@ const SocialCont = styled.nav`
 `
 const SocialLink = styled.a`
   margin-left: .8rem;
-  color: rgba(0, 0, 0, .5);
+  color: #000;
   font-size: 1.3rem;
   transition: 250ms ease;
   &:visited{
-    color: rgba(0, 0, 0, .5);
+    color: #000;
   }
   &:hover{
-    color: ${props => props.theme.main.primaryColor};
+    color: rgba(0, 0, 0, .5);
   }
 `
 const LoginButton = styled.a`

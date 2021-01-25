@@ -49,7 +49,7 @@ export default ()=> {
             <Row align="center">
               <Col xs={12} md={9}>
                 <SectionText>
-                  {sectionText}
+                  ¿Necesitas Vender, Arrendar o Comprar una propiedad? Somos tu socio perfecto.
                 </SectionText>          
               </Col>
               <Col xs={12} md={3}>
