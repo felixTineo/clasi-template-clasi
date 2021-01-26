@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Context from '../../_context';
 import { FormProperty } from '../../_components/forms'
-import { DownCircleFilled } from '@ant-design/icons';
+import { DownOutlined } from '@ant-design/icons';
 
 const MainCont = styled.section`
   padding-top: 119px;
@@ -40,6 +40,15 @@ const DownButton = styled.a`
   text-decoration: none;
   position: absolute;
   bottom: 30px;
+  background: #000;
+  padding: .5rem;
+  font-size: 14px;
+  display: flex;
+  //flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff !important;
+  min-width: 6rem;
 `
 const SvgCont = styled.span`
   color: #000;
@@ -60,9 +69,8 @@ export default ()=> {
       </Title>
       <FormProperty />
       <DownButton href="#properties">
-        <SvgCont>
-          <DownCircleFilled />
-        </SvgCont>
+        Ver más
+        <DownOutlined style={{ marginLeft: 8 }} />
       </DownButton>
     </MainCont>
   )

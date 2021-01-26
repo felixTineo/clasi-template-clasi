@@ -121,7 +121,7 @@ export default ()=> {
           </Link>
         </NavItem>    
         <NavItem>
-          <Link href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}>
+          <Link href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=000`}>
             <NavLink>
               Login
             </NavLink>

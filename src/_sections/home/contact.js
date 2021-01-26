@@ -57,7 +57,7 @@ export default ()=> {
               </Col>
               <Col xs={12} md={3}>
                 <ContactButton outlined primary block onClick={()=> navigate("/contact")}>
-                  Contactanos
+                  Contáctanos
                 </ContactButton>
               </Col>
             </Row>
