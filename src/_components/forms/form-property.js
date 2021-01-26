@@ -81,8 +81,8 @@ export default ({ block, shadow, noHome })=> {
     stringSearch: '',
     priceMin: '',
     priceMax: '',
-    bedrooms: '',
-    bathrooms: '',
+    totalAreaFrom: '',
+    totalAreaTo: '',
     currency: '',
   });  
 
@@ -100,8 +100,8 @@ export default ({ block, shadow, noHome })=> {
         stringSearch: '',
         priceMin: '',
         priceMax: '',
-        bedrooms: '',
-        bathrooms: '',
+        totalAreaFrom: '',
+        totalAreaTo: '',
         currency: '',
       })
     }
@@ -151,7 +151,7 @@ export default ({ block, shadow, noHome })=> {
               </Col>
               <Col xs={12} md={3}>
                 <Input
-                  id="priceMin"
+                  id="priceMax"
                   value={values.priceMax}
                   onChange={onChange}
                   type="number"
@@ -162,23 +162,23 @@ export default ({ block, shadow, noHome })=> {
               </Col>
               <Col xs={12} md={2}>
                 <Input
-                  id="bedrooms"
-                  value={values.bedrooms}
+                  id="totalAreaFrom"
+                  value={values.totalAreaFrom}
                   onChange={onChange}
                   type="number"
                   min={0}                    
-                  placeholder="Dormitorios"
+                  placeholder="Mt2 desde"
                   shadow
                 />
               </Col>
               <Col xs={12} md={2}>
                 <Input
-                  id="bathrooms"
-                  value={values.bathrooms}
+                  id="totalAreaTo"
+                  value={values.totalAreaTo}
                   onChange={onChange}
                   type="number"
                   min={0}                    
-                  placeholder="Baños"
+                  placeholder="Mt2 hasta"
                   shadow
                 />
               </Col>
@@ -188,7 +188,7 @@ export default ({ block, shadow, noHome })=> {
                   onChange={onChange}
                   value={values.currency}
                   default="Divisa"
-                  options={["CPL", "UF"]}
+                  options={["CLP", "UF"]}
                   primary
                   shadow
                 />
