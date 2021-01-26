@@ -187,7 +187,7 @@ export default ({ block, shadow, noHome })=> {
                   id="currency"
                   onChange={onChange}
                   value={values.currency}
-                  default="Divisa"
+                  default="Moneda"
                   options={["CLP", "UF"]}
                   primary
                   shadow
