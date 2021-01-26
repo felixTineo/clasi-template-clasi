@@ -10,6 +10,7 @@ const SectionCont = styled.div`
 `
 const SectionText = styled.p`
   text-align: center;
+  margin: 0;
   @media(min-width: 768px){
     text-align: left;
     font-size: 1.5rem;
@@ -23,11 +24,11 @@ const Divider = styled.div`
 `
 const ContactButton = styled.button`
   cursor: pointer;
-  background-color: transparent;
+  background-color: hsl(0, 0%, 0%);
   border: 1px solid #2a2a2a;
   min-height: 44px;
   width: 100%;
-  color: #2a2a2a;
+  color: #fff;
   font-family: "Proxima Nova", 'Montserrat', sans-serif;
   font-size: 28px;
   text-transform: uppercase;
@@ -35,8 +36,7 @@ const ContactButton = styled.button`
   letter-spacing: 0.35px;
   transition: 250ms ease;
   &:hover{
-    background-color: #2a2a2a;
-    color: #fff;
+    background-color: hsl(0, 0%, 10%);
   }
 `
 
@@ -49,8 +49,11 @@ export default ()=> {
             <Row align="center">
               <Col xs={12} md={9}>
                 <SectionText>
-                  ¿Necesitas Vender, Arrendar o Comprar una propiedad? Somos tu socio perfecto.
+                  ¿Necesitas Vender, Arrendar o Comprar una propiedad?
                 </SectionText>          
+                <SectionText>
+                  Somos tu socio perfecto.
+                </SectionText>
               </Col>
               <Col xs={12} md={3}>
                 <ContactButton outlined primary block onClick={()=> navigate("/contact")}>

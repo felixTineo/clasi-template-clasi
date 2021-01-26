@@ -27,6 +27,7 @@ const Card = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 4rem;
+  user-select: none;
   @media(min-width: 768px){
     margin: 0;
     margin-bottom: 4rem;
@@ -65,7 +66,7 @@ const Ubication = styled.p`
   font-size: 14px;
 `
 const SubUbication = styled(Ubication)`
-  color: ${props => props.hasSub ? "#e20076" : "transparent"};
+  color: ${props => props.hasSub ? "#008AFC" : "transparent"};
   margin-bottom: 1.5rem;
   font-weight: normal;
 `
@@ -84,6 +85,7 @@ const Phone = styled.a`
 const Mail = styled.p`
   margin: 0;
   font-size: 14px;
+  user-select: text;
 `
 const ContactCont = styled.ul`
   color: ${props => props.theme.main.primaryColor};

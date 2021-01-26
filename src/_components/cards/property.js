@@ -68,7 +68,7 @@ const CardTitle = styled.li`
   margin-bottom: .5rem;
 `
 const CardPrice = styled.li`
-  color: ${props => props.theme.main.primaryColor};
+  color: #DAD9D7;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: .5rem;
