@@ -1,0 +1,14 @@
+a{
+  user-select:initial;
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #979797;
+  color: #262626;
+
+  background-color: #262626;
+  border-color: #262626;
+  color: #f7f3f0;
+  color: rgb(31, 30, 31);
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
