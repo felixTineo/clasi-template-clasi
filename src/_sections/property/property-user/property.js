@@ -27,6 +27,7 @@ const CharItemLi = styled.li`
   justify-content: space-between;
   margin-bottom: 1rem;
   color: #002438;
+  font-size: .8rem;
 `
 
 const CharItem = ({ icon, name, value }) => {
