@@ -40,9 +40,11 @@ const FooterRights = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  font-size: 12px;
   @media(min-width: 768px){
     flex-direction: row;
     align-items: center;
+    font-size: 14px;
   }    
 `
 const NavCont = styled.div`
@@ -55,7 +57,7 @@ const NavLink = styled(Link)`
   color: #212121;
   transition: 250ms ease;
   text-decoration: none;
-  font-weight: bold;
+  //font-weight: bold;
   margin-bottom: 1rem;
   @media(min-width: 768px){
     display: block;
@@ -122,10 +124,10 @@ const BackTop = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  background: #000;
+  background: gray;
   margin-bottom: 1rem;
   transition: 250ms ease;
-  color: #fff;
+  color: #000;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
               0px 2px 2px rgba(0, 0, 0, .12),
               0px 4px 4px rgba(0, 0, 0, .12),

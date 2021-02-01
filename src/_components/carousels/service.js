@@ -81,7 +81,7 @@ export default ()=> {
             <RightOutlined style={{ color: "#fff" }} />
           </ButtonNext>
           {
-            Array(itemsDesk.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: "#000" }} className="carousel-text-dot" key={i} slide={i} />)
+            Array(itemsDesk.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: "#008AFC" }} className="carousel-text-dot" key={i} slide={i} />)
           }
         </CarouselProvider>
       </Hidden>

@@ -35,22 +35,22 @@ const NavPaginate = styled.nav`
     transition: 250ms ease;
     outline: none !important;
     &:hover{
-      color: ${props => props.theme.main.primaryColor};
+      color: #008AFC;;
       //background-color: ${props => props.theme.main.primaryColor};
     }
   }
   .active-pagination-page{
-    color: ${props => props.theme.main.primaryColor};
+    color: #008AFC;
     //background-color: ${props => props.theme.main.primaryColor};
     outline: none !important;
   }
   .back-button-paginate{
-    color: ${props => props.theme.main.primaryColor};
+    color: #008AFC;;
     cursor: pointer;
     outline: none !important;
   }
   .next-button-paginate{
-    color: ${props => props.theme.main.primaryColor};
+    color: #008AFC;;
     cursor: pointer;
     outline: none !important;
   }
@@ -90,7 +90,7 @@ const StandCont = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  color: ${props => props.loading && props.theme.main.primaryColor};
+  color: #000;
 `
 
 export default ({ location })=> {

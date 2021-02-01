@@ -3,7 +3,9 @@ import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 
 export default ({ lat, lng, height, zoom })=> {
   
-const mapBoxUrl =  "https://api.mapbox.com/styles/v1/felixtineo/ckjsqy8dq3eu419oaxv4azw71/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZmVsaXh0aW5lbyIsImEiOiJja2IwdTYzaHQwMDYyMnZvOHltYXJrdmIwIn0.P0lczMOjIif3MGlqroU__A";
+const mapBoxUrl =  "https://api.mapbox.com/styles/v1/felixtineo/ckkigaae20ubv17pelsiz47wg/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZmVsaXh0aW5lbyIsImEiOiJja2IwdTYzaHQwMDYyMnZvOHltYXJrdmIwIn0.P0lczMOjIif3MGlqroU__A";
+//mapbox://styles/felixtineo/ckkigaae20ubv17pelsiz47wg
+
 //mapbox://styles/felixtineo/ckjsqy8dq3eu419oaxv4azw71
 //mapbox://styles/felixtineo/ckcd8fl665s3y1inuti4rsg5c
 

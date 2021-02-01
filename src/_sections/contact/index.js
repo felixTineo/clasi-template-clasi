@@ -68,7 +68,7 @@ export default ()=> {
           ¿Dudas? ¿Consultas? Estamos aquí para ayudarte
         </Title>
         <SubTitle>
-          Envienos un mensaje y una de nuestras asesoras inmobiliarias se pondrá en contacto a la brevedad
+          Envíanos un mensaje y una de nuestras Asesoras Inmobiliarias se pondrá en contacto a la brevedad.
         </SubTitle>
         <Form onSubmit={e=> e.preventDefault()}>
           <Row>

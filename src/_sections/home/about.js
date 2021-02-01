@@ -108,7 +108,7 @@ export default ()=> {
         <Row gutterWidth={128}>
           <Col xs={12} md={6}>
             <TitleService>Ofrecemos un servicio ajustado a las necesidades de cada cliente</TitleService>
-            <SubTitleService>Estas son algunas de las cosas que podemos hacer por vos:</SubTitleService>
+            <SubTitleService>Estos son alguno de los servicios que podemos entregarte:</SubTitleService>
             <CarouselCont>
               <ServiceCarousel />
             </CarouselCont>

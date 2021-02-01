@@ -11,10 +11,11 @@ const DescriptioneCont = styled.div`
   //color: #fff;
 `
 const DescriptionTitle = styled.h2`
-  
+  text-transform: uppercase;
+  letter-spacing: .5rem;
 `
 const DescriptionDescription = styled.p`
-
+  text-align: justify;
 `
 
 const Description = ({ id, description, title }) => {

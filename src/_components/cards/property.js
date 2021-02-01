@@ -68,8 +68,8 @@ const CardTitle = styled.li`
   margin-bottom: .5rem;
 `
 const CardPrice = styled.li`
-  color: #DAD9D7;
-  font-size: 1.2rem;
+  color: #008AFC;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: .5rem;
 `

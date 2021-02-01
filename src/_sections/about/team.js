@@ -41,7 +41,7 @@ const Avatar = styled.img`
   object-position: cover;
 `
 const Name = styled.p`
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: .2rem;
   font-size: 20px;
   text-align: center;
@@ -67,7 +67,7 @@ const Ubication = styled.p`
 `
 const SubUbication = styled(Ubication)`
   color: ${props => props.hasSub ? "#008AFC" : "transparent"};
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: normal;
 `
 const Phone = styled.a`
@@ -84,7 +84,7 @@ const Phone = styled.a`
 `
 const Mail = styled.p`
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   user-select: text;
 `
 const ContactCont = styled.ul`
