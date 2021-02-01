@@ -12,6 +12,7 @@ const MainCont = styled.div`
 const PublicObs = styled.p`
   font-weight: bold;
   margin: 2rem 0;
+  white-space: pre-line;
 `
 
 const CharsCont = styled.ul`
@@ -51,11 +52,6 @@ export default ({ description })=> {
          <InteractionButtons />
         </Hidden>
         <Col xs={12}>
-          <PublicObs>
-            {description.publicObservation}
-          </PublicObs>
-        </Col>
-        <Col xs={12}>
           <h2 style={{ color: "#002438" }}>Características</h2>
           <Row>
             <Col xs={12} md={6}>
@@ -77,22 +73,13 @@ export default ({ description })=> {
           </Row>
         </Col>
         <Col xs={12}>
-          <h2 style={{ color: "#002438" }}>Otros servicios</h2>
+          <h2 style={{ color: "#002438" }}>Descripción</h2>
           <Row>
-            <Col xs={12} md={6}>
-              <CharsCont>
-                {
-                  //charsOthers.slice(0, 7).map((c) => <CharItem  key={c.id} {...c} />)
-                }
-              </CharsCont>
-            </Col>
-            <Col xs={12} md={6}>
-              <CharsCont>
-                {
-                  //charsOthers.slice(7, charsOthers.length).map((c) => <CharItem key={c.id} {...c} />)
-                }        
-              </CharsCont>                    
-            </Col>            
+        <Col xs={12}>
+          <PublicObs>
+            {description.publicObservations}
+          </PublicObs>
+        </Col>          
           </Row>
         </Col>        
       </Row>

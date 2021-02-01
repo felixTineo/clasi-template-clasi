@@ -17,7 +17,7 @@ export default ({ state })=> {
       <Container>
         <Row gutterWidth={0}>
           <Col xs={12} md={6}>
-            <Gallery images={state.images} />
+            <Gallery images={state.images} commune={state.ubication.commune} />
           </Col>
           <Col xs={12} md={6}>
             <Description description={state} />

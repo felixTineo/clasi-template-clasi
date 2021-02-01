@@ -63,7 +63,20 @@ const IconButton = styled.a`
     color: #5A5A5A;
   }  
   &:hover{
-    color: ${props => props.theme.main.primaryColor};
+    color: #008AFC;
+  }
+`
+const CustomButton = styled(Button)`
+  min-width: auto;
+  background-color: #000;
+  border-color: #000;
+  &:hover{
+    background-color: hsl(0, 0%, 10%);
+    border-color: hsl(0, 0%, 10%);
+  }
+  &:active{
+    background-color: #000;
+    border-color: #000;
   }
 `
 
@@ -133,9 +146,9 @@ export default ({ description })=> {
           </Col>   
           <Col xs={12}>
             <ContactFormButtons>
-              <Button primary outlined block>
+              <CustomButton primary outlined block>
                 Enviar
-              </Button>
+              </CustomButton>
             </ContactFormButtons>
           </Col>          
           <Col xs={12}>
