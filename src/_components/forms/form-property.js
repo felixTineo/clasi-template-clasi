@@ -8,6 +8,7 @@ import { useNavigateForm } from '../../_hooks';
 import PROPERTY_TYPE from '../../_constants/PROPERTY_TYPE.json';
 import COMMUNES from '../../_constants/CITIES.json';
 import { getSearchParams } from 'gatsby-query-params';
+import { SlidersFilled } from '@ant-design/icons';
 
 const Form = styled.form`
   width: 100%;
@@ -54,13 +55,19 @@ const ButtonFilter = styled.button`
   //position: absolute;
   //right: 0;
   font-weight: bold;
+  text-shadow: rgba(0, 0, 0, .5) 1px 1px 1px, rgba(0, 0, 0, .5) -1px -1px 1px;
+  color: #fff;
   &:hover{
-    color: hsl(0,0%,10%);
+    color: #008AFC;
   }
 `
 const SvgCont = styled.svg`
-fill: #000;
+fill: #fff;
 margin-left: 1rem;
+transition: 250ms ease;
+path{
+  stroke: rgba(0, 0, 0, .350);
+}
 ${ButtonFilter}:hover & {
   fill: #008AFC;
 }
@@ -79,6 +86,7 @@ const FormButton = styled.button`
   cursor: pointer;
   @media(min-width: 768px){
     font-size: 1.2rem;
+    
   }
 `
 
@@ -290,7 +298,7 @@ export default ({ block, shadow, noHome, noHomeFilter })=> {
                   onChange={onChange}
                   type="number"
                   min={0}                    
-                  placeholder="mt 2 desde"
+                  placeholder="m² desde"
                   shadow
                 />
               </Col>
@@ -301,7 +309,7 @@ export default ({ block, shadow, noHome, noHomeFilter })=> {
                   onChange={onChange}
                   type="number"
                   min={0}                    
-                  placeholder="mt 2 hasta"
+                  placeholder="m² hasta"
                   shadow
                 />
               </Col>
@@ -382,7 +390,7 @@ export default ({ block, shadow, noHome, noHomeFilter })=> {
                   onChange={onChange}
                   type="number"
                   min={0}                    
-                  placeholder="mt 2 desde"
+                  placeholder="m² desde"
                   shadow
                 />
               </Col>
@@ -393,7 +401,7 @@ export default ({ block, shadow, noHome, noHomeFilter })=> {
                   onChange={onChange}
                   type="number"
                   min={0}                    
-                  placeholder="mt 2 hasta"
+                  placeholder="m² hasta"
                   shadow
                 />
               </Col>

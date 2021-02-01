@@ -44,13 +44,15 @@ const ButtonFilter = styled.button`
   transition: 250ms ease;
   font-size: 1rem;
   margin: 33.5px 0;
+  color: #008AFC;
   &:hover{
-    color: hsl(0, 0%, 10%);
+    filter: brightness(1.2);
   }
 `
 const SvgCont = styled.svg`
-  fill: #000;
+  fill: #008AFC;
   margin-left: 1rem;
+  transition: 250ms ease;
   ${ButtonFilter}:hover & {
     fill: #008AFC;
   }

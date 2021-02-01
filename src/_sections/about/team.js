@@ -15,7 +15,7 @@ const Title = styled.h2`
   font-size: 50px;
   color: ${props => props.theme.main.primaryColor};
   font-weight: 300;
-  margin-bottom: 7rem;
+  margin-bottom: 3rem;
   text-align: center;
   color: #000;
   letter-spacing: .5rem;
@@ -42,7 +42,7 @@ const Avatar = styled.img`
 `
 const Name = styled.p`
   margin-top: 1rem;
-  margin-bottom: .2rem;
+  margin-bottom: 0;
   font-size: 20px;
   text-align: center;
 `

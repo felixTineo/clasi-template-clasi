@@ -223,7 +223,7 @@ export default ()=> {
                 </Col>                            
                 <Col xs={12}>
                 <SocialCont>
-                  <h3>Siguenos en:</h3>         
+                  <p>Síguenos en:</p>         
                   <SocialLink href="https://www.instagram.com/lw.propiedades/" rel="noopener" target="_blank">
                     <InstagramFilled />
                   </SocialLink>
@@ -289,7 +289,7 @@ export default ()=> {
       <FooterRightsCont>
         <Container>
           <FooterRights>
-            <li>Derechos reservados: LW Propiedades® es marca registrada (INAPI n°reg. 13288873)</li>
+            <li>Derechos Reservados: LW Propiedades® es marca registrada (INAPI n°reg. 13288873)</li>
           </FooterRights>
         </Container>
       </FooterRightsCont>

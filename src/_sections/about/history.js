@@ -24,6 +24,7 @@ const Title = styled.h2`
 `
 const Description = styled.div`
   text-align: justify;
+  font-size: .9rem;
 `
 const Image = styled.img`
   object-fit: cover;

@@ -12,15 +12,17 @@ const MainCont = styled.div`
   }
 `
 const OperationCode = styled.p`
-  color: ${props => props.theme.main.primaryColor};
+  color: #000;
   font-weight: bold;
+  font-size: 14px;
 `
 const Title = styled.h1`
   font-weight: 300;
-  font-size: 50px;
+  font-size: 36px;
 `
 const Price = styled(Title)`
-  color: ${props => props.theme.main.primaryColor};
+  color: #008AFC;
+  font-size: 36px;
 `
 const UbicationCont = styled.div`
   display: flex;
