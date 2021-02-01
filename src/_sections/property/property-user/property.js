@@ -19,12 +19,12 @@ const CharsCont = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  margin: 2rem 0;
+  margin: 2rem 1rem;
 `
 const CharItemLi = styled.li`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-bottom: 1rem;
   color: #002438;
 `
@@ -33,8 +33,10 @@ const CharItem = ({ icon, name, value }) => {
   const Icon = Icons[icon];
   return(
     <CharItemLi>
-      <Icon className="clasi-icon" />
-      <span style={{ marginLeft: 16 }}>{name}</span>
+      <span>
+        <Icon className="clasi-icon" />
+        <span style={{ marginLeft: 16 }}>{name}</span>
+      </span>
       <span style={{ marginLeft: 16 }}>{value}</span>
     </CharItemLi>
   )
@@ -58,7 +60,7 @@ export default ({ description })=> {
               <CharsCont>
                 {
                   //charsGeneral.slice(0, 7).map((c) => <CharItem key={c.id} {...c} />)
-                  description.characteristics.map((c) => <CharItem key={c.id} {...c} />)
+                  description.characteristics.slice(0, Math.ceil(description.characteristics.length / 2)).map((c) => <CharItem key={c.id} {...c} />)
                 }
               </CharsCont>
             </Col>
@@ -66,7 +68,7 @@ export default ({ description })=> {
               <CharsCont>
                 {
                   //charsGeneral.slice(7, charsGeneral.length).map((c) => <CharItem key={c.id} {...c} />)
-                  [].map((c) => <CharItem key={c.id} {...c} />)
+                  description.characteristics.slice(Math.ceil(description.characteristics.length / 2), description.characteristics.length).map((c) => <CharItem key={c.id} {...c} />)
                 }        
               </CharsCont>      
             </Col>            
