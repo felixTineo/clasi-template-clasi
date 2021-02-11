@@ -35,7 +35,7 @@ export default ()=> {
             <Rectangular
               image={state.bannerImage}
               buttonText={state.buttonText}
-              title={state.footer}
+              title={"Encuentra aquí las mejores propiedades que tenemos disponibles"}
               icon="/icons/marker.svg"
               onClick={()=> navigate("/properties")}
             />

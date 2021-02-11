@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import context from '../../_context';
 import Link from '../link';
 import styled from 'styled-components';
-import { truncate } from '../../_util';
+import { truncate, priceFormat } from '../../_util';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -10,7 +10,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 520px;
+  height: 600px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem;
@@ -54,6 +54,7 @@ const CardTitleCont = styled.ul`
 const CardTitle = styled.li`
   font-size: 1.2rem;
   margin-bottom: .5rem;
+  font-family: 'Roboto', sans-serif;
 `
 const CardPrice = styled.li`
   color: ${props => props.theme.main.primaryColor};
@@ -63,6 +64,8 @@ const CardPrice = styled.li`
 `
 const CardOperation = styled.span`
   font-weight: bold;
+  text-transform: capitalize;
+  font-family: 'Roboto', sans-serif;
 `
 const CardCharacteristics = styled.ul`
   //list-style: none;
@@ -88,6 +91,8 @@ export default ({
   code,
   ubication,
   characteristics,
+  operation,
+  currency
 })=> {
   const builderId = useContext(context).builderId;
   return(
@@ -97,19 +102,35 @@ export default ({
       <CardInfo>
         <CardTitleCont>
           <CardTitle>{truncate(title, 30)}</CardTitle>
-          <CardPrice>UF ${value}</CardPrice>
+          {currency} {currency !== "UF" && "$"}{priceFormat(value)}
           <li>
-            <CardOperation>Venta - </CardOperation>
-            <span>cod {code}</span>
+            <CardOperation>{operation.toLowerCase()} - cod {code}</CardOperation>
           </li>
         </CardTitleCont>
         <Divider />
         <CardCharacteristics>
-          <CharItem>{truncate(ubication.address, 30)}</CharItem>
+          <CharItem>
+            <img src="/site.svg" />
+            <span style={{ marginLeft: ".5rem" }}>{truncate(ubication.address, 30)}</span>
+          </CharItem>
           {
-            characteristics.slice(0, 2).map((char, index) => (
+            characteristics.filter(char => (
+              char.name === "Superficie total" ||
+              char.name === "Superficie útil" ||
+              char.name === "Habitaciones" ||
+              char.name === "Baños" ||
+              char.name === "Estacionamientos"
+
+            ) ).map((char, index) => (
               <CharItem key={index}>
-                <span>{char.name} {char.value} {char.name === "Sup. Total" && "mt2"}</span>
+                {
+                  char.name === "Superficie total" && <img src="/surface.svg" /> ||
+                  char.name === "Superficie útil" && <img src="/surface.svg" />  ||
+                  char.name === "Habitaciones" && <img src="/rooms.svg" /> ||
+                  char.name === "Baños" && <img src="/bath.svg" /> ||
+                  char.name === "Estacionamientos" && <img src="/parking.svg" />
+                }
+                <span style={{ marginLeft: ".5rem" }}>{char.name} {char.value} {char.name === "Superficie total" && "mt2" || char.name === "Superficie útil" && "mt2"}</span>
               </CharItem>
             ))
           }

@@ -7,7 +7,7 @@ const MainCont = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${props => props.theme.about.hero.background});
   background-size: cover;
   background-repeat: no-repeat;
-  
+  background-position: bottom;
 `
 const InnerCont = styled.div`
   height: 70vh;

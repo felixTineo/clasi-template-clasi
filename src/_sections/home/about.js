@@ -92,21 +92,32 @@ export default ()=> {
       <Container>
         <Row gutterWidth={128}>
           <Col xs={12} md={6}>
-            <TitleService>Ofrecemos un servicio ajustado a las necesidades de cada cliente</TitleService>
-            <SubTitleService>Estas son algunas de las cosas que podemos hacer por vos:</SubTitleService>
+            <TitleService>En Liderar Propiedades ofrecemos un servicio profesional y de excelencia.</TitleService>
+            <SubTitleService>Estos son algunos de los servicios con los que podrás contar:</SubTitleService>
             <CarouselCont>
               <ServiceCarousel />
             </CarouselCont>
           </Col>
           <Col xs={12} md={6}>
-            <TitleQuoteCont>
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%"
+            }}>
+              <img src="/serv.jpg" alt="servicios" style={{
+                width: "100%",
+                boxShadow: "0px 12px 24px rgba(0, 0, 0, .25)"
+              }} />
+            </div>
+{/*            <TitleQuoteCont>
               <SvgCont width="84" height="101" viewBox="0 0 84 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M56 48.3737L56 0H84L84 48.3737L72.6923 101H58.1538L66.2308 48.3737H56ZM0 48.3737L0 0L28 0L28 48.3737L16.6923 101H2.15385L10.2308 48.3737H0Z"/>
               </SvgCont>
             </TitleQuoteCont>
             <QuoteCarouselCont>
               <ReviewCarousel />
-            </QuoteCarouselCont>
+</QuoteCarouselCont>*/}
           </Col>          
         </Row>
       </Container>

@@ -7,6 +7,7 @@ const MainCont = styled.div`
   color: #fff;
   padding: .5rem 0;
   font-size: 14px;
+  font-family: 'Roboto', sans-serif;
 `
 const RatesCont = styled.ul`
   display: flex;

@@ -30,7 +30,7 @@ export default ()=> {
             <Row align="center">
               <Col xs={12} md={9}>
                 <SectionText>
-                  {sectionText}
+                  ¿Deseas obtener un trabajo profesional y asesoría de excelencia? Cuenta con nosotros
                 </SectionText>          
               </Col>
               <Col xs={12} md={3}>
