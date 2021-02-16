@@ -6,9 +6,8 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 
-export default ()=> {
+export default ({ items })=> {
   const color = useContext(Context).main.primaryColor;
-  const items = useContext(Context).home.properties.items;
   return(
     <Fragment>
       <Hidden xs>

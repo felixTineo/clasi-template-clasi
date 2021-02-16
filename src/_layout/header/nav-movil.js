@@ -103,6 +103,13 @@ export default ()=> {
               </NavLink>
             </Link>
           </NavItem>
+          <NavItem>
+            <Link to={`/confidence`}>
+              <NavLink>
+                Confíenos su propiedad
+              </NavLink>
+            </Link>
+          </NavItem>          
 {/*          <NavItem>
             <Link to="/news">
               <NavLink>

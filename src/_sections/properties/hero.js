@@ -60,11 +60,14 @@ export default ()=> {
   const [filter, setFilter] = useState(false);
 
   const { values, onChange, onFinish, setInitial } = useNavigateForm({
+    propertyType: '',
+    operation: '',
+    commune: '',
     priceMin: '',
     priceMax: '',
-    bedrooms: '',
-    bathrooms: '',
-    currency: '',
+    totalAreaFrom: '',
+    totalAreaTo: '',    
+    currency: 'CLP',
   });
   const params = getSearchParams();
 
@@ -104,50 +107,50 @@ export default ()=> {
                       onChange={onChange}
                       type="number"
                       min={0}
-                      placeholder="Desde"
+                      placeholder="Precio desde"
                       shadow
                     />
                   </Col>
                   <Col xs={12} md={2}>
                     <Input
-                      id="priceMin"
+                      id="priceMax"
                       value={values.priceMax}
                       onChange={onChange}
                       type="number"
                       min={0}                    
-                      placeholder="Hasta"
+                      placeholder="Precio hasta"
                       shadow
                     />
                   </Col>
                   <Col xs={12} md={2}>
                     <Input
-                      id="bedrooms"
-                      value={values.bedrooms}
+                      id="totalAreaFrom"
+                      value={values.totalAreaFrom}
                       onChange={onChange}
                       type="number"
-                      min={0}                    
-                      placeholder="Dormitorios"
+                      min={0}
+                      placeholder="Superficie desde"
                       shadow
                     />
                   </Col>
                   <Col xs={12} md={2}>
                     <Input
-                      id="bathrooms"
-                      value={values.bathrooms}
+                      id="totalAreaTo"
+                      value={values.totalAreaTo}
                       onChange={onChange}
                       type="number"
                       min={0}                    
-                      placeholder="Baños"
+                      placeholder="Superficie hasta"
                       shadow
                     />
-                  </Col>
+                  </Col>                  
                   <Col xs={12} md={2}>
                     <Select
                       id="currency"
                       onChange={onChange}
                       value={values.currency}
-                      default="Divisa"
-                      options={["CPL", "UF"]}
+                      default="Moneda"
+                      options={["CLP", "UF"]}
                       primary
                       shadow
                     />

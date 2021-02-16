@@ -10,15 +10,15 @@ require('dotenv').config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Halabi - Propiedades",
+    title: "liderarpropiedades",
     author: "Clasihome",
     //imageUrl: "https://clasihome.com/properties/back.png",
     description:
       "Tenemos excelentes propiedades pensadas para ti.",
     keywords: `inmobilario, chile, republica, propiedades, republicar, portales, portal, inmobiliaria, web, santiago, corredor, casas, departamentos, venta, arriendo, mejores, precios`,
-    facebook: "https://www.facebook.com/carmenluzpropiedades",
-    instagram: `https://www.instagram.com/cluzpropiedades/`,
-    siteUrl: `https://tender-wozniak-faad50.netlify.app/`,
+    facebook: "https://www.facebook.com/Liderar-Propiedades-109987060417541",
+    instagram: `https://www.instagram.com/liderar_propiedades/`,
+    siteUrl: `http://liderarpropiedades.cl`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

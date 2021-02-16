@@ -101,7 +101,7 @@ export default ({
       <CardImage src={mainImage} />
       <CardInfo>
         <CardTitleCont>
-          <CardTitle>{truncate(title, 30)}</CardTitle>
+          <CardTitle>{truncate(title, 50)}</CardTitle>
           {currency} {currency !== "UF" && "$"}{priceFormat(value)}
           <li>
             <CardOperation>{operation.toLowerCase()} - cod {code}</CardOperation>

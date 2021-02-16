@@ -35,8 +35,8 @@ export default ({ children, data })=> {
           <Helmet>
             <meta charSet="utf-8" />
             <meta name="description" content="Tenemos excelentes propiedades pensadas para ti." />
-            <title>Propiedades | www.lwpropiedades.cl | Chile</title>
-            <link rel="canonical" href="https://tender-wozniak-faad50.netlify.app/" />
+            <title>liderarpropiedades.cl | Chile</title>
+            <link rel="canonical" href="http://liderarpropiedades.cl" />
             {/*<script type="text/javascript" async src="https://s.cliengo.com/weboptimizer/5fc654eafd9efe002a1607d6/5fc654ebfd9efe002a1607d9.js"></script>*/}
           </Helmet>              
           <Header />

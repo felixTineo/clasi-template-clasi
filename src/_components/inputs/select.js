@@ -27,7 +27,7 @@ const Select = styled.select`
   appearance: none; 
   background-color: #fff;
   border-radius: 6px;
-  padding: 5px;
+  padding: .5rem;
   height: 44px;
   width: 100%;
   background-image: ${props => props.primary

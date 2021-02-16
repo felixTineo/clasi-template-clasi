@@ -12,7 +12,7 @@ const InputLabel = styled.label`
   height: 44px;
   width: 100%;
   margin-bottom: 1rem;
-  border: ${props => props.gray ? "1px solid #EBEBEB" : "1px solid #5A5A5A" };  
+  border: ${props => props.gray ? "1px solid #EBEBEB" : "none" };  
   padding-right: 16px;
   color: #fff;
   @media(min-width: 768px){
@@ -83,7 +83,7 @@ const PropertyInfoDescription = styled.span`
 `
 
 
-export default ({ selected, onSelect, id, placeholder, options }) => {
+export default ({ selected, onSelect, id, placeholder, options, gray }) => {
   const contextData = useContext(context);
   const [value, setValue] = useState(selected)
   const [state, setState] = useReducer((current, next) => ({ ...current, ...next }),{
@@ -111,8 +111,8 @@ export default ({ selected, onSelect, id, placeholder, options }) => {
       setState({ loading: true });
       try{
         setValue(value);
-        //const propertiesUrl = `https://api.clasihome.com/rest/properties?id=${contextData.office.id}&typeId=${contextData.office.typeId}&status=PUBLICADA&stringSearch=${value}`;
-        const propertiesUrl = `https://api.clasihome.com/rest/properties?id=5e8e36b31c9d440000d35090&typeId=${contextData.office.typeId}&status=PUBLICADA&stringSearch=${value}`;
+        const propertiesUrl = `https://api.clasihome.com/rest/properties?id=${contextData.office.id}&typeId=${contextData.office.typeId}&status=PUBLICADA&stringSearch=${value}`;
+        //const propertiesUrl = `https://api.clasihome.com/rest/properties?id=5e8e36b31c9d440000d35090&typeId=${contextData.office.typeId}&status=PUBLICADA&stringSearch=${value}`;
         const data = await fetch(propertiesUrl);
         const result = await data.json();
         console.log(result);
@@ -138,7 +138,7 @@ export default ({ selected, onSelect, id, placeholder, options }) => {
   }
 
   return (
-    <InputLabel htmlFor={id} gray>
+    <InputLabel htmlFor={id} gray={gray}>
       <Input
         id={id}
         name={id}

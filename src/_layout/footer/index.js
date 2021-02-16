@@ -249,6 +249,11 @@ export default ()=> {
                       Propiedades
                     </NavLink>                  
                   </Col>
+                  <Col xs={6} md={12}>
+                    <NavLink to={`/confidence`}>
+                      Confíenos su propiedad
+                    </NavLink>                  
+                  </Col>                  
 {/*                  <Visible md xs xxl lg xl>
                     <Col xs={6} md={12}>
                       <NavLink to="/news">

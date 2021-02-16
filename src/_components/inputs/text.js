@@ -5,6 +5,7 @@ export default styled.input`
   box-shadow: 0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12);
   border-radius: 6px;
   padding: 5px;
+  padding-left: .5rem;
   height: 44px;
   width: 100%;
   border: none;
