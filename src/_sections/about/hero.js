@@ -7,15 +7,16 @@ const MainCont = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${props => props.theme.about.hero.background});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
 `
 const InnerCont = styled.div`
-  height: 70vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   @media(min-width: 768px){
     justify-content: flex-start;
+    height: calc(100vh - 154.27px);
   }
 `;
 const Title = styled.h1`

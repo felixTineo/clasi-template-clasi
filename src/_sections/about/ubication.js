@@ -29,15 +29,15 @@ export default ()=> {
   return(
     <MainCont>
       <Title>
-        {state.title}
+      ¿Deseas una reunión? Coordinemos y con gusto te atendemos en Av. Vitacura 3201, Vitacura.
       </Title>
       {
         lat && (
           <Map
-          lat={parseFloat(lng)}
-          lng={parseFloat(lat)}
+          lat={parseFloat(lat)}
+          lng={parseFloat(lng)}
           height={300}
-          zoom={8}
+          zoom={18}
         />         
         )
       } 

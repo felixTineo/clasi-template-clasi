@@ -4,7 +4,7 @@ import { Container } from 'react-grid-system';
 
 const MainCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
-  color: #fff;
+  color: #D8AD4C;
   padding: .5rem 0;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;

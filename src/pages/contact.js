@@ -9,7 +9,7 @@ export default ({ data })=> {
   return(
     <Layout data={JSON.parse(data.initial.data)}>
       <Contact />
-      {/*<Ubication />*/}
+      <Ubication />
     </Layout>
   )
 }

@@ -53,7 +53,7 @@ export default ()=> {
               image={state.bannerImage}
               buttonText={state.buttonText}
               title={"Encuentra aquí las mejores propiedades que tenemos disponibles"}
-              icon="/icons/marker.svg"
+              icon="/marker.svg"
               onClick={()=> navigate("/properties")}
             />
           </Col>

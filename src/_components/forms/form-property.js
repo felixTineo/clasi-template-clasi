@@ -8,6 +8,7 @@ import { useNavigateForm } from '../../_hooks';
 import PROPERTY_TYPE from '../../_constants/PROPERTY_TYPE.json';
 import COMMUNES from '../../_constants/CITIES.json';
 import { getSearchParams } from 'gatsby-query-params';
+import { SearchOutlined } from '@ant-design/icons';
 
 const Form = styled.form`
   width: 100%;
@@ -40,12 +41,12 @@ const FormButtonCont = styled.div`
 `
 const FormButton = styled.button`
   margin-left: ${props => props.noMargin ? "0" : "2rem"};
-  color: ${props => props.active ? "#fff" : "rgba(255, 255, 255, .6)"};
+  color: ${props => props.active ? "#D8AD4C" : "rgba(255, 255, 255, .6)"};
   font-weight: bold;
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  border-color: ${props => props.active && props.theme.main.primaryColor};
+  border-color: ${props => props.active && "#D8AD4C"};
   transition: 250ms ease;
   cursor: pointer;
   @media(min-width: 768px){
@@ -168,12 +169,12 @@ export default ({ block, shadow, noHome })=> {
           <Col xs={12} md={2}>
             <Hidden xs>
               <IconButton primary>
-                <img src="/icons/search.svg" alt="buscar" />
+              <SearchOutlined />
               </IconButton>
             </Hidden>
             <Visible xs>
               <Button primary block>
-                <img src="/icons/search.svg" alt="buscar" style={{ marginRight: "1rem" }} />
+                <SearchOutlined />
                 Buscar
               </Button>
             </Visible>

@@ -10,15 +10,15 @@ require('dotenv').config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "liderarpropiedades",
+    title: "Realty Brokers | Chile",
     author: "Clasihome",
     //imageUrl: "https://clasihome.com/properties/back.png",
     description:
       "Tenemos excelentes propiedades pensadas para ti.",
     keywords: `inmobilario, chile, republica, propiedades, republicar, portales, portal, inmobiliaria, web, santiago, corredor, casas, departamentos, venta, arriendo, mejores, precios`,
-    facebook: "https://www.facebook.com/Liderar-Propiedades-109987060417541",
-    instagram: `https://www.instagram.com/liderar_propiedades/`,
-    siteUrl: `http://liderarpropiedades.cl`,
+    facebook: "https://www.facebook.com/realtybrokerscl",
+    instagram: `https://www.instagram.com/realtybrokerscl`,
+    siteUrl: `http://clasihome.com`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -37,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Elephant - inmobiliaria`,
-        short_name: "elephant",
+        name: `Realty Brokers - inmobiliaria`,
+        short_name: "Realty Brokers",
         lang: `es`,
         start_url: "/",
         icon: `static/favicon.ico`,

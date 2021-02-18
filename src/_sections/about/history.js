@@ -25,6 +25,7 @@ const Image = styled.img`
   object-fit: cover;
   object-position: center;
   width: 100%;
+  height: 90vh;
 `
 
 export default ()=> {
@@ -32,9 +33,9 @@ export default ()=> {
   return(
     <MainCont>
       <Container>
-        <Row>
+        <Row align="center">
           <Col xs={12} md={6} push={{ md: 6 }}>
-            <Image src="/history-image.jpg" alt="historia" />
+            <Image src={state.history.background} alt="historia" />
           </Col>                    
           <Col xs={12} md={6} pull={{ md: 6 }}>
             <HistoryCont>

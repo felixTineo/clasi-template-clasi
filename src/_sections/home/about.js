@@ -92,7 +92,7 @@ export default ()=> {
       <Container>
         <Row gutterWidth={128}>
           <Col xs={12} md={6}>
-            <TitleService>En Liderar Propiedades ofrecemos un servicio profesional y de excelencia.</TitleService>
+            <TitleService>En Realty Brokers encontrarás compromiso y seguridad.</TitleService>
             <SubTitleService>Estos son algunos de los servicios con los que podrás contar:</SubTitleService>
             <CarouselCont>
               <ServiceCarousel />

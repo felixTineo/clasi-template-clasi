@@ -17,7 +17,7 @@ const MainCont = styled.section`
   background-repeat: no-repeat;
   color: #fff;
   @media(min-width: 768px){
-    min-height: 85vh;
+    min-height: calc(100vh - 154.27px);
   }
 `
 
@@ -34,13 +34,13 @@ const Title = styled.h1`
 const DownButton = styled.a`
   text-decoration: none;
   position: absolute;
-  bottom: 30px;
+  bottom: 1rem;
 `
 const SvgCont = styled.svg`
   stroke: #fff;
   transition: 250ms ease;
   ${DownButton}:hover & {
-    stroke: ${props => props.theme.main.primaryColor};
+    stroke: rgb(212, 175, 55);
   }
 `
 

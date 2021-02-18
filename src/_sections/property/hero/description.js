@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Row, Col, Visible } from 'react-grid-system';
 import InteractionButtons from '../interaction-buttons';
 import { EnvironmentOutlined } from '@ant-design/icons';
+import { priceFormat } from '../../../_util';
 
 const MainCont = styled.div`
   background-color: #fff;
@@ -52,7 +53,7 @@ export default ({ description })=> {
             {description.title}
           </Title>
           <Price>
-            {`${description.currency} ${description.value}`}
+            {`${description.currency} ${description.currency === "UF" ? description.value : priceFormat(description.value)}`}
           </Price>
           <UbicationCont>
             <SvgCont version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">

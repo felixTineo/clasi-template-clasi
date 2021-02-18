@@ -29,10 +29,10 @@ export default ({ items })=> {
             }
           </Slider>
           <ButtonBack className="carousel-back-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-left.svg" alt="chevron" />
+            <img src="/chevron-left.svg" alt="chevron" />
           </ButtonBack>
           <ButtonNext className="carousel-next-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-right.svg" alt="chevron"/>
+            <img src="/chevron-right.svg" alt="chevron"/>
           </ButtonNext>
         </CarouselProvider>
       </Hidden>

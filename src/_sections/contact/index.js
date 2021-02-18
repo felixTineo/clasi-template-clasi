@@ -11,6 +11,10 @@ const MainCont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 122.27px;
+  @media(min-width: 768px){
+    margin-top: 0;
+  }
 `
 
 const Title = styled.h1`
@@ -105,10 +109,10 @@ export default ()=> {
     <Container>
       <MainCont>
         <Title>
-          Contáctanos
+          ¿Consultas? Escríbenos y te atenderemos a la brevedad
         </Title>
         <SubTitle>
-          Envíenos un mensaje y uno de nuestros asesores se pondra en contacto a la brevedad
+          
         </SubTitle>
         <Row>
           <Col xs={12}>
@@ -181,7 +185,7 @@ export default ()=> {
                     </Visible>
                     <Col xs={12}>
                       <SubTitleFooter>
-                        También puede escribirnos a <MailSpan>contacto@liderarpropiedades.cl</MailSpan>
+                        También puede escribirnos a <MailSpan>contacto@realtybrokers.cl</MailSpan>
                       </SubTitleFooter>
                     </Col>
                   </Row>
