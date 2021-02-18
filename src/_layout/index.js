@@ -35,7 +35,7 @@ export default ({ children, data })=> {
           <Helmet>
             <meta charSet="utf-8" />
             <meta name="description" content="Tenemos excelentes propiedades pensadas para ti." />
-            <title>Propiedades | MyC</title>
+            <title>Realty Brokers | Chile</title>
             <link rel="canonical" href="http://clasihome.com" />
             <meta name="og:url" content="http://clasihome.com" />
             <meta name="og:title" content="Realty Brokers | Chile" />
