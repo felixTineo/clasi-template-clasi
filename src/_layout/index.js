@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Context from '../_context';
 import data from '../_context/state';
 import styled, { ThemeProvider } from 'styled-components';
@@ -25,12 +25,19 @@ export default ({ children, data })=> {
 
   /*const { loading, data, error } = useLayout();
 
-  if(loading) return <LoaderScreen />
+  if(loading) return <LoaderScreen /> 
   if(error) return <p>error de conexión</p>*/
+  useEffect(()=>{
+    (async()=>{
+      const data = await fetch(`https://api.clasihome.com/rest/builders?builderId=5fb2a5f3ea262c2e14e462ad`); 
+      const result = await data.json();
+      console.log("ORIGINAL DATA", result);
+    })()
+  },[])
 
   return(
     <Context.Provider value={data}>
-      <ThemeProvider theme={data}>
+      <ThemeProvider theme={data}>        
         <Layout>
           <Helmet>
             <meta charSet="utf-8" />

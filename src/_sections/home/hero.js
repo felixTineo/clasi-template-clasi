@@ -11,13 +11,14 @@ const MainCont = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(${props => props.theme.home.hero.background});
+  background-image: linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), url(${props => props.theme.home.hero.background});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
+  border-bottom: 10px solid #F7BD2D;
   @media(min-width: 768px){
-    min-height: calc(100vh - 154.27px);
+    //min-height: calc(100vh - 154.27px);
   }
 `
 

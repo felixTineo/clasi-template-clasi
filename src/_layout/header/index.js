@@ -14,8 +14,11 @@ const MainCont = styled.header`
   width: 100%;
   z-index: 1500;
   @media(min-width: 768px){
-    position: relative;
-    //background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
   }
 `
 
