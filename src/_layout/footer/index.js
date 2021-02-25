@@ -5,9 +5,11 @@ import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { UpOutlined, PhoneFilled, WhatsAppOutlined } from '@ant-design/icons';
 
 const Footer = styled.footer`
-  
+  background-color: ${props => props.theme.main.primaryColor};
+  color: #fff;
 `
 const MainFooter = styled.div`
   padding: 4rem 0;
@@ -28,7 +30,7 @@ const OfficeInfoCont = styled.ul`
   list-style: none;
 `
 const OfficeInfo = styled.li`
-  color: #8E8787;
+  color: #fff;
   margin-bottom: .5rem;
 `
 const FooterRights = styled.ul`
@@ -51,25 +53,52 @@ const NavCont = styled.div`
   }      
 `
 const NavLink = styled(Link)`
-  color: #212121;
+  color: #fff;
   transition: 250ms ease;
   text-decoration: none;
-  font-weight: bold;
   margin-bottom: 1rem;
   @media(min-width: 768px){
     display: block;
     text-align: right;
   }
-  &:hover{
-    color: ${props => props.theme.main.primaryColor} !important;
-  }
   &:visited{
-    color: #212121;
+    color: #fff;
+  }  
+  &:hover{
+    color: #F7BD2D;
   }
 `
+const ContactButton = styled.a`
+  text-decoration: none;
+    min-width: 160px;
+    min-height: 44px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: #FFFFFF;
+    transition: 250ms ease;
+    //font-family: "Roboto";
+    span{
+      margin-left: .5rem;
+    }
+    &:visited{
+      color: #fff;
+    }
+    &:hover{
+      background-color: #fff;
+      color: ${props => props.theme.main.primaryColor};
+    }
+`
 const SvgIcon = styled.svg`
-  fill: ${props => props.social ? props.theme.main.primaryColor : "#fff"};
+  fill: #fff;
   margin-right: .5rem;
+  ${ContactButton}:hover &{
+    fill: red;
+  }
 `
 const SocialNav = styled.ul`
   padding: 0;
@@ -95,12 +124,12 @@ const Logo = styled.img`
 const HeaderTitle = styled.h1`
   color: ${props => props.theme.main.primaryColor};
   font-size: 1rem;
-  font-weight: bold;
+  //font-weight: bold;
 `
 
 const DevelopBy = styled.a`
   color: #fff !important;
-  font-weight: bold;
+  //font-weight: bold;
   margin-left: .5rem;
 `
 
@@ -117,46 +146,22 @@ const BackTop = styled.button`
   justify-content: center;
   border: none;
   cursor: pointer;
+  color: #fff;
+  border: 1px solid #fff;
   align-items: center;
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  background: ${props => props.theme.main.primaryColor};
+  background: transparent;
   margin-bottom: 1rem;
   transition: 250ms ease;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
-              0px 2px 2px rgba(0, 0, 0, .12),
-              0px 4px 4px rgba(0, 0, 0, .12),
-              0px 8px 8px rgba(0, 0, 0, .12);
   &:hover{
-    filter: brightness(1.1);
+    background: #fff;
+    color: ${props => props.theme.main.primaryColor};
   };
   &:active{
     box-shadow: none;
   }
-`
-const ContactButton = styled.a`
-  text-decoration: none;
-    min-width: 160px;
-    min-height: 44px;
-    border: 1px solid #FFFFFF;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #374685;
-    border-color: #374685;
-    color: #FFFFFF;
-    transition: 250ms ease;
-    font-family: "Roboto";
-    &:visited{
-      color: #fff;
-    }
-    &:hover{
-      background-color: hsl(228,41%,55%);
-      color: #fff;
-    }
 `
  
 
@@ -199,10 +204,8 @@ export default ()=> {
                 </Col>
                 <Col xs={12}>
                   <ContactButton href={`https://api.whatsapp.com/send?phone=56942371486`} target="_blank" rel="noopener">
-                    <SvgIcon width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12.8766 9.1894C12.0195 9.1894 11.1779 9.05534 10.3804 8.79178C9.98958 8.65849 9.50917 8.78077 9.27066 9.02573L7.6965 10.2141C5.87092 9.23956 4.7464 8.11541 3.78521 6.30354L4.93857 4.77039C5.23822 4.47114 5.3457 4.03401 5.21693 3.62385C4.95224 2.82213 4.81779 1.98093 4.81779 1.12343C4.81782 0.503963 4.31386 0 3.69443 0H1.12339C0.503964 0 0 0.503964 0 1.12339C0 8.22365 5.77639 14 12.8766 14C13.4961 14 14 13.496 14 12.8766V10.3127C14 9.69336 13.496 9.1894 12.8766 9.1894Z"/>
-                    </SvgIcon>
-                      <span>{office.phone}</span>
+                      <WhatsAppOutlined />
+                      <span>Envianos un WhatsApp</span>
                   </ContactButton>                 
                 </Col>                            
                 <Col xs={12}>
@@ -233,7 +236,7 @@ export default ()=> {
                     <Hidden xs>
                         <BackTopCont>
                           <BackTop onClick={handleTop} href="#top">
-                            <img src="/chevron-up.svg" alt="backtop" />
+                            <UpOutlined />
                           </BackTop>
                         </BackTopCont>
                     </Hidden> 
@@ -257,7 +260,12 @@ export default ()=> {
                     <NavLink to={`/contact`}>
                       Contacto
                     </NavLink>                  
-                  </Col>                                          
+                  </Col>       
+                  <Col xs={6} md={12}>
+                    <NavLink href={`http://app.clasihome.com/login?logo=${state.main.logoDark.value}&primaryColor=${state.main.primaryColor.substring(1)}`}>
+                      Login
+                    </NavLink>                  
+                  </Col>                                                         
                 </Row>
               </NavCont>
             </Col>                            

@@ -15,14 +15,14 @@ export default styled.button`
   align-items: center;
   background-color: ${props => props.primary ? props.theme.main.primaryColor : "transparent"};
   border-color: ${props => props.primary ? props.theme.main.primaryColor : "#fff"};
-  color: #D8AD4C;
+  color: #F7BD2D;
   transition: 250ms ease;
   &:hover{
     background-color: ${props => props.primary ? hexToHsl(props.theme.main.primaryColor, 30) : "#fff" };
-    color: ${props => props.primary ? "#D8AD4C" : props.theme.main.primaryColor};
+    color: ${props => props.primary ? "#F7BD2D" : props.theme.main.primaryColor};
   };
   &:active{
     background-color: ${props => props.primary ? hexToHsl(props.theme.main.primaryColor, 20) : hexToHsl("#ffffff", 90) };
-    color: ${props => props.primary ? "#D8AD4C" : props.theme.main.primaryColor};
+    color: ${props => props.primary ? "#F7BD2D" : props.theme.main.primaryColor};
   }  
 `

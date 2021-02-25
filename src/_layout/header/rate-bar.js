@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-grid-system';
+import { useGetIndicators } from '../../_hooks';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const MainCont = styled.div`
   background-color: #fff;
-  color: ${props => props.theme.main.primaryColor};
+  //color: #fff;
   padding: .5rem 0;
-  font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  position: relative;
+  //margin-left: auto;
+  //margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  //max-width: 1240px;
 `
 const RatesCont = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  color: #919191;
+  color: #fff;
   @media(min-width: 768px){
     font-weight: normal;
     justify-content: flex-end;
+    color: ${props => props.theme.main.primaryColor};
   }
 `
 const RateItem = styled.li`
@@ -43,19 +53,40 @@ const RateItemNoAfter = styled(RateItem)`
 `
 
 export default ()=> {
-
-  return(
+  const { loading, error, data } = useGetIndicators();
+  
+  if(loading) return(
     <MainCont>
       <Container>
         <RatesCont>
           <RateItem>
-            UF $75875987
+            UF <span><LoadingOutlined /></span>
           </RateItem>
           <RateItem>
-            UTM $75875987
+            UTM <span><LoadingOutlined /></span>
           </RateItem>
           <RateItemNoAfter>
-            Dólar $75875987
+            Dólar <span><LoadingOutlined /></span>
+          </RateItemNoAfter>                    
+        </RatesCont>
+      </Container>
+    </MainCont>
+  );
+
+  if(error) return <span>error de conextión</span>
+
+  return(
+    <MainCont>      
+      <Container>
+        <RatesCont>
+          <RateItem>
+            UF ${data.uf}
+          </RateItem>
+          <RateItem>
+            UTM ${data.utm}
+          </RateItem>
+          <RateItemNoAfter>
+            Dólar ${data.dollar}
           </RateItemNoAfter>                    
         </RatesCont>
       </Container>

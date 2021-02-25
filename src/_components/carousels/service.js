@@ -14,7 +14,9 @@ const chunkArray = (myArray, chunk) =>{
 };
 
 const ServiceCont = styled.div`
-  padding: 2rem;
+  padding: 1rem;
+  margin-left: ${props => props.index !== 0 && props.desktop ? "1rem" : "0"};
+  padding-left: ${props => props.index === 0 && props.desktop ? "0" : "1rem"};
 `
 const ServiceTitle = styled.p`
   color: ${props => props.theme.main.primaryColor};
@@ -26,9 +28,9 @@ const ServiceContainer = styled.div`
   display: flex;
 `
 
-const Service = ({ id, title, description }) => {
+const Service = ({ id, title, description, index, desktop }) => {
   return(
-    <ServiceCont>
+    <ServiceCont index={index} desktop={desktop}>
       <ServiceTitle>
         {title}
       </ServiceTitle>
@@ -45,14 +47,14 @@ export default ()=> {
   const color = state.main.primaryColor;
   const itemsMovil = state.home.services.items;
   const itemsToChunk = state.home.services.items.map(item => item);
-  const itemsDesk = chunkArray(itemsToChunk, 2);
+  const itemsDesk = chunkArray(itemsToChunk, 4);
   return(
     <Fragment>
       <Hidden xs>
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={50}
-          //isIntrinsicHeight={true}
+          //naturalSlideHeight={50}
+          isIntrinsicHeight={true}
           totalSlides={itemsDesk.length}
           visibleSlides={1}
           orientation="horizontal"
@@ -63,8 +65,8 @@ export default ()=> {
                 <Slide key={mainItem[0].id} index={index}>
                   <ServiceContainer>
                   {
-                    mainItem.map(item => (
-                        <Service key={item.id} {...item} />
+                    mainItem.map((item, indexChild) => (
+                        <Service key={item.id} {...item} index={indexChild} desktop/>
                     ))
                   }
                   </ServiceContainer>
@@ -72,15 +74,6 @@ export default ()=> {
               ))
             }
           </Slider>
-          <ButtonBack className="carousel-back-button carousel-text-back-button" style={{ backgroundColor: color }}>
-            <img src="/chevron-left.svg" alt="chevron" />
-          </ButtonBack>
-          <ButtonNext className="carousel-next-button carousel-text-next-button" style={{ backgroundColor: color }}>
-            <img src="/chevron-right.svg" alt="chevron"/>
-          </ButtonNext>
-          {
-            Array(itemsDesk.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)
-          }
         </CarouselProvider>
       </Hidden>
       <Visible xs>

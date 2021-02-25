@@ -10,6 +10,12 @@ import { getSearchParams } from 'gatsby-query-params';
 const SectionCont = styled.div`
   background-color: #fff;
   padding: 8rem 0 0;
+  background-image: linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), url("/6037cdc7ef29c.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  min-height: 75vh;
 `
 
 const SearchForm = styled.form`
@@ -42,15 +48,17 @@ const ButtonFilter = styled.button`
   align-items: center;
   text-decoration: underline;
   transition: 250ms ease;
+  color: #fff;
   &:hover{
-    color: ${props => props.theme.main.primaryColor};
+    color: #F7BD2D;
   }
 `
 const SvgCont = styled.svg`
-  fill: ${props => props.theme.main.primaryColor};
+  fill: #fff;
   margin-left: 1rem;
+  transition: 250ms ease;
   ${ButtonFilter}:hover & {
-    filter: brightness(1.2)
+    fill: #F7BD2D;
   }
 `
 
@@ -156,7 +164,7 @@ export default ()=> {
                     />
                   </Col>
                   <Col xs={12} md={2}>
-                    <Button primary block shadow>Aplicar filtros</Button>
+                    <Button block shadow>Aplicar filtros</Button>
                   </Col>                                                                                    
                 </Row>
               </Container>

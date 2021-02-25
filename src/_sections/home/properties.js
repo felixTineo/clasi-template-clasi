@@ -25,7 +25,7 @@ export default ()=> {
   useEffect(()=>{
     (async()=>{
       try{
-        //const data = await fetch(`https://api.clasihome.com/rest/properties?id=${office.id}&typeId=${office.typeId}&status=PUBLICADA&limit=9&integration=WEB&featured=true`);
+        //const data = await fetch(`https://api.clasihome.com/rest/properties?id=${office.id}&typeId=${office.typeId}&status=PUBLICADA&limit=9&integration=WEB&featu#F7BD2D=true`);
         const data = await fetch(`https://api.clasihome.com/rest/properties?id=${office.id}&typeId=${office.typeId}&status=PUBLICADA&limit=9`);
         const result = await data.json();
         console.log("ITEMS ITEMS ITEMS", result.properties);
@@ -48,17 +48,15 @@ export default ()=> {
           <Col xs={12}>
             <PropertyCarousel items={items} />
           </Col>
-          <Col xs={12}>
-            <Rectangular
-              image={state.bannerImage}
-              buttonText={state.buttonText}
-              title={"Encuentra aquí las mejores propiedades que tenemos disponibles"}
-              icon="/marker.svg"
-              onClick={()=> navigate("/properties")}
-            />
-          </Col>
         </Row>
       </Container>
+      <Rectangular
+        image={state.bannerImage}
+        buttonText={state.buttonText}
+        title={"Encuentra aquí las mejores propiedades que tenemos disponibles"}
+        icon="/marker.svg"
+        onClick={()=> navigate("/properties")}
+      />      
     </MainCont>
   )
 }

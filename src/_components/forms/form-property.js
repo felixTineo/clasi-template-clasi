@@ -22,6 +22,7 @@ const Form = styled.form`
     background-color: #fff;
     box-shadow: ${props => props.shadow && "0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)"};
     margin-bottom:0;
+    border: 2px  solid #fff;
   }  
 `
 const FormCont = styled.div`
@@ -41,12 +42,11 @@ const FormButtonCont = styled.div`
 `
 const FormButton = styled.button`
   margin-left: ${props => props.noMargin ? "0" : "2rem"};
-  color: ${props => props.active ? "#D8AD4C" : "rgba(255, 255, 255, .6)"};
-  font-weight: bold;
+  color: ${props => props.active ? "#F7BD2D" : "rgba(255, 255, 255, .6)"};
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  border-color: ${props => props.active && "#D8AD4C"};
+  border-color: ${props => props.active && "#F7BD2D"};
   transition: 250ms ease;
   cursor: pointer;
   @media(min-width: 768px){

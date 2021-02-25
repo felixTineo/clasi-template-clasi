@@ -13,7 +13,13 @@ const DescriptionTitle = styled.h2`
   
 `
 const DescriptionDescription = styled.p`
+  ul{
+    padding-left: 2rem;
+    list-style: initial;
+  }
+  li{
 
+  }
 `
 
 const Description = ({ id, description, title }) => {
@@ -39,9 +45,9 @@ export default ()=> {
       <Hidden xs>
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={60}
+          naturalSlideHeight={70}
           //isIntrinsicHeight={true}
-          totalSlides={items.length}
+          totalSlides={items.length + 1}
           visibleSlides={1}
           orientation="horizontal"
         >
@@ -53,12 +59,35 @@ export default ()=> {
                 </Slide>
               ))
             }
+            <Slide>
+              <DescriptioneCont>
+                <DescriptionTitle>
+                  Valores
+                </DescriptionTitle>      
+                <DescriptionDescription>
+                  <ul>
+                    <li>
+                    Proactividad.
+                    </li>
+                    <li>
+                    Profesionalismo.
+                    </li>
+                    <li>
+                    Transparencia.
+                    </li>
+                    <li>
+                    Tecnología.
+                    </li>                                                            
+                  </ul>
+                </DescriptionDescription>
+              </DescriptioneCont>              
+            </Slide>
           </Slider>
           <ButtonBack className="carousel-back-button carousel-desc-back-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-left.svg" alt="chevron" />
+            <img src="/chevron-left.svg" alt="chevron" />
           </ButtonBack>
           <ButtonNext className="carousel-next-button carousel-desc-next-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-right.svg" alt="chevron"/>
+            <img src="/chevron-right.svg" alt="chevron"/>
           </ButtonNext>
           {/*
             Array(items.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)

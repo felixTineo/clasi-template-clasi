@@ -4,7 +4,7 @@ import { Container } from 'react-grid-system';
 import Context from '../../_context';
 
 const MainCont = styled.section`
-  background-image: linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), url(${props => props.theme.about.hero.background});
+  background-image: linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), url("/6037ca5f71794.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

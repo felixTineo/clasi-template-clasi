@@ -14,7 +14,7 @@ const GalleryItem = styled.div`
   background-image: url(${props => props.url});
 `
 const GalleryThumbCont = styled.div`
-  //border: 1px solid red;
+  //border: 1px solid #F7BD2D;
   margin: 0 !important;
   background-color: ${props => props.theme.main.primaryColor};
 `
@@ -34,7 +34,7 @@ export default ({ images })=> {
     getSwiper: getGallerySwiper,
     lazy: true,
     slidesPerView: "auto",
-    centeredSlides: true,
+    cente#F7BD2DSlides: true,
     slidesPerView: 1,
     /*navigation: {
       nextEl: ".swiper-button-next.customized-swiper-button-next",
@@ -47,7 +47,7 @@ export default ({ images })=> {
     getSwiper: getThumbnailSwiper,
     spaceBetween: 10,
     slidesPerView: "auto",
-    centeredSlides: true,
+    cente#F7BD2DSlides: true,
     slideToClickedSlide: true,
     containerClass: "customized-swiper-container-thumb",
   };

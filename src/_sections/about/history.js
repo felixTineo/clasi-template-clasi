@@ -19,7 +19,7 @@ const Title = styled.h2`
   color: ${props => props.theme.main.primaryColor};
 `
 const Description = styled.div`
-
+  text-align: justify;
 `
 const Image = styled.img`
   object-fit: cover;

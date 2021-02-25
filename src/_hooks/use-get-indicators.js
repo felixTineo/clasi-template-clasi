@@ -20,8 +20,7 @@ export default ()=> {
   });
 
   const getAllData = useCallback(async()=> {
-    const localData = window.localStorage.getItem("indicators");
-    if( !localData || localData && Date.now() > new Date(localData.date)){
+
       try{
         const urls = ["https://mindicador.cl/api/uf", "https://mindicador.cl/api/utm", "https://mindicador.cl/api/dolar"];
         const data = await Promise.all(urls.map(url => getData(url)));
@@ -40,11 +39,6 @@ export default ()=> {
         console.log(e);
         setQuery({ loading: false, error: true, data: null });
       }
-    }
-    else{
-      console.log("ALL DATA RATE YESTERDAY", JSON.parse(localData).uf);
-      setQuery({ loading: false, error: false, data: JSON.parse(localData) });
-    }
   });
 
   useEffect(()=>{

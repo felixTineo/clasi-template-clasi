@@ -5,6 +5,10 @@ import Context from '../../_context';
 import { Button } from '../../_components/buttons';
 import { navigate } from 'gatsby';
 
+const MainCont = styled.div`
+  background-color: rgba(0,0,0, .05);
+`
+
 const SectionCont = styled.div`
   padding: 2rem 0;
 `
@@ -24,7 +28,7 @@ const Divider = styled.div`
 export default ()=> {
   const sectionText = useContext(Context).home.contact.title;
   return(
-    <Fragment>
+    <MainCont>
       <Container>
         <SectionCont>
             <Row align="center">
@@ -41,7 +45,6 @@ export default ()=> {
             </Row>
         </SectionCont>
       </Container>
-      <Divider />
-    </Fragment>
+    </MainCont>
   )
 }

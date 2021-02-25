@@ -11,9 +11,9 @@ const MainCont = styled.section`
   padding-bottom: 6rem;
 `
 const HeroInfoCont = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
+  //background-color: ${props => props.theme.main.primaryColor};
   min-height: calc(50vh - 4rem);
-  color: #ffffff;
+  //color: #ffffff;
 `
 const DescriptionCont = styled.div`
   display: flex;
@@ -25,6 +25,7 @@ const DescriptionCont = styled.div`
 `
 const Title = styled.h2`
   font-size: 40px;
+  color: ${props => props.theme.main.primaryColor};
 `
 const Description = styled.p`
   margin: 2rem 0 4rem;
@@ -41,7 +42,7 @@ const TitleService = styled(Title)`
 `
 const SubTitleService = styled(Description)`
   font-weight: bold;
-  margin: 4rem 0 0;
+  //margin: 4rem 0 0;
 `
 const TitleQuoteCont = styled.div`
   padding-top: 4rem;
@@ -76,7 +77,7 @@ export default ()=> {
                 <Description>
                   {state.about.banner.subTitle}
                 </Description>
-                <Button block onClick={()=> navigate("/about")}>
+                <Button block primary onClick={()=> navigate("/about")}>
                   {state.about.banner.buttonText}
                 </Button>
               </DescriptionCont>
@@ -91,14 +92,14 @@ export default ()=> {
       </HeroInfoCont>
       <Container>
         <Row gutterWidth={128}>
-          <Col xs={12} md={6}>
-            <TitleService>En Realty Brokers encontrarás compromiso y seguridad.</TitleService>
+          <Col xs={12}>
+            <TitleService>En Realty Brokers encontrarás <br /> compromiso y seguridad.</TitleService>
             <SubTitleService>Estos son algunos de los servicios con los que podrás contar:</SubTitleService>
             <CarouselCont>
               <ServiceCarousel />
             </CarouselCont>
           </Col>
-          <Col xs={12} md={6}>
+{/*          <Col xs={12} md={6}>
             <div style={{
               display: "flex",
               justifyContent: "center",
@@ -110,15 +111,15 @@ export default ()=> {
                 boxShadow: "0px 12px 24px rgba(0, 0, 0, .25)"
               }} />
             </div>
-{/*            <TitleQuoteCont>
+            <TitleQuoteCont>
               <SvgCont width="84" height="101" viewBox="0 0 84 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M56 48.3737L56 0H84L84 48.3737L72.6923 101H58.1538L66.2308 48.3737H56ZM0 48.3737L0 0L28 0L28 48.3737L16.6923 101H2.15385L10.2308 48.3737H0Z"/>
               </SvgCont>
             </TitleQuoteCont>
             <QuoteCarouselCont>
               <ReviewCarousel />
-</QuoteCarouselCont>*/}
-          </Col>          
+</QuoteCarouselCont>
+          </Col>    */}      
         </Row>
       </Container>
     </MainCont>

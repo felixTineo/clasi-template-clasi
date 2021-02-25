@@ -1,14 +1,65 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, Fragment } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { PropertyCard as Card } from '../../_components/cards';
 import OfficeContext from '../../_context';
 import { useProperties } from '../../_hooks';
-import { LoadingOutlined, FrownOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
+import { LoadingOutlined, FrownOutlined, LeftOutlined, RightOutlined, WhatsAppOutlined } from '@ant-design/icons'
 import ReactPaginate from 'react-paginate';
 import { getSearchParams } from 'gatsby-query-params';
 import { urlBuilder } from '../../_util';
 import { navigate } from 'gatsby';
+
+const BarCont = styled.section`
+  //padding: 4rem 0;
+  margin: 4rem 0;
+  @media(min-width: 768px){
+    margin-bottom: 0;
+  }
+`
+const HeaderMapCont = styled.div`
+  background-color: rgba(0,0,0,.05);
+`
+const Title = styled.p`
+  color: ${props => props.theme.main.primaryColor};
+  padding: 4rem 2rem;
+  //text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+  padding-left: 0;
+`
+/*const Map = styled.img`
+  width: 100%;
+  height: 304px;
+  object-position: center;
+  object-fit: cover;
+`*/
+
+const ContactButton = styled.a`
+  text-decoration: none;
+    min-width: 160px;
+    min-height: 44px;
+    border: 1px solid ${props => props.theme.main.primaryColor};;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: ${props => props.theme.main.primaryColor};;
+    transition: 250ms ease;
+    //font-family: "Roboto";
+    span{
+      margin-left: .5rem;
+    }
+    &:visited{
+      color: #fff;
+    }
+    &:hover{
+      background-color: ${props => props.theme.main.primaryColor};;
+      color: #fff;
+    }
+`
 
 const NavPaginate = styled.nav`
   display: flex;
@@ -117,43 +168,64 @@ export default ({ location })=> {
   );
 
   return(
-    <Container>
-      <div style={{ paddingTop: '5rem' }}>
-        <Row>
-          {
-            data.properties.map(p => (
-              <Col key={p.mainImage} xs={12} md={4} style={{ margin: "1rem 0" }}>
-                <Card {...p} />
+    <Fragment>
+      <Container>
+        <div style={{ paddingTop: '5rem' }}>
+          <Row>
+            {
+              data.properties.map(p => (
+                <Col key={p.mainImage} xs={12} md={4} style={{ margin: "1rem 0" }}>
+                  <Card {...p} />
+                </Col>
+              ))
+            }
+            {
+              data.totalRegistersQuery > 0 && (
+              <Col xs={12}>
+                <NavPaginate>
+                  <ReactPaginate
+                    pageCount={Math.floor(data.totalRegistersQuery / 6)}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={4}
+                    containerClassName="paginateCont"
+                    activeClassName="pagination-page-active"
+                    pageClassName="pagination-page"
+                    previousLabel={<LeftOutlined />}
+                    previousClassName="back-button-paginate"
+                    nextLabel={<RightOutlined />}
+                    nextClassName="next-button-paginate"
+                    disabledClassName="control-disabled"
+                    activeClassName="active-pagination-page"
+                    onPageChange={handlePaginate}
+                    initialPage={parseInt(data.page, 10)}
+                    disableInitialCallback={true}
+                  />
+                </NavPaginate>
               </Col>
-            ))
-          }
-          {
-            data.totalRegistersQuery > 0 && (
-            <Col xs={12}>
-              <NavPaginate>
-                <ReactPaginate
-                  pageCount={data.totalRegistersQuery / 6}
-                  marginPagesDisplayed={2}
-                  pageRangeDisplayed={4}
-                  containerClassName="paginateCont"
-                  activeClassName="pagination-page-active"
-                  pageClassName="pagination-page"
-                  previousLabel={<LeftOutlined />}
-                  previousClassName="back-button-paginate"
-                  nextLabel={<RightOutlined />}
-                  nextClassName="next-button-paginate"
-                  disabledClassName="control-disabled"
-                  activeClassName="active-pagination-page"
-                  onPageChange={handlePaginate}
-                  initialPage={parseInt(data.page, 10)}
-                  disableInitialCallback={true}
-                />
-              </NavPaginate>
+              )
+            }
+          </Row>
+        </div>
+      </Container>
+      <BarCont>
+      <HeaderMapCont>
+        <Container>
+          <Row align="center">
+            <Col xs={12} md={9}>
+              <Title>
+                ¿Deseas una reunión? Coordinemos y con gusto te atendemos en Av. Vitacura 3201, Vitacura.
+              </Title>
             </Col>
-            )
-          }
-        </Row>
-      </div>
-    </Container>
+            <Col xs={12} md={3}>
+              <ContactButton href={`https://api.whatsapp.com/send?phone=56942371486`} target="_blank" rel="noopener">
+                  <WhatsAppOutlined />
+                  <span>Envianos un WhatsApp</span>
+              </ContactButton>                
+            </Col>
+          </Row>
+        </Container>
+      </HeaderMapCont>
+    </BarCont>      
+    </Fragment>
   )
 }

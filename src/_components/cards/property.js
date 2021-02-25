@@ -10,7 +10,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 600px;
+  height: 650px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem;
@@ -41,7 +41,7 @@ const CardInfo = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   color: #212121;
 `
 const CardTitleCont = styled.ul`
@@ -76,6 +76,8 @@ const CardCharacteristics = styled.ul`
 
 const CharItem = styled.li`
   margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
 `
 const Divider = styled.span`
   height: 1px;
@@ -111,7 +113,7 @@ export default ({
         <CardCharacteristics>
           <CharItem>
             <img src="/site.svg" />
-            <span style={{ marginLeft: ".5rem" }}>{truncate(ubication.address, 30)}</span>
+            <span style={{ marginLeft: ".5rem" }}>{truncate(ubication.commune, 30)}</span>
           </CharItem>
           {
             characteristics.filter(char => (

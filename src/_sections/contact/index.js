@@ -5,6 +5,8 @@ import { Input, Textarea } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
 import { LoadingOutlined } from '@ant-design/icons';
 
+
+
 const MainCont = styled.div`
   min-height: 80vh;
   display: flex;
@@ -38,7 +40,7 @@ const MailSpan = styled.span`
   text-decoration: underline;
 `
 const SubTitleFooter = styled(SubTitle)`
-  margin-top: 4rem;
+  margin-top: 2rem;
 `
 const ButtonContainer = styled.div`
    margin-top: 32px;

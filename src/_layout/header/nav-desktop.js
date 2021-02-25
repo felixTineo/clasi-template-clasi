@@ -24,10 +24,10 @@ const NavLink = styled.span`
   transition: 250ms ease;
   text-decoration: none !important;
   &:hover{
-    color: ${props => props.theme.main.primaryColor};;
+    color: #F7BD2D;
   }
   &:visited{
-    color: rgba(255, 255, 255, .6);
+    color: #F7BD2D;
   }
 `
 const SvgCont = styled.svg`
@@ -42,22 +42,22 @@ const LoginButton = styled.a`
   min-width: 160px;
   min-height: 44px;
   border: 1px solid #b79c4e;
-  border-color: ${props => props.theme.main.primaryColor};
+  border-color: #fff;
   transition: 250ms ease;
   padding: 1px 6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${props => props.theme.main.primaryColor};
+  color: #fff;
   text-decoration: none;
   border-radius: 6px;
   cursor: pointer;
   &:visited{
-    color: ${props => props.theme.main.primaryColor};
+    color: #fff;
   }  
   &:hover{
-    background-color: ${props => props.theme.main.primaryColor};;
-    color: #fff;
+    background-color: #fff;
+    color: ${props => props.theme.main.primaryColor};
   }
 `
 
@@ -67,20 +67,27 @@ export default ()=> {
     <MainCont>
       <Logo />
       <NavBar>
-        <NavItem noMargin>
-          <Link to={`/about`}>
+      <NavItem noMargin>
+          <Link to={`/`}>
             <NavLink>
-              Nosotros
+              Home
             </NavLink>
           </Link>
-        </NavItem>
+        </NavItem>        
         <NavItem>
           <Link to={`/properties`}>
             <NavLink>
               Propiedades
             </NavLink>
           </Link>
-        </NavItem>       
+        </NavItem>            
+        <NavItem>
+          <Link to={`/about`}>
+            <NavLink>
+              Nosotros
+            </NavLink>
+          </Link>
+        </NavItem>   
 {/*        <NavItem>
           <Link to="/news">
             <NavLink>
@@ -96,11 +103,11 @@ export default ()=> {
           </Link>
         </NavItem>                          
       </NavBar>
-{/*      <LoginButton
-        href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}
+      <LoginButton
+        href={`http://app.clasihome.com/login?logo=${state.main.logoDark.value}&primaryColor=${state.main.primaryColor.substring(1)}`}
       >
         Login
-</LoginButton>*/}
+      </LoginButton>
   </MainCont>
   )
 }

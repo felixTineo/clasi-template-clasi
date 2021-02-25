@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../buttons';
+import { EnvironmentOutlined } from '@ant-design/icons';
 
 const BannerCont = styled.div`
   margin-top: 2rem;
@@ -16,16 +17,17 @@ const Title = styled.p`
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
+  font-size: 1.5rem;
   @media(min-width: 768px){
     text-align: left;
   }
 `
 const ImageCont = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
 `
 
 export default ({ title, image, onClick, buttonText, icon }) => {
@@ -36,14 +38,14 @@ export default ({ title, image, onClick, buttonText, icon }) => {
         <Visible xs>
           <Col xs={12}>
             <ImageCont>
-              <img src={icon} alt={title} style={{ marginRight: ".5rem" }} />
+              <EnvironmentOutlined />
             </ImageCont>
           </Col>
         </Visible>
         <Col xs={12} md={9}>
           <Title>
             <Hidden xs>
-              <img src={icon} alt={title} style={{ marginRight: ".5rem" }} />
+              <EnvironmentOutlined style={{ marginRight: "1rem" }} />
             </Hidden>
             {title}
           </Title>

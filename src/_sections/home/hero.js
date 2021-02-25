@@ -51,7 +51,8 @@ export default ()=> {
   return(
     <MainCont>
       <Title>
-        {state.home.hero.title}
+        Compra, arrienda o vende<br />
+        propiedades en Chile
       </Title>
       <FormProperty />
       <DownButton href="#properties">
