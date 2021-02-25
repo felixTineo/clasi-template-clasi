@@ -33,6 +33,7 @@ const UbicationCont = styled.div`
   margin-bottom: 2rem;
   @media(min-width: 768px){
     margin: 0;
+    margin-bottom: .5rem;
   }
 `
 const SvgCont = styled.span`
@@ -65,6 +66,25 @@ export default ({ description })=> {
               {description.ubication.address}
             </span>
           </UbicationCont>
+          {
+           description.characteristics.filter(char => (
+              char.name === "Superficie total" ||
+              char.name === "Superficie útil" ||
+              char.name === "Habitaciones" ||
+              char.name === "Baños"
+
+            ) ).map((char, index) => (
+              <UbicationCont key={index}>
+                {
+                  char.name === "Superficie total" && <img style={{ width: "2rem", marginRight: "1rem" }} src="/icons/surface.svg" /> ||
+                  char.name === "Superficie útil" && <img style={{ width: "2rem", marginRight: "1rem" }} src="/icons/surface.svg" />  ||
+                  char.name === "Habitaciones" && <img style={{ width: "2rem", marginRight: "1rem" }} src="/icons/rooms.svg" /> ||
+                  char.name === "Baños" && <img style={{ width: "2rem", marginRight: "1rem" }} src="/icons/bath.svg" />
+                }
+                <span>{char.name} {char.value} {char.name === "Superficie total" && "m²" || char.name === "Superficie útil" && "m²"}</span>
+              </UbicationCont>
+            ))
+          }
         </Col>
         <Visible xs>
           <InteractionButtons />

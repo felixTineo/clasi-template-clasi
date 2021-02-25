@@ -11,23 +11,34 @@ const SvgCont = styled.svg`
   }
 `
 
-const CustomButton = styled(Button)`
-  min-width: auto;
-  background-color: #000;
-  border-color: #000;
-  &:hover{
-    background-color: hsl(0, 0%, 10%);
-    border-color: hsl(0, 0%, 10%);
-  }
-  &:active{
+const CustomButton = styled.a`
+    min-width: 160px;
+    min-height: 44px;
+    width: 100%;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e20076;
+    border-color: #e20076;
+    color: #FFFFFF;
+    transition: 250ms ease;
+    min-width: auto;
     background-color: #000;
     border-color: #000;
-  }
+    &:visited{
+      color: #FFFFFF;
+    }
+    &:hover{
+      background-color: hsl(0,0%,10%);
+      border-color: hsl(0,0%,10%);      
+    }
 `
 
-export default ()=> (
+export default ({ videos })=> (
   <Fragment>
-    <Col xs={12} md={5}>
+{/*    <Col xs={12} md={5}>
       <CustomButton outlined primary block style={{ marginBottom: 16 }}>
         Recorrer
         <SvgCont width="26" height="26" fill="none" version="1.1" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +50,8 @@ export default ()=> (
           </g>                
         </SvgCont>
       </CustomButton>
-    </Col>
+</Col>*/}
+{console.log("VIDEOS", videos)}
     <Col xs={12} md={5}>
       <CustomButton outlined primary block style={{ marginBottom: 16 }}>
         Ver video

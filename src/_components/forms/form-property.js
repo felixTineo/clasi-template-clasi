@@ -44,9 +44,10 @@ const FormButtonCont = styled.div`
   }
 `
 const ButtonFilter = styled.button`
-  background-color: transparent;
+  background-color: ${props => props.noHome ? "transparent" : "#000"};
+  min-height: ${props => !props.noHome && "44px"};
   border: none;
-  width: 150px;
+  width: 160px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -59,9 +60,10 @@ const ButtonFilter = styled.button`
   text-shadow: ${props => props.noHome ? "none" : "rgba(0, 0, 0, .5) 1px 1px 1px, rgba(0, 0, 0, .5) -1px -1px 1px"};
   color: ${props => props.noHome ? "#000" : "#fff"};
   position: absolute;
-  right: -150px;
+  right: -166px;
   &:hover{
-    color: #008AFC;
+    color: ${props => props.noHome ? "#008AFC" : "#fff"};
+    background-color: ${props => props.noHome ? "transparent" : "hsl(0,0%,10%)"};
   }
 `
 const SvgCont = styled.svg`
@@ -72,7 +74,7 @@ path{
   stroke: ${props => props.noHome ? "none" : "rgba(0, 0, 0, .350)"};
 }
 ${ButtonFilter}:hover & {
-  fill: #008AFC;
+  fill: ${props => props.noHome ? "#008AFC" : "#fff"};  
 }
 `
 

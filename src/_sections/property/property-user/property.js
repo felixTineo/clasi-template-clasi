@@ -10,7 +10,6 @@ const MainCont = styled.div`
   border-right: none;
 `
 const PublicObs = styled.p`
-  font-weight: bold;
   margin: 2rem 0;
   white-space: pre-line;
 `
@@ -27,7 +26,7 @@ const CharItemLi = styled.li`
   justify-content: space-between;
   margin-bottom: 1rem;
   color: #002438;
-  font-size: .8rem;
+  //font-size: .8rem;
 `
 
 const CharItem = ({ icon, name, value }) => {
@@ -52,7 +51,7 @@ export default ({ description })=> {
     <MainCont>
       <Row>
         <Hidden xs>
-         <InteractionButtons />
+         <InteractionButtons videos={description.videos} />
         </Hidden>
         <Col xs={12}>
           <h2 style={{ color: "#002438" }}>Características</h2>

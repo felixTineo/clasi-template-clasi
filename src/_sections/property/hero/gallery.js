@@ -8,10 +8,11 @@ const Commune = styled.p`
   top: 0;
   left: 0;
   color: #fff;
-  padding: 1rem;
+  padding: 1.25rem;
   //font-size: .8rem;
   background-color: #000;
   margin: 0;
+  text-transform: uppercase;
 `
 const ImageContainer = styled.div`
   position: relative;

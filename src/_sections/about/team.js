@@ -24,14 +24,24 @@ const Title = styled.h2`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 4rem;
   user-select: none;
+  min-height: 475.19px;
   @media(min-width: 768px){
     margin: 0;
     margin-bottom: 4rem;
   }
+`
+const DivDivider1 = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`
+const DivDivider2 = styled.div`
+  width: 100%;
+  text-align: center;
 `
 const Avatar = styled.img`
   width: 160px;
@@ -41,7 +51,7 @@ const Avatar = styled.img`
   object-position: cover;
 `
 const Name = styled.p`
-  margin-top: 1rem;
+  //margin-top: 1rem;
   margin-bottom: 0;
   font-size: 20px;
   text-align: center;
@@ -111,55 +121,54 @@ export default ()=> {
           </Col>
           <Col xs={12} md={3} key={uuid()}>
             <Card>
-              <Avatar src={state.items[0].avatar} alt={state.items[0].lastName} />
-              <Name>{state.items[0].fullName}</Name>
-              <br />
-              <Position hasPosition>
-                Ingeniero Comercial
-              </Position>
-              <Position hasPosition>
-                Tasador Inmobiliario y Agrícola
-              </Position>
-              <Description>
-                Gerente General
-              </Description>
-              <Ubication>
-                Región Metropolitana | V Región
-              </Ubication>
-              <SubUbication>
-                Casa Matriz
-              </SubUbication>              
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56942835382`}>
-                +56 9 4283 5382
-              </Phone>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
-                +56 2 3255 9596
-              </Phone>           
-              <Mail>
-                luis@lwpropiedades.cl
-              </Mail>   
+              <DivDivider1>
+                <Avatar src={state.items[0].avatar} alt={state.items[0].lastName} />              
+                <Name>{state.items[0].fullName}</Name>
+                <Position hasPosition>
+                  Ingeniero Comercial
+                </Position>
+                <Position hasPosition>
+                  Tasador Inmobiliario y Agrícola
+                </Position>
+                <Description>
+                  Gerente General
+                </Description>
+                <Ubication>
+                  Región Metropolitana | V Región
+                </Ubication>
+              </DivDivider1>
+              <DivDivider2>
+                <SubUbication>
+                  Casa Matriz
+                </SubUbication>              
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56942835382`}>
+                  +56 9 4283 5382
+                </Phone>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
+                  +56 2 3255 9596
+                </Phone>           
+                <Mail>
+                  luis@lwpropiedades.cl
+                </Mail>   
+              </DivDivider2>
             </Card>
           </Col>     
           <Col xs={12} md={3} key={uuid()}>
             <Card>
-              <Avatar src={state.items[1].avatar} alt={state.items[1].lastName} />
-              <Name>{state.items[1].fullName}</Name>
-              <br />
-              <Position>
-                Ingeniero Comercial
-              </Position>
-              <Position>
-                Tasador Inmobiliario y Agrícola
-              </Position>
-              <Description>
-                Ejecutiva Inmobiliaria
-              </Description>
-              <Ubication>
-              Región Metropolitana
-              </Ubication>
-              <SubUbication hasSub>
-                Casa Matriz
-              </SubUbication>
+              <DivDivider1>
+                <Avatar src={state.items[1].avatar} alt={state.items[1].lastName} />
+                <Name>{state.items[1].fullName}</Name>
+                <Description>
+                  Ejecutiva Inmobiliaria
+                </Description>
+                <Ubication>
+                Región Metropolitana
+                </Ubication>
+                <SubUbication hasSub>
+                  Casa Matriz
+                </SubUbication>              
+              </DivDivider1>
+              <DivDivider2>
               <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56938792076`}>
                 +56 9 3879 2076
               </Phone>
@@ -169,160 +178,147 @@ export default ()=> {
               <Mail>
                 h.alcantara@lwpropiedades.cl
               </Mail>   
+              </DivDivider2>
             </Card>
           </Col>    
           <Col xs={12} md={3} key={uuid()}>
             <Card>
-              <Avatar src={state.items[2].avatar} alt={state.items[2].lastName} />
-              <Name>{state.items[2].fullName}</Name>
-              <Position>
-                Ingeniero Comercial
-              </Position>
-              <Position>
-                Tasador Inmobiliario y Agrícola
-              </Position>
-              <Description>
-              Asociada Inmobiliaria
-              </Description>
-              <Ubication>
-              Región Metropolitana
-              </Ubication>
-              <SubUbication hasSub>
-              Las Condes | Lo Barnechea
-              </SubUbication>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56962138939`}>
-              +56 9 6213 8939
-              </Phone>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
-              +56 2 3255 9596
-              </Phone>           
-              <Mail>
-                francisca@lwpropiedades.cl
-              </Mail>   
+              <DivDivider1>
+                <Avatar src={state.items[2].avatar} alt={state.items[2].lastName} />
+                <Name>{state.items[2].fullName}</Name>
+                <Description>
+                Asociada Inmobiliaria
+                </Description>
+                <Ubication>
+                Región Metropolitana
+                </Ubication>
+                <SubUbication hasSub>
+                Las Condes | Lo Barnechea
+                </SubUbication>
+              </DivDivider1>
+              <DivDivider2>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56962138939`}>
+                +56 9 6213 8939
+                </Phone>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
+                +56 2 3255 9596
+                </Phone>           
+                <Mail>
+                  francisca@lwpropiedades.cl
+                </Mail>   
+              </DivDivider2>
             </Card>
           </Col>       
           <Col xs={12} md={3} key={uuid()}>
             <Card>
-              <Avatar src={state.items[5].avatar} alt={state.items[5].lastName} />
-              <Name>{state.items[5].fullName}</Name>
-              <br />
-              <Position>
-                Ingeniero Comercial
-              </Position>
-              <Position>
-                Tasador Inmobiliario y Agrícola
-              </Position>
-              <Description>
-              Asociada Inmobiliaria
-              </Description>
-              <Ubication>
-              Región Metropolitana
-              </Ubication>
-              <SubUbication hasSub>
-              Vitacura
-              </SubUbication>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56935248789`}>
-                +56 9 3524 8789
-              </Phone>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
-                +56 2 3255 9596
-              </Phone>           
-              <Mail>
-              c.ortiz@lwpropiedades.cl
-              </Mail>   
+              <DivDivider1>
+                <Avatar src={state.items[5].avatar} alt={state.items[5].lastName} />
+                <Name>{state.items[5].fullName}</Name>
+                <Description>
+                Asociada Inmobiliaria
+                </Description>
+                <Ubication>
+                Región Metropolitana
+                </Ubication>
+                <SubUbication hasSub>
+                Vitacura
+                </SubUbication>
+              </DivDivider1>
+              <DivDivider2>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56935248789`}>
+                  +56 9 3524 8789
+                </Phone>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
+                  +56 2 3255 9596
+                </Phone>           
+                <Mail>
+                c.ortiz@lwpropiedades.cl
+                </Mail>   
+              </DivDivider2>
             </Card>
           </Col>              
           <Col xs={12} md={3} key={uuid()}>
             <Card>
-              <Avatar src={state.items[3].avatar} alt={state.items[3].lastName} />
-              <Name>{state.items[3].fullName}</Name>
-              <br />
-              <Position>
-                Ingeniero Comercial
-              </Position>
-              <Position>
-                Tasador Inmobiliario y Agrícola
-              </Position>
-              <Description>
-              Asociada Inmobiliaria
-              </Description>
-              <Ubication>
-              Región Metropolitana
-              </Ubication>
-              <SubUbication hasSub>
-              Providencia | La Reina | Ñuñoa
-              </SubUbication>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56988983632`}>
-                +56 9 8898 3632
-              </Phone>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
-                +56 2 3255 9596
-              </Phone>           
-              <Mail>
-                e.albornoz@lwpropiedades.cl
-              </Mail>   
+              <DivDivider1>
+                <Avatar src={state.items[3].avatar} alt={state.items[3].lastName} />
+                <Name>{state.items[3].fullName}</Name>
+                <Description>
+                Asociada Inmobiliaria
+                </Description>
+                <Ubication>
+                Región Metropolitana
+                </Ubication>
+                <SubUbication hasSub>
+                Providencia | La Reina | Ñuñoa
+                </SubUbication>
+              </DivDivider1>
+              <DivDivider2>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56988983632`}>
+                  +56 9 8898 3632
+                </Phone>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
+                  +56 2 3255 9596
+                </Phone>           
+                <Mail>
+                  e.albornoz@lwpropiedades.cl
+                </Mail>   
+              </DivDivider2>
             </Card>
           </Col>     
           <Col xs={12} md={3} key={uuid()}>
             <Card>
-              <Avatar src={state.items[4].avatar} alt={state.items[4].lastName} />
-              <Name>{state.items[4].fullName}</Name>
-              <br />
-              <Position>
-                Ingeniero Comercial
-              </Position>
-              <Position>
-                Tasador Inmobiliario y Agrícola
-              </Position>
-              <Description>
-              Asociada Inmobiliaria
-              </Description>
-              <Ubication>
-              Región Metropolitana
-              </Ubication>
-              <SubUbication hasSub>
-              Chicureo
-              </SubUbication>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56997487079`}>
-                +56 9 9748 7079
-              </Phone>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
-                +56 2 3255 9596
-              </Phone>           
-              <Mail>
-              claudia@lwpropiedades.cl
-              </Mail>   
+              <DivDivider1>
+                <Avatar src={state.items[4].avatar} alt={state.items[4].lastName} />
+                <Name>{state.items[4].fullName}</Name>
+                <Description>
+                Asociada Inmobiliaria
+                </Description>
+                <Ubication>
+                Región Metropolitana
+                </Ubication>
+                <SubUbication hasSub>
+                Chicureo
+                </SubUbication>
+              </DivDivider1>
+              <DivDivider2>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56997487079`}>
+                  +56 9 9748 7079
+                </Phone>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
+                  +56 2 3255 9596
+                </Phone>           
+                <Mail>
+                claudia@lwpropiedades.cl
+                </Mail>   
+              </DivDivider2>
             </Card>
           </Col>        
           <Col xs={12} md={3} key={uuid()}>
             <Card>
-              <Avatar src={state.items[6].avatar} alt={state.items[6].lastName} />
-              <Name>{state.items[6].fullName}</Name>
-              <br />
-              <Position>
-                Ingeniero Comercial
-              </Position>
-              <Position>
-                Tasador Inmobiliario y Agrícola
-              </Position>
-              <Description>
-              Asociada Inmobiliaria
-              </Description>
-              <Ubication>
-                V Región
-              </Ubication>
-              <SubUbication hasSub>
-                Viña del Mar | Concón
-              </SubUbication>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56993224610`}>
-                +56 9 9322 4610
-              </Phone>
-              <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
-                +56 2 3255 9596
-              </Phone>           
-              <Mail>
-                camila@lwpropiedades.cl
-              </Mail>   
+              <DivDivider1>
+                <Avatar src={state.items[6].avatar} alt={state.items[6].lastName} />
+                <Name>{state.items[6].fullName}</Name>
+                <Description>
+                Asociada Inmobiliaria
+                </Description>
+                <Ubication>
+                  V Región
+                </Ubication>
+                <SubUbication hasSub>
+                  Viña del Mar | Concón
+                </SubUbication>
+              </DivDivider1>
+              <DivDivider2>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56993224610`}>
+                  +56 9 9322 4610
+                </Phone>
+                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
+                  +56 2 3255 9596
+                </Phone>           
+                <Mail>
+                  camila@lwpropiedades.cl
+                </Mail>   
+              </DivDivider2>
             </Card>
           </Col>                                           
           {/*

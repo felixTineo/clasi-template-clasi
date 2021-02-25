@@ -116,7 +116,6 @@ export default ({
   const { loading, error, data } = useGetIndicators();
   return(
     <Link to={`/property?builderId=${builderId}&propertyId=${_id}`} title="Ver propiedad">
-      {console.log("CHARACTERISTICS", characteristics)}
     <CardCont>
       <CardImage src={mainImage}>
         <Commune>
@@ -151,7 +150,7 @@ export default ({
                   char.name === "Habitaciones" && <img src="/icons/rooms.svg" /> ||
                   char.name === "Baños" && <img src="/icons/bath.svg" />
                 }
-                <span>{char.name} {char.value} {char.name === "Superficie total" && "mt2" || char.name === "Superficie útil" && "mt2"}</span>
+                <span>{char.name} {char.value} {char.name === "Superficie total" && "m²" || char.name === "Superficie útil" && "m²"}</span>
               </CharItem>
             ))
           }
