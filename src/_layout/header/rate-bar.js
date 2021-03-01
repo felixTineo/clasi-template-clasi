@@ -5,7 +5,6 @@ import { useGetIndicators } from '../../_hooks';
 import { LoadingOutlined } from '@ant-design/icons';
 
 const MainCont = styled.div`
-  background-color: #fff;
   //color: #fff;
   padding: .5rem 0;
   font-size: 12px;
@@ -15,6 +14,9 @@ const MainCont = styled.div`
   padding-left: 10px;
   padding-right: 10px;
   //max-width: 1240px;
+  @media(min-width: 768px){
+    background-color: #fff;
+  }
 `
 const RatesCont = styled.ul`
   display: flex;

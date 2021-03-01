@@ -25,11 +25,11 @@ const MainCont = styled.section`
 const Title = styled.h1`
   font-weight: 300;
   max-width: 95%;
-  font-size: 32px;
+  font-size: 2rem;
   text-align: center;
   @media(min-width: 768px){
     max-width: 50%;
-    font-size: 50px;
+    font-size: 2.5rem;
   }
 `
 const DownButton = styled.a`

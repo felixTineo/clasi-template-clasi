@@ -29,7 +29,7 @@ export default ({ dark })=> {
         {
           state.main.logo.isImage
           ?(
-            <LogoImg src={ dark ? state.main.logo.value : state.main.logo.value} />
+            <LogoImg src={ dark ? state.main.logoDark.value : state.main.logo.value} />
           )
           :(
             <LogoText>

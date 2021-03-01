@@ -5,14 +5,18 @@ import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { UpOutlined, PhoneFilled, WhatsAppOutlined } from '@ant-design/icons';
+import { UpOutlined, PhoneFilled, WhatsAppOutlined, ShopOutlined } from '@ant-design/icons';
 
 const Footer = styled.footer`
   background-color: ${props => props.theme.main.primaryColor};
   color: #fff;
 `
 const MainFooter = styled.div`
-  padding: 4rem 0;
+    padding: 4rem 0;
+    padding-bottom: 0;
+  @media(min-width: 768px){
+    padding-bottom: 4rem;
+  }  
 `
 const FooterRightsCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
@@ -175,6 +179,7 @@ export default ()=> {
       <MainFooter>
         <Container>
           <Row>
+            <Hidden xs>
             <Col xs={12} md={4}>
               <p>Contacto:</p>
               <OfficeInfoCont>
@@ -189,6 +194,7 @@ export default ()=> {
                 </OfficeInfo>
               </OfficeInfoCont>
             </Col>
+            </Hidden>
             <Col xs={12} md={4}>
               <Row>
                 <Col xs={12}>
@@ -203,14 +209,13 @@ export default ()=> {
                   </GatsbyLink>                  
                 </Col>
                 <Col xs={12}>
-                  <ContactButton href={`https://api.whatsapp.com/send?phone=56942371486`} target="_blank" rel="noopener">
-                      <WhatsAppOutlined />
+                  <ContactButton href={`https://wa.link/b4aqwh`} target="_blank" rel="noopener">
+                      <WhatsAppOutlined style={{ color: "#06d755" }} />
                       <span>Envianos un WhatsApp</span>
                   </ContactButton>                 
                 </Col>                            
                 <Col xs={12}>
                   <SocialNav>
-                    <li>Síguenos en</li>
                     <SocialItem style={{ marginLeft: "1rem" }}>
                       <a href={office.facebook} target="_blank" rel="noopener">
                         <SvgIcon social={true} width="29" height="29" fill="none" version="1.1" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg">
@@ -224,7 +229,12 @@ export default ()=> {
                           <path d="m14.457 0a14.5 14.5 0 0 0-14.457 14.5 14.5 14.5 0 0 0 14.5 14.5 14.5 14.5 0 0 0 14.5-14.5 14.5 14.5 0 0 0-14.5-14.5 14.5 14.5 0 0 0-0.042969 0zm-2.916 6h6.6504c3.0602 0 5.543 2.4808 5.543 5.541v6.6504c0 3.0602-2.4828 5.543-5.543 5.543h-6.6504c-3.0603 0-5.541-2.4828-5.541-5.543v-6.6504c0-3.0603 2.4808-5.541 5.541-5.541zm0 1.6621c-2.1392 0-3.8789 1.7397-3.8789 3.8789v6.6504c0 2.1392 1.7397 3.8809 3.8789 3.8809h6.6504c2.1392 0 3.8809-1.7417 3.8809-3.8809v-6.6504c0-2.1392-1.7417-3.8789-3.8809-3.8789h-6.6504zm3.3262 2.7715c2.4484 0 4.4336 1.9852 4.4336 4.4336 0 2.4484-1.9852 4.4336-4.4336 4.4336-2.4484 0-4.4336-1.9852-4.4336-4.4336 0-2.4484 1.9852-4.4336 4.4336-4.4336zm0 1.6621c-1.5273 0-2.7715 1.243-2.7715 2.7715 0 1.5273 1.2442 2.7715 2.7715 2.7715 1.5273 0 2.7715-1.2442 2.7715-2.7715 0-1.5285-1.2442-2.7715-2.7715-2.7715z"/>
                         </SvgIcon>
                       </a>
-                    </SocialItem>     
+                    </SocialItem>  
+                    <SocialItem style={{ marginLeft: "1rem" }}>
+                      <a href="https://g.page/realty-brokers-chile?gm" target="_blank" rel="noopener">
+                        <img width={30} src="/g-bussiness.svg" />
+                      </a>
+                    </SocialItem>                       
                   </SocialNav>
                 </Col>  
               </Row>
@@ -232,7 +242,7 @@ export default ()=> {
             <Col xs={12} md={4}>
               <NavCont>
                 <Row>
-                  <Col xs={6} md={12}>
+                  <Col xs={3} md={12}>
                     <Hidden xs>
                         <BackTopCont>
                           <BackTop onClick={handleTop} href="#top">
@@ -244,7 +254,7 @@ export default ()=> {
                       Nosotros
                     </NavLink>
                   </Col>
-                  <Col xs={6} md={12}>
+                  <Col xs={3} md={12}>
                     <NavLink to={`/properties`}>
                       Propiedades
                     </NavLink>                  
@@ -256,16 +266,32 @@ export default ()=> {
                       </NavLink>                  
                     </Col>
 </Visible>*/}
-                  <Col xs={6} md={12}>
+                  <Col xs={3} md={12}>
                     <NavLink to={`/contact`}>
                       Contacto
                     </NavLink>                  
                   </Col>       
-                  <Col xs={6} md={12}>
+                  <Col xs={3} md={12}>
                     <NavLink href={`http://app.clasihome.com/login?logo=${state.main.logoDark.value}&primaryColor=${state.main.primaryColor.substring(1)}`}>
                       Login
                     </NavLink>                  
-                  </Col>                                                         
+                  </Col>    
+                  <Visible xs>
+                    <Col xs={12} md={4}>
+                      <p>Contacto:</p>
+                      <OfficeInfoCont>
+                        <OfficeInfo>
+                          {office.address}
+                        </OfficeInfo>
+                        <OfficeInfo>
+                          {office.phone}
+                        </OfficeInfo>
+                        <OfficeInfo>
+                          {office.email}
+                        </OfficeInfo>
+                      </OfficeInfoCont>
+                    </Col>                    
+                  </Visible>                                                     
                 </Row>
               </NavCont>
             </Col>                            
@@ -275,7 +301,7 @@ export default ()=> {
       <FooterRightsCont>
         <Container>
           <FooterRights>
-            <li>2020 © Todos los derechos reservados</li>
+            <li>{new Date().getFullYear()} © Todos los derechos reservados</li>
             <li>Desarrollado por <DevelopBy href="https://clasihome.com/" target="_blank">Clasihome</DevelopBy></li>
           </FooterRights>
         </Container>

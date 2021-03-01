@@ -14,17 +14,18 @@ const InnerCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 125.27px;
   @media(min-width: 768px){
     justify-content: flex-start;
     height: calc(100vh - 154.27px);
+    padding-top: 0;
   }
 `;
 const Title = styled.h1`
   color: #fff;
   text-align: center;
+  font-weight: 400;
   @media(min-width: 768px){
-    width: 70%;
-    text-align: left;
   }
 `
 

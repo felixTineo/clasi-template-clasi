@@ -21,10 +21,10 @@ const DescriptionCont = styled.div`
   justify-content: center;
   align-items: center;  
   height: 100%;
-  padding: 4rem 0;
+  padding: 4rem 0 0;
 `
 const Title = styled.h2`
-  font-size: 40px;
+  font-size: 2rem;
   color: ${props => props.theme.main.primaryColor};
 `
 const Description = styled.p`
@@ -36,13 +36,22 @@ const HeroImage = styled.img`
   object-fit: cover;
   object-fit: center;
 `
+const TitleServiceCont = styled.div`
+  background-color: ${props => props.theme.main.primaryColor};
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 2rem;
+`
 const TitleService = styled(Title)`
-  color: ${props => props.theme.main.primaryColor};
-  padding-top: 4rem;
+  //color: ${props => props.theme.main.primaryColor};
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
 `
 const SubTitleService = styled(Description)`
-  font-weight: bold;
   //margin: 4rem 0 0;
+  text-align: center;
+  font-size: 1.5rem;
 `
 const TitleQuoteCont = styled.div`
   padding-top: 4rem;
@@ -90,14 +99,20 @@ export default ()=> {
           </Row>
         </Container>
       </HeroInfoCont>
-      <Container>
+      
         <Row gutterWidth={128}>
           <Col xs={12}>
-            <TitleService>En Realty Brokers encontrarás <br /> compromiso y seguridad.</TitleService>
-            <SubTitleService>Estos son algunos de los servicios con los que podrás contar:</SubTitleService>
-            <CarouselCont>
-              <ServiceCarousel />
-            </CarouselCont>
+            <TitleServiceCont>
+              <Container>
+                <TitleService>En Realty Brokers encontrarás compromiso y seguridad.</TitleService>
+              </Container>
+            </TitleServiceCont>
+            <Container>
+              <SubTitleService>Estos son algunos de los servicios con los que podrás contar:</SubTitleService>
+              <CarouselCont>
+                <ServiceCarousel />
+              </CarouselCont>
+            </Container>
           </Col>
 {/*          <Col xs={12} md={6}>
             <div style={{
@@ -121,7 +136,6 @@ export default ()=> {
 </QuoteCarouselCont>
           </Col>    */}      
         </Row>
-      </Container>
     </MainCont>
   )
 }

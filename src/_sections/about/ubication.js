@@ -52,6 +52,10 @@ const ContactButton = styled.a`
       background-color: #fff;
       color: ${props => props.theme.main.primaryColor};
     }
+    margin-bottom: 2rem;
+  @media(min-width: 768px){
+    margin-bottom: 0;
+  }
 `
 
 export default ()=> {

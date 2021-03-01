@@ -1,7 +1,7 @@
 import React, { useContext, Fragment } from 'react';
 import Context from '../../_context';
 import styled from 'styled-components';
-import { Visible, Hidden } from 'react-grid-system';
+import { Visible, Hidden, Row, Col } from 'react-grid-system';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -14,12 +14,17 @@ const chunkArray = (myArray, chunk) =>{
 };
 
 const ServiceCont = styled.div`
-  padding: 1rem;
-  margin-left: ${props => props.index !== 0 && props.desktop ? "1rem" : "0"};
-  padding-left: ${props => props.index === 0 && props.desktop ? "0" : "1rem"};
+  padding: 1rem .8rem;
+  //margin-left: ${props => props.index !== 0 && props.desktop ? "1rem" : "0"};
+  //padding-left: ${props => props.index === 0 && props.desktop ? "0" : "1rem"};
+  text-align: center;
+`
+const ServiceImg = styled.img`
+  max-width: 100px;
 `
 const ServiceTitle = styled.p`
   color: ${props => props.theme.main.primaryColor};
+  font-weight: bold;
 `
 const ServiceDescription = styled.p`
 
@@ -51,7 +56,53 @@ export default ()=> {
   return(
     <Fragment>
       <Hidden xs>
-        <CarouselProvider
+        <Row>
+          <Col xs={3}>
+            <ServiceCont index={0} desktop>
+              <ServiceImg src="venta.png" alt="venta de inmuebles" />
+              <ServiceTitle>
+                Venta de Inmueble
+              </ServiceTitle>
+              <ServiceDescription>
+                ¿Necesita vender? Gestionamos su propiedad para la venta en el menor tiempo posible. 
+              </ServiceDescription>
+            </ServiceCont>              
+          </Col>
+          <Col xs={3}>
+            <ServiceCont desktop>
+              <ServiceImg src="arriendos.png" alt="arriendo de inmuebles" />
+              <ServiceTitle>
+                Arriendo de Inmuebles
+              </ServiceTitle>
+              <ServiceDescription>
+                ¿Desea arrendar su propiedad? Cuente con nuestros profesionales para realizarlo en el menor tiempo posible.
+              </ServiceDescription>
+            </ServiceCont>              
+          </Col>         
+          <Col xs={3}>
+            <ServiceCont desktop>
+              <ServiceImg src="administracion.png" alt="administracion de inmuebles" />
+              <ServiceTitle>
+                Administración de propiedades
+              </ServiceTitle>
+              <ServiceDescription>
+                No pierda tiempo. Nosotros gestionamos y administramos su inmueble.
+              </ServiceDescription>
+            </ServiceCont>              
+          </Col>         
+          <Col xs={3}>
+            <ServiceCont desktop>
+              <ServiceImg src="asesoria.png" alt="asesoria de inmuebles" />
+              <ServiceTitle>
+                Asesoría de compra Inmobiliaria
+              </ServiceTitle>
+              <ServiceDescription>
+                ¿Quiere comprar? Nosotros le asesoramos para que tome una mejor decisión.
+              </ServiceDescription>
+            </ServiceCont>              
+          </Col>                              
+        </Row>
+{/*        <CarouselProvider
           naturalSlideWidth={100}
           //naturalSlideHeight={50}
           isIntrinsicHeight={true}
@@ -74,7 +125,7 @@ export default ()=> {
               ))
             }
           </Slider>
-        </CarouselProvider>
+          </CarouselProvider>*/}
       </Hidden>
       <Visible xs>
         <CarouselProvider

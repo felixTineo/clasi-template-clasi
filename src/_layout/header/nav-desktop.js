@@ -101,13 +101,13 @@ export default ()=> {
               Contacto
             </NavLink>
           </Link>
-        </NavItem>                          
+        </NavItem>       
       </NavBar>
-      <LoginButton
+{/*      <LoginButton
         href={`http://app.clasihome.com/login?logo=${state.main.logoDark.value}&primaryColor=${state.main.primaryColor.substring(1)}`}
       >
         Login
-      </LoginButton>
+</LoginButton>*/}
   </MainCont>
   )
 }

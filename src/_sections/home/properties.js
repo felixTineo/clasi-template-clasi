@@ -8,7 +8,7 @@ import { navigate } from 'gatsby';
 
 const MainCont = styled.section`
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 0 0;
 `
 const Title = styled.h2`
   color: ${props => props.theme.main.primaryColor};
@@ -42,7 +42,7 @@ export default ()=> {
         <Row>
           <Col xs={12}>
             <Title>
-              {state.title}
+              Contamos con una selección exclusiva de propiedades
             </Title>                 
           </Col>
           <Col xs={12}>

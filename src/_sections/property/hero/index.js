@@ -8,8 +8,11 @@ import Description from './description';
 
 const MainCont = styled.div`
   padding-top: 10rem;
-  background-color: ${props => props.theme.main.primaryColor};
+  background-color: #fff;
   border-bottom: 10px solid #F7BD2D;
+  @media(min-width: 768px){
+    background-color: ${props => props.theme.main.primaryColor};
+  }
 `
 export default ({ state })=> {
   //const state = useContext(Context).singleProperty;

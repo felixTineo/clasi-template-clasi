@@ -9,15 +9,24 @@ import { getSearchParams } from 'gatsby-query-params';
 
 const SectionCont = styled.div`
   background-color: #fff;
-  padding: 8rem 0 0;
   background-image: linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), linear-gradient(rgba(18, 17, 86, .6), rgba(18, 17, 86, .6) ), url("/6037cdc7ef29c.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  min-height: 75vh;
+  min-height: 100vh;
+  padding-top: 125.27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media(min-width: 768px){
+    min-height: 75vh;
+    padding-top: 0;
+  }
 `
-
+const Title = styled.h1`
+  font-weight: 400;
+`
 const SearchForm = styled.form`
   width: 100%;
   margin-bottom: 2rem;
@@ -86,8 +95,10 @@ export default ()=> {
   return(
     <SectionCont>
       <Container>
-        <h1>Propiedades</h1>
         <Row align="center">
+          <Col xs={12}>
+            <Title>Propiedades</Title>
+          </Col>
           <Col xs={12} md={10}>
             <FormProperty block shadow noHome/>
           </Col>
