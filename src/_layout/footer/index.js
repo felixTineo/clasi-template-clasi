@@ -74,8 +74,8 @@ const NavLink = styled(Link)`
 `
 const ContactButton = styled.a`
   text-decoration: none;
-    min-width: 160px;
-    min-height: 44px;
+    min-width: 100%;
+    min-height: 66px;
     border: 1px solid #fff;
     border-radius: 6px;
     cursor: pointer;
@@ -85,6 +85,7 @@ const ContactButton = styled.a`
     background-color: transparent;
     color: #FFFFFF;
     transition: 250ms ease;
+    font-size: 1.3rem;
     //font-family: "Roboto";
     span{
       margin-left: .5rem;
