@@ -72,7 +72,7 @@ const Description = styled.p`
 const Ubication = styled.p`
   margin: 0;
   text-align: center;
-  font-weight: bold;
+  font-weight: ${props => props.blue ? "normal" : "bold"};
   font-size: 14px;
   color: ${props => props.blue ? "#008AFC" : "inherit"};
 `
@@ -131,9 +131,8 @@ export default ()=> {
                 <Position hasPosition>
                   Tasador Inmobiliario y Agrícola
                 </Position>
-                <br />
                 <Description>
-                  Gerente General
+                  <span style={{ marginTop: ".2rem", display: "block" }}>Gerente General</span>
                 </Description>
                 <Ubication blue>
                   Región Metropolitana | V Región
