@@ -28,7 +28,7 @@ const Card = styled.div`
   align-items: center;
   margin-bottom: 4rem;
   user-select: none;
-  min-height: 475.19px;
+  height: 460px;
   @media(min-width: 768px){
     margin: 0;
     margin-bottom: 4rem;
@@ -74,6 +74,7 @@ const Ubication = styled.p`
   text-align: center;
   font-weight: bold;
   font-size: 14px;
+  color: ${props => props.blue ? "#008AFC" : "inherit"};
 `
 const SubUbication = styled(Ubication)`
   color: ${props => props.hasSub ? "#008AFC" : "transparent"};
@@ -130,17 +131,17 @@ export default ()=> {
                 <Position hasPosition>
                   Tasador Inmobiliario y Agrícola
                 </Position>
+                <br />
                 <Description>
                   Gerente General
                 </Description>
-                <Ubication>
+                <Ubication blue>
                   Región Metropolitana | V Región
                 </Ubication>
+                <SubUbication hasSub>
+                </SubUbication>
               </DivDivider1>
               <DivDivider2>
-                <SubUbication>
-                  Casa Matriz
-                </SubUbication>              
                 <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56942835382`}>
                   +56 9 4283 5382
                 </Phone>
@@ -158,6 +159,8 @@ export default ()=> {
               <DivDivider1>
                 <Avatar src={state.items[1].avatar} alt={state.items[1].lastName} />
                 <Name>{state.items[1].fullName}</Name>
+                <br />
+                <br />
                 <Description>
                   Ejecutiva Inmobiliaria
                 </Description>
@@ -186,6 +189,7 @@ export default ()=> {
               <DivDivider1>
                 <Avatar src={state.items[2].avatar} alt={state.items[2].lastName} />
                 <Name>{state.items[2].fullName}</Name>
+                <br />
                 <Description>
                 Asociada Inmobiliaria
                 </Description>
@@ -214,11 +218,13 @@ export default ()=> {
               <DivDivider1>
                 <Avatar src={state.items[5].avatar} alt={state.items[5].lastName} />
                 <Name>{state.items[5].fullName}</Name>
+                <br />
+                <br />
                 <Description>
                 Asociada Inmobiliaria
                 </Description>
                 <Ubication>
-                Región Metropolitana
+                  Región Metropolitana | Vitacura
                 </Ubication>
                 <SubUbication hasSub>
                 Vitacura
@@ -242,6 +248,8 @@ export default ()=> {
               <DivDivider1>
                 <Avatar src={state.items[3].avatar} alt={state.items[3].lastName} />
                 <Name>{state.items[3].fullName}</Name>
+                <br />
+                <br />
                 <Description>
                 Asociada Inmobiliaria
                 </Description>
@@ -270,6 +278,8 @@ export default ()=> {
               <DivDivider1>
                 <Avatar src={state.items[4].avatar} alt={state.items[4].lastName} />
                 <Name>{state.items[4].fullName}</Name>
+                <br />
+                <br />
                 <Description>
                 Asociada Inmobiliaria
                 </Description>
@@ -292,35 +302,7 @@ export default ()=> {
                 </Mail>   
               </DivDivider2>
             </Card>
-          </Col>        
-          <Col xs={12} md={3} key={uuid()}>
-            <Card>
-              <DivDivider1>
-                <Avatar src={state.items[6].avatar} alt={state.items[6].lastName} />
-                <Name>{state.items[6].fullName}</Name>
-                <Description>
-                Asociada Inmobiliaria
-                </Description>
-                <Ubication>
-                  V Región
-                </Ubication>
-                <SubUbication hasSub>
-                  Viña del Mar | Concón
-                </SubUbication>
-              </DivDivider1>
-              <DivDivider2>
-                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56993224610`}>
-                  +56 9 9322 4610
-                </Phone>
-                <Phone target="_blank" rel="noopener" href={`https://api.whatsapp.com/send?phone=56232559596`}>
-                  +56 2 3255 9596
-                </Phone>           
-                <Mail>
-                  camila@lwpropiedades.cl
-                </Mail>   
-              </DivDivider2>
-            </Card>
-          </Col>                                           
+          </Col>                                                 
           {/*
             state.items.map(m => (
               <Col xs={12} md={3} key={m.id}>
