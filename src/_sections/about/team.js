@@ -134,7 +134,7 @@ export default ()=> {
                 <Description>
                   <span style={{ marginTop: ".2rem", display: "block" }}>Gerente General</span>
                 </Description>
-                <Ubication blue>
+                <Ubication>
                   Región Metropolitana | V Región
                 </Ubication>
                 <SubUbication hasSub>
