@@ -223,7 +223,7 @@ export default ()=> {
                 Asociada Inmobiliaria
                 </Description>
                 <Ubication>
-                  Región Metropolitana | Vitacura
+                  Región Metropolitana
                 </Ubication>
                 <SubUbication hasSub>
                 Vitacura
